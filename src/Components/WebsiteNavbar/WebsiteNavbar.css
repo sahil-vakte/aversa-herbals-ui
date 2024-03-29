@@ -1,0 +1,63 @@
+.nav-bar-icons{
+    height: 30px;
+    width: 35px;
+    color: #1c324a;
+}
+
+.selected-nav-link-navbar{
+    font-weight: 700; 
+    font-size: 21px;
+    color: rgb(22,98,51);
+    margin-top: 7px;
+    text-decoration: none;
+}
+  
+.navbar-content-gap{
+    gap: 50px;
+}
+
+.fixed-navbar-classname{
+    background-color: white;
+    position: fixed;
+    top: 0;
+    /* border-bottom: 1px solid; */
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 #0000000d;
+    width: 100%;
+    z-index: 1;
+}
+.navbar-brand {
+    color: black !important; /* Set the brand name color to black */
+  }
+.navbar-brand,
+.navbar-nav .nav-link {
+  /* color: gray !important;  */
+  font-weight: 600; 
+  font-size: 21px;
+}
+
+.navbar-nav .nav-link.active {
+  font-weight: 700; /* Set the font weight for the active tab */
+  color: green !important;
+}
+
+.brandlogo-styling{
+    height: 60px;
+    width: 250px;
+}
+
+@media screen and (max-width: 575px) {
+  .fixed-navbar-classnam{
+    position: fixed;
+    position: absolute;
+    z-index: 10;
+  }
+
+  .navbar-content-gap{
+    gap: 0px;
+  }
+
+  .brandlogo-styling{
+    height: 50px;
+    width: 200px;
+  }
+}
