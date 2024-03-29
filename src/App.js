@@ -2,6 +2,7 @@ import WebRoutes from './Routes/WebRoutes';
 import { Route, Routes } from 'react-router-dom';
 import "../src/Styles/KNimbalkarStyles.css"
 import "../src/Styles/KJadhavStyles.css"
+import "../src/Styles/SahilStyles.css"
 
 function App() {
   return (

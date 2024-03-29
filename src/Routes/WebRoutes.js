@@ -7,6 +7,7 @@ import WellnessResourcesPage from "../Container/WellnessResourcesPage/WellnessRe
 import AboutUsPage from "../Container/AboutUsPage/AboutUsPage";
 import ContactPage from "../Container/ContactPage/ContactPage";
 import WebsiteFooter from "../Components/WebsiteFooter/WebsiteFooter";
+import BusinessOpportunity from "../Container/BusinessOpportunityPage/BusinessOpportunity";
 
 const WebRoutes = () => {
   return (
@@ -19,6 +20,7 @@ const WebRoutes = () => {
         <Route path="/aversa-herbal-wellness-resources" element=<WellnessResourcesPage /> />
         <Route path="/aversa-herbal-about-us" element=<AboutUsPage /> />
         <Route path="/aversa-herbal-contact-us" element=<ContactPage /> />
+        <Route path="/aversa-herbal-business-opportunity" element=<BusinessOpportunity/> />
       </Routes>
     </div>
     <WebsiteFooter/>

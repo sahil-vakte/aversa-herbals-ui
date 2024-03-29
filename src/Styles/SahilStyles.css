@@ -1,0 +1,48 @@
+.aversa-images-of-hexagone{
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(18% 0,100% 0,80% 100%,0 100%);
+}
+
+.aversa-herbals-head-tag{
+    color: rgb(22,98,51);
+    font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif;
+    font-size: 3rem;
+    line-height: 1;
+    padding: 9px;
+}
+
+.aversa-herbals-para-tag-one{
+    color: #000000;
+    text-align: justify;
+    font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif;
+    font-size: 1rem;
+    padding: 9px;
+}
+
+.landing-page-section-one-bg{
+    background: linear-gradient(45deg, #c8ffd3, transparent);
+}
+
+.aversa-product-title{
+    color: white;
+    font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.aversa-prducts-price{
+    font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif;
+    font-size: 1rem;
+    color: white;
+    margin: 0px;   
+}
+
+.see-all-products-button{
+    background-color: rgb(22,98,51);
+    border-radius: 20px;
+    color: white;
+    font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif;
+    padding: 8px;
+    border: none;
+}

@@ -31,7 +31,10 @@ const WebsiteNavbar = () => {
                 Wellness Resources
               </Link>
               <Link className={location.pathname === '/aversa-herbal-about-us' ? 'selected-nav-link-navbar' : "nav-link"} to="/aversa-herbal-about-us"> 
-                About Aversa Herbals
+                About Us
+              </Link>
+              <Link className={location.pathname === '/aversa-herbal-business-opportunity' ? 'selected-nav-link-navbar' : "nav-link"} to="/aversa-herbal-business-opportunity"> 
+               Business Opportunity
               </Link>
               <Link className={location.pathname === '/aversa-herbal-contact-us' ? 'selected-nav-link-navbar' : "nav-link"} to="/aversa-herbal-contact-us"> 
                 Contact US
