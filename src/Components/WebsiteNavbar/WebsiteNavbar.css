@@ -35,10 +35,6 @@
   font-size: 21px;
 }
 
-.navbar-nav .nav-link.active {
-  font-weight: 700; /* Set the font weight for the active tab */
-  color: green !important;
-}
 
 .brandlogo-styling{
     height: 60px;
