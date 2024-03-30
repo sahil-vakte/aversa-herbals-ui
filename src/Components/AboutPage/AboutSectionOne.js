@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import missionlogo from "../../Assets/missionlogo.jpg";
 import ourvalue from "../../Assets/ourvaluelogo.jpg";
 import { FaHandPointRight } from "react-icons/fa";
+import { IoIosArrowDropright } from "react-icons/io";
 
 const AboutSectionOne = () => {
   return (
@@ -23,7 +24,12 @@ const AboutSectionOne = () => {
               herbal remedies backed by centuries of traditional wisdom and
               modern scientific research.
             </p>
-            <Button variant="outline-success">Shop Now</Button>
+            <button className="see-all-products-button">
+                 Shop Now{" "}
+                  <IoIosArrowDropright
+                    style={{ color: "white", height: "20px", width: "20px" }}
+                  />
+                </button>
           </div>
         </Col>
       </Row>
@@ -65,7 +71,12 @@ const AboutSectionOne = () => {
               community today and experience the transformative power of herbal
               wellness and financial freedom.
             </p>
-            <Button variant="outline-success">Join Now Button</Button>
+            <button className="see-all-products-button">
+                 Join Now{" "}
+                  <IoIosArrowDropright
+                    style={{ color: "white", height: "20px", width: "20px" }}
+                  />
+                </button>
           </div>
         </Col>
 
