@@ -8,12 +8,14 @@ import AboutUsPage from "../Container/AboutUsPage/AboutUsPage";
 import ContactPage from "../Container/ContactPage/ContactPage";
 import WebsiteFooter from "../Components/WebsiteFooter/WebsiteFooter";
 import BusinessOpportunity from "../Container/BusinessOpportunityPage/BusinessOpportunity";
+import RegistrationPage from "../Container/RegistrationPage/RegistrationPage";
+import LoginPage from "../Container/LoginPage/LoginPage";
 
 const WebRoutes = () => {
   return (
     <div>
       <WebsiteNavbar />
-      <div style={{marginTop:"80px",marginBottom:"30px"}}>
+      <div style={{marginTop:"80px"}}>
       <Routes>
         <Route path="/*" element=<WebsiteHomepage /> />
         <Route path="/aversa-herbal-products" element=<ProductsPage /> />
@@ -21,6 +23,8 @@ const WebRoutes = () => {
         <Route path="/aversa-herbal-about-us" element=<AboutUsPage /> />
         <Route path="/aversa-herbal-contact-us" element=<ContactPage /> />
         <Route path="/aversa-herbal-business-opportunity" element=<BusinessOpportunity/> />
+        <Route path="/aversa-herbal-sign-up" element=<RegistrationPage/> />
+        <Route path="/aversa-herbal-login" element=<LoginPage/> />
       </Routes>
     </div>
     <WebsiteFooter/>

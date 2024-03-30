@@ -46,3 +46,68 @@
     padding: 8px;
     border: none;
 }
+
+.registration-page-background {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .registration-page-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../Assets/mockup 3.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(12px);
+  }
+  
+  .registration-content {
+    z-index: 0; /* Ensure the content is on top of the blurred background */
+    background-color: rgb(196 196 196 / 70%);
+    padding-top: 20px;
+    padding-bottom: 20px;
+   
+  }
+
+  .registration-input-form-input-tag{
+    width: 100%;
+    border: none;
+    padding: 5px;
+  }
+  .registration-input-form-input-tag:focus{
+    outline: none;
+  }
+
+  .login-page-background {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .login-page-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../Assets/mockup 1.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(12px);
+  }
+  
+  
