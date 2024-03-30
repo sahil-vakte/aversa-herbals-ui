@@ -96,12 +96,12 @@ const WebsiteNavbar = () => {
                   </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link to="/aversa-herbal-sign-up" className="nav-link">
+                  <Link to="/aversa-herbal-login" className="nav-link">
                     Login
                   </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link to="/aversa-herbal-sign-up" className="nav-link">
+                  <Link to="/" className="nav-link">
                     Log Out
                   </Link>
                 </NavDropdown.Item>

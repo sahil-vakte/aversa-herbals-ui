@@ -110,4 +110,9 @@
     filter: blur(12px);
   }
   
+
+  .products-page-linear-gradient-bg{
+    background: linear-gradient(45deg, #eec80d, #0dcaf080, #eec80d);
+
+  }
   
