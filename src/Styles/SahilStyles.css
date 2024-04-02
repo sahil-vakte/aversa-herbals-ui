@@ -115,4 +115,36 @@
     background: linear-gradient(45deg, #eec80d, #0dcaf080, #eec80d);
 
   }
+
+  .businessopportunity-background{
+    background-image: url("../Assets/businessopportunitybg.webp");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+
+  }
+
+  .aversa-herbals-head-tag-business{
+    color: white;
+    font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif;
+    font-size: 5rem;
+    line-height: 1;
+    padding: 9px;
+  }
+
+  .aversa-images-of-no-hexagone{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .aversa-herbals-head-tag-business{
+        color: white;
+        font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif;
+        font-size: 3rem;
+        line-height: 1;
+        padding: 9px;
+      }
+    }
   

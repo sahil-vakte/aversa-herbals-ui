@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
 import missionlogo from "../../Assets/missionlogo.jpg";
 import ourvalue from "../../Assets/ourvaluelogo.jpg";
 import { FaHandPointRight } from "react-icons/fa";
