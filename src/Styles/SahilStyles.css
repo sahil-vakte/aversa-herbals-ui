@@ -131,6 +131,13 @@
     line-height: 1;
     padding: 9px;
   }
+  .aversa-herbals-head-tag-contact-us{
+    color: rgb(22,98,51);
+    font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif;
+    font-size: 6rem;
+    line-height: 1;
+    padding: 9px;
+  }
 
   .aversa-images-of-no-hexagone{
     height: 100%;
@@ -143,6 +150,14 @@
         color: white;
         font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif;
         font-size: 3rem;
+        line-height: 1;
+        padding: 9px;
+      }
+      .aversa-herbals-head-tag-contact-us{
+        color: rgb(22,98,51);
+        font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif;
+        font-size: 3rem;
+        text-align: center;
         line-height: 1;
         padding: 9px;
       }

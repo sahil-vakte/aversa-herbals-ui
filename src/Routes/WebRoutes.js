@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import WebsiteHomepage from "../Container/WebsiteHomepage/WebsiteHomepage";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import WebsiteNavbar from "../Components/WebsiteNavbar/WebsiteNavbar";
 import ProductsPage from "../Container/ProductsPage/ProductsPage";
 import WellnessResourcesPage from "../Container/WellnessResourcesPage/WellnessResourcesPage";
@@ -12,8 +12,18 @@ import RegistrationPage from "../Container/RegistrationPage/RegistrationPage";
 import LoginPage from "../Container/LoginPage/LoginPage";
 
 const WebRoutes = () => {
+  function ScrollToTop() {
+    const { pathname } = useLocation();
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+  
+    return null;
+  }
   return (
     <div>
+    <ScrollToTop/>
       <WebsiteNavbar />
       <div style={{marginTop:"80px"}}>
       <Routes>
