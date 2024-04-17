@@ -1,0 +1,65 @@
+.sidebar-menu-text-p-tag {
+  color: white;
+  font-size: 18px;
+  /* font-family: "Roboto"; */
+  font-weight: 700;
+  word-wrap: "break-word";
+  margin: 0px;
+}
+
+.padding-of-sidebar-middle-page{
+  padding-left: 10px;
+  padding-right: 10px;
+  /* width: 100%; */
+  /* width: 95%; */
+}
+
+.nav-bar-other-logo-items{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  justify-content: end;
+}
+
+.margin-bottom-card{
+  margin-bottom: 10px;
+}
+
+.admin-page-dropdown{
+  background-color: #F1F5F8;
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+  border: none;
+  padding: 10px ;
+  color: #5E6F7A;
+}
+
+.admin-page-dropdown:focus{
+  outline: none;
+}
+
+.admin-page-dropdown-para-tag{
+  padding-top: 10px;
+  color: 'black';
+font-Size: 14;
+font-Weight: '400';
+word-Wrap: 'break-word'
+}
+.css-1f2xuhi-MuiDrawer-docked .MuiDrawer-paper{
+  background-color: rgb(90, 47, 252);
+}
+.css-1l8j5k8{
+  background-color: rgb(90, 47, 252);
+}
+@media (max-width: 767px) {
+  .padding-of-sidebar-middle-page{
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+  }
+
+  .nav-bar-other-logo-items{
+    display: none;
+  }
+}

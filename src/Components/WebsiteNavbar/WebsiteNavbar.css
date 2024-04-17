@@ -1,7 +1,7 @@
 .nav-bar-icons{
     height: 30px;
     width: 35px;
-    color: #1c324a;
+    color: rgb(22,98,51);
 }
 
 .selected-nav-link-navbar{
@@ -20,7 +20,7 @@
     background-color: white;
     position: fixed;
     top: 0;
-    /* border-bottom: 1px solid; */
+    border-bottom: 2px solid rgb(22,98,51);
     box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 #0000000d;
     width: 100%;
     z-index: 1;
@@ -30,7 +30,7 @@
   }
 .navbar-brand,
 .navbar-nav .nav-link {
-  /* color: gray !important;  */
+  color: rgb(22,98,51) !important; 
   font-weight: 600; 
   font-size: 21px;
 }

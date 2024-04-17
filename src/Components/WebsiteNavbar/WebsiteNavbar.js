@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { BsCart4 } from "react-icons/bs";
-import { RiUserFill } from "react-icons/ri";
-import Aversalogo from "../../Assets/aversalogo.jpg";
-import { Link, useLocation } from "react-router-dom"; // Import useLocation hook
+import Aversalogo from "../../Assets/aversa_full_colour_1.svg";
+import { Link, useLocation } from "react-router-dom"; 
 import "./WebsiteNavbar.css";
-import { NavDropdown } from "react-bootstrap";
+import { FaChevronDown } from "react-icons/fa";
+import NavProductList from "./NavProductList"; // Import NavProductList component
 
 const WebsiteNavbar = () => {
-  const location = useLocation(); // Get current location
+  const location = useLocation(); 
+  const [showProductList, setShowProductList] = useState(false);
+
+  const handleProductLinkHover = () => {
+    setShowProductList(true);
+  };
+
+  const handleProductLinkLeave = () => {
+    setShowProductList(false);
+  };
+
   return (
     <div>
       <div className="fixed-navbar-classname">
@@ -21,7 +31,7 @@ const WebsiteNavbar = () => {
           <img src={Aversalogo} alt="" className="brandlogo-styling" />
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto d-flex justify-content-center w-100 navbar-content-gap">
+            <Nav className="me-auto d-flex justify-content-end w-100 navbar-content-gap">
               <Link
                 className={
                   location.pathname === "/"
@@ -34,26 +44,6 @@ const WebsiteNavbar = () => {
               </Link>
               <Link
                 className={
-                  location.pathname === "/aversa-herbal-products"
-                    ? "selected-nav-link-navbar"
-                    : "nav-link"
-                }
-                to="/aversa-herbal-products"
-              >
-                Products
-              </Link>
-              <Link
-                className={
-                  location.pathname === "/aversa-herbal-wellness-resources"
-                    ? "selected-nav-link-navbar"
-                    : "nav-link"
-                }
-                to="/aversa-herbal-wellness-resources"
-              >
-                Wellness Resources
-              </Link>
-              <Link
-                className={
                   location.pathname === "/aversa-herbal-about-us"
                     ? "selected-nav-link-navbar"
                     : "nav-link"
@@ -62,6 +52,23 @@ const WebsiteNavbar = () => {
               >
                 About Us
               </Link>
+              <div
+                onMouseEnter={handleProductLinkHover}
+                onMouseLeave={handleProductLinkLeave}
+                style={{ position: "relative" }}
+              >
+                <Link
+                  className={
+                    location.pathname === "/aversa-herbal-products"
+                      ? "selected-nav-link-navbar"
+                      : "nav-link"
+                  }
+                  to="/aversa-herbal-products"
+                  style={{ display: "flex", gap: "5px", alignItems: "center" }}
+                >
+                  Products <FaChevronDown />
+                </Link>
+              </div>
               <Link
                 className={
                   location.pathname === "/aversa-herbal-business-opportunity"
@@ -82,37 +89,59 @@ const WebsiteNavbar = () => {
               >
                 Contact US
               </Link>
-            </Nav>
-            <Nav>
-              <NavDropdown
-                title={<RiUserFill className="nav-bar-icons" />}
-                id="navbarScrollingDropdown"
-                drop="start"
-                align="bottom"
+              <Link
+                className={
+                  location.pathname === "/aversa-herbal-login"
+                    ? "selected-nav-link-navbar"
+                    : "nav-link"
+                }
+                to="/aversa-herbal-login"
               >
-                <NavDropdown.Item>
-                  <Link to="/aversa-herbal-sign-up" className="nav-link">
-                    Sign Up
-                  </Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <Link to="/aversa-herbal-login" className="nav-link">
-                    Login
-                  </Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <Link to="/" className="nav-link">
-                    Log Out
-                  </Link>
-                </NavDropdown.Item>
-              </NavDropdown>
-              <Nav.Link href="#deets">
-                <BsCart4 className="nav-bar-icons" />
-              </Nav.Link>
+                Login
+              </Link>
+              <Link
+                className={
+                  location.pathname === "/aversa-herbal-sign-up"
+                    ? "selected-nav-link-navbar"
+                    : "nav-link"
+                }
+                to="/aversa-herbal-sign-up"
+              >
+                Sign Up
+              </Link>
+              <Link
+                style={{ display: "flex", alignItems: "center" }}
+                className={
+                  location.pathname === "/aversa-herbal-contact-us"
+                    ? "selected-nav-link-navbar"
+                    : "nav-link"
+                }
+                to="/cart"
+              >
+                Cart <BsCart4 className="nav-bar-icons" />
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
+        {showProductList && (
+        <div
+          style={{
+            position: "absolute",
+            top: "80px",
+            width:"100%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            zIndex: 1000, // Set a high z-index value
+            backgroundColor: "#fff", // Optional: add background color
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Optional: add box shadow
+            padding: "10px",
+          }}
+        >
+          <NavProductList />
+        </div>
+      )}
       </div>
+      
     </div>
   );
 };
