@@ -26,7 +26,7 @@ const CreateIngredients = () => {
       formDataToSend.append('hindi_name', formData.hindi_name);
       formDataToSend.append('url', formData.url);
 
-      await axios.post('http://13.201.61.252:8000/api/ingredients/', formDataToSend);
+      await axios.post('http://118.139.165.183:8000/api/ingredients/', formDataToSend);
       alert('Ingredient added successfully');
     } catch (error) {
       console.error('Error adding ingredient:', error);

@@ -48,31 +48,9 @@ const CreateProduct = () => {
     setFormData(newFormData);
   };
 
-  // const handleSubmit = async () => {
-  //   try {
-  //     await axios.post('http://52.66.167.53:8000/api/products/', formData);
-  //     alert('Product created successfully');
-  //   } catch (error) {
-  //     console.error('Error creating product:', error);
-  //   }
-  // };
-
   const handleSubmit = async () => {
     try {
-      const formDataToSend = new FormData();
-      formDataToSend.append('title', formData.title);
-      formDataToSend.append('subtitle', formData.subtitle);
-      formDataToSend.append('fixed_price', formData.fixed_price);
-      formDataToSend.append('available_discount', formData.available_discount);
-      formDataToSend.append('distributed_price', formData.distributed_price);
-      formDataToSend.append('active_status', formData.active_status);
-      formDataToSend.append('available_quantity', formData.available_quantity);
-  
-      formData.images.forEach((image, index) => {
-        formDataToSend.append(`image${index}`, image.file); // Assuming the server expects files with keys like 'image0', 'image1', etc.
-      });
-  
-      await axios.post('http://52.66.167.53:8000/api/products/', formDataToSend);
+      await axios.post('http://118.139.165.183:8000/api/products-post/', formData);
       alert('Product created successfully');
     } catch (error) {
       console.error('Error creating product:', error);

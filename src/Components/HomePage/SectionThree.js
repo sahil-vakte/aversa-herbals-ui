@@ -9,7 +9,7 @@ const SectionThree = () => {
   return (
     <div>
       <Container>
-        <Row>
+        <Row className="align-items-center">
           <Col sm={6}>
             <h1 className="aversa-herbals-head-tag">
             <span style={{fontWeight:"400"}}>Why </span> 
@@ -44,6 +44,7 @@ const SectionThree = () => {
               src={kahalbattaImage}
               alt="team image"
               className="landing-page-team-img"
+              style={{maxHeight:"500px"}}
             />
      
           </Col>

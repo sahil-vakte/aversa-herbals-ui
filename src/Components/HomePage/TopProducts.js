@@ -140,10 +140,10 @@ const TopProducts = () => {
   
 
   return (
-    <div>
+    <div className="custom-div-in-top-products">
       {/* <Container> */}
 
-      <Row style={{ padding: "10px" }}>
+      <Row style={{ padding: "10px" }} className="custom-row-in-top-products">
         <Col sm={3}>
           <h1 className="aversa-herbals-head-tag">
             <span style={{ fontWeight: "400" }}>Explore our Range of</span>{" "}

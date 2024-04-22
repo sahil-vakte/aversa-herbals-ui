@@ -1,6 +1,6 @@
 import React from 'react'
 import {  Col, Container, Row } from "react-bootstrap";
-import Logo from "../../Assets/aversa_black_1.svg"
+import Logo from "../../Assets/aversa_full_colour_1.svg"
 import "./WebsiteFooter.css"
 import { FaInstagram,FaXTwitter  } from "react-icons/fa6";
 import { FaFacebookSquare,FaYoutube  } from "react-icons/fa";
@@ -9,6 +9,7 @@ import { FaFacebookSquare,FaYoutube  } from "react-icons/fa";
 const WebsiteFooter = () => {
   return (
     <div className='aversa-footer-background'>
+    <div  className='aversa-footer-background-two'>
     <Container>
       <Row>
       <Col sm={3}>
@@ -17,10 +18,10 @@ const WebsiteFooter = () => {
       <p className='footer-slogan'><i>ON A MISSION TO HEALTHY<br/> & WEALTHY BHARAT </i></p>
 
       <div style={{display:"flex",flexWrap:"wrap",gap:"30px"}}>
-        <FaInstagram style={{height:"40px",width:"40px",color:"white",cursor:"pointer"}}/>
-        <FaFacebookSquare style={{height:"40px",width:"40px",color:"white",cursor:"pointer"}}/>
-        <FaXTwitter style={{height:"40px",width:"40px",color:"white",cursor:"pointer"}}/>
-        <FaYoutube  style={{height:"40px",width:"40px",color:"white",cursor:"pointer"}}/>
+        <FaInstagram style={{height:"40px",width:"40px",color:"black",cursor:"pointer"}}/>
+        <FaFacebookSquare style={{height:"40px",width:"40px",color:"black",cursor:"pointer"}}/>
+        <FaXTwitter style={{height:"40px",width:"40px",color:"black",cursor:"pointer"}}/>
+        <FaYoutube  style={{height:"40px",width:"40px",color:"black",cursor:"pointer"}}/>
       </div>
       </Col>
       <Col sm={3}>
@@ -41,6 +42,7 @@ const WebsiteFooter = () => {
       </Col>
       </Row>
       </Container>
+    </div>
     </div>
   )
 }

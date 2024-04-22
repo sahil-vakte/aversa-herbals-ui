@@ -4,10 +4,12 @@ import TopProducts from '../../Components/HomePage/TopProducts'
 import BusinessOpportunityInfo from '../../Components/HomePage/BusinessOpportunityInfo'
 import SectionTwo from '../../Components/HomePage/SectionTwo'
 import SectionThree from '../../Components/HomePage/SectionThree'
+import WebNavbarAdd from '../../Components/WebsiteNavbar/WebNavbarAdd'
 
 const WebsiteHomepage = () => {
   return (
     <div>
+      <div><WebNavbarAdd/></div>
       <div><SectionOne/></div>
       <div style={{marginTop:"80px"}}><SectionTwo/></div>
       <div style={{marginTop:"80px"}}><TopProducts/></div>

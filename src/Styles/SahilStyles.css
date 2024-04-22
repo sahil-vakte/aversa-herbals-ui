@@ -210,6 +210,59 @@
   background-color: transparent; 
 }
 
+.web-navbar-advertise-bg{
+  background-color: #AC1F29;
+  padding: 5px;
+  color: white;
+}
+
+.home-page-advertise-h-tag{
+  font-size: 23px;
+  margin: 0px;
+  font-family: Koulen;
+}
+
+.business-opportunity-bg-padding{
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 200px;
+}
+.business-opportunity-bg{
+  background-color: #D9D9D9;
+  padding: 30px;
+  border-top-left-radius: 170px; 
+  border-bottom-right-radius: 170px;
+}
+
+.images-in-business-in-home-page{
+  height: 300px;
+  width: 80%;
+  border-radius: 15px;
+  box-shadow: 0 0 5px 1px #266431;
+}
+.images-in-business-in-home-page-h3-tag{
+  color: #266431;
+  font-family: Century Gothic;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  padding-top: 10px;
+} 
+.images-in-business-in-home-page-p-tag{
+  color: #266431;
+  font-family: Century Gothic;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+}
+.business-opportunity-bg .custom-business-opportunity-home-page-row {
+  margin-top: -135px;
+}
+
+.custom-div-in-top-products{
+  padding-left: 40px;
+  padding-right: 40px;
+}
 /* Container styles */
 .scrolling-text-container {
   background-color: #eff5ff;
@@ -268,6 +321,28 @@
       }
       .branch-image{
         display: none;
+      }
+      .business-opportunity-bg-padding{
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 0px;
+      }
+      .business-opportunity-bg .custom-business-opportunity-home-page-row {
+        margin-top: 0px;
+      }
+      .images-in-business-in-home-page{
+        height: 300px;
+        width: 100%;
+        border-radius: 15px;
+      }
+      .business-opportunity-bg{
+        background-color: #D9D9D9;
+        padding: 20px;
+       border-radius: 20px;
+      }
+      .custom-div-in-top-products{
+        padding-left: 5px;
+        padding-right: 5px;
       }
     }
   

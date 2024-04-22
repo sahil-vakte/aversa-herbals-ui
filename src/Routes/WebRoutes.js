@@ -25,7 +25,7 @@ const WebRoutes = () => {
     <div>
     <ScrollToTop/>
       <WebsiteNavbar />
-      <div style={{marginTop:"80px"}}>
+      <div style={{marginTop:"75px"}}>
       <Routes>
         <Route path="/*" element=<WebsiteHomepage /> />
         <Route path="/aversa-herbal-products" element=<ProductsPage /> />
@@ -37,7 +37,9 @@ const WebRoutes = () => {
         <Route path="/aversa-herbal-login" element=<LoginPage/> />
       </Routes>
     </div>
+    <div style={{marginTop:"40px"}}>
     <WebsiteFooter/>
+    </div>
     </div>
   );
 };
