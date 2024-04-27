@@ -259,6 +259,20 @@
   margin-top: -135px;
 }
 
+.add-product-page .form-label{
+  margin: 0px;
+  font-weight: 700;
+}
+.add-product-page .form-control{
+  margin-bottom: 15px;
+}
+.add-product-page .btn-primary{
+  margin-bottom: 10px;
+}
+.add-product-page .btn-danger{
+  margin-bottom: 10px;
+}
+
 .custom-div-in-top-products{
   padding-left: 40px;
   padding-right: 40px;
