@@ -50,7 +50,7 @@ const AdminIngredientsList = () => {
       formData.append("image", imageFile);
     }
     axios
-      .patch(`http://118.139.165.183:8000/api/ingredients-update/${id}/`, formData, {
+      .patch(`http://118.139.165.183:8000/api/ingredients/${id}/`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -74,7 +74,7 @@ const AdminIngredientsList = () => {
   const handleDeleteSubmit = () => {
     const { id } = selectedIngredient;
     axios
-      .delete(`http://118.139.165.183:8000/api/ingredients-delete/${id}/`)
+      .delete(`http://118.139.165.183:8000/api/ingredients/${id}/`)
       .then(() => {
         setDeleteModalShow(false);
         axios

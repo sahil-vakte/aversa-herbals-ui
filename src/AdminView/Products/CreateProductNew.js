@@ -1,8 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Form, Button, Container, Row, Col, FormCheck } from "react-bootstrap";
+import AdminLoader from "../AdminLoader/AdminLoader";
 
 const CreateProductNew = () => {
+  const [loading, setloading] = useState(false);
+
   const [formData, setFormData] = useState({
     title: "",
     subtitle: "",
@@ -24,45 +27,43 @@ const CreateProductNew = () => {
     product_by_product: [],
     product_by_disease: [],
   });
+  const [ingredientsData, setIngredientsData] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://118.139.165.183:8000/api/ingredients/")
+      .then((response) => {
+        setIngredientsData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  const [productByProductType, setproductByProductType] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://118.139.165.183:8000/api/products-by-product/")
+      .then((response) => {
+        setproductByProductType(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  const [diseaseByDisease, setdiseaseByDisease] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://118.139.165.183:8000/api/products-by-disease/")
+      .then((response) => {
+        setdiseaseByDisease(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   console.log("formData", formData);
-
-    const [ingredientsData, setIngredientsData] = useState([]);
-    useEffect(() => {
-      axios
-        .get("http://118.139.165.183:8000/api/ingredients/")
-        .then((response) => {
-          setIngredientsData(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, []);
-
-    const [productByProductType, setproductByProductType] = useState([]);
-    useEffect(() => {
-      axios
-        .get("http://118.139.165.183:8000/api/products-by-product/")
-        .then((response) => {
-            setproductByProductType(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, []);
-
-    const [diseaseByDisease, setdiseaseByDisease] = useState([]);
-    useEffect(() => {
-      axios
-        .get("http://118.139.165.183:8000/api/products-by-disease/")
-        .then((response) => {
-            setdiseaseByDisease(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, []);
-
-
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -104,32 +105,18 @@ const CreateProductNew = () => {
     }
   };
 
-  const handleProductByProductChange = (productId, checked) => {
-    if (checked) {
-      setFormData({
-        ...formData,
-        product_by_product: [...formData.product_by_product, productId],
-      });
-    } else {
-      const updatedProductByProduct = formData.product_by_product.filter(
-        (id) => id !== productId
-      );
-      setFormData({ ...formData, product_by_product: updatedProductByProduct });
-    }
+  const handleProductByProductChange = (productId) => {
+    setFormData({
+      ...formData,
+      product_by_product: [productId], 
+    });
   };
 
-  const handleDiseaseByDiseaseChange = (diseaseId, checked) => {
-    if (checked) {
-      setFormData({
-        ...formData,
-        product_by_disease: [...formData.product_by_disease, diseaseId],
-      });
-    } else {
-      const updatedDiseaseByDisease = formData.product_by_disease.filter(
-        (id) => id !== diseaseId
-      );
-      setFormData({ ...formData, product_by_disease: updatedDiseaseByDisease });
-    }
+  const handleDiseaseByDiseaseChange = (diseaseId) => {
+    setFormData({
+      ...formData,
+      product_by_disease: [diseaseId], 
+    });
   };
 
   const [ingredientSearch, setIngredientSearch] = useState("");
@@ -161,9 +148,17 @@ const CreateProductNew = () => {
   };
 
   const handleSubmit = async () => {
+    setloading(true);
     try {
-      const { image1, image2, image3, image4, image5, ...formDataWithoutImages } = formData;
-  
+      const {
+        image1,
+        image2,
+        image3,
+        image4,
+        image5,
+        ...formDataWithoutImages
+      } = formData;
+
       const response = await fetch(
         "http://118.139.165.183:8000/api/products/create/",
         {
@@ -172,26 +167,28 @@ const CreateProductNew = () => {
           body: JSON.stringify(formDataWithoutImages),
         }
       );
-  
+
       if (!response.ok) {
         throw new Error("Failed to save form data");
       }
-  
+
       const responseData = await response.json();
       const productId = responseData.id;
-  
+
       const formDataWithImages = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
         if (key.startsWith("image") && value) {
           formDataWithImages.append(key, value);
         }
       });
-  
-      if (formDataWithImages.has("image1") ||
-          formDataWithImages.has("image2") ||
-          formDataWithImages.has("image3") ||
-          formDataWithImages.has("image4") ||
-          formDataWithImages.has("image5")) {
+
+      if (
+        formDataWithImages.has("image1") ||
+        formDataWithImages.has("image2") ||
+        formDataWithImages.has("image3") ||
+        formDataWithImages.has("image4") ||
+        formDataWithImages.has("image5")
+      ) {
         const uploadResponse = await fetch(
           `http://118.139.165.183:8000/api/products/partial-update/${productId}/`,
           {
@@ -199,158 +196,169 @@ const CreateProductNew = () => {
             body: formDataWithImages,
           }
         );
-  
+
         if (!uploadResponse.ok) {
           throw new Error("Failed to upload images");
+          setloading(false);
         }
       }
-  
+      setloading(false);
       console.log("Form data and images uploaded successfully");
     } catch (error) {
       console.error(error);
+      setloading(false);
     }
   };
-  
 
   return (
-    <div className="add-product-page">
-      <Container>
-        <Form>
-          <Form.Group controlId="title">
-            <Form.Label className="add-product-form-label">Title</Form.Label>
-            <Form.Control
-              type="text"
-              name="title"
-              value={formData.title}
-              onChange={handleInputChange}
-            />
-          </Form.Group>
+    <div>
+      {loading && <AdminLoader />}
+      <div className="add-product-page">
+        <Container>
+          <Form>
+            <Form.Group controlId="title">
+              <Form.Label className="add-product-form-label">Title</Form.Label>
+              <Form.Control
+                type="text"
+                name="title"
+                value={formData.title}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
 
-          <Form.Group controlId="subtitle">
-            <Form.Label>Subtitle</Form.Label>
-            <Form.Control
-              type="text"
-              name="subtitle"
-              value={formData.subtitle}
-              onChange={handleInputChange}
-            />
-          </Form.Group>
+            <Form.Group controlId="subtitle">
+              <Form.Label>Subtitle</Form.Label>
+              <Form.Control
+                type="text"
+                name="subtitle"
+                value={formData.subtitle}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
 
-          <Row >
-            <Col sm={6} >
-              <Form.Group controlId="fixed_price">
-                <Form.Label>Fixed Price</Form.Label>
-                <Form.Control
-                  type="number"
-                  name="fixed_price"
-                  value={formData.fixed_price}
-                  onChange={handleInputChange}
-                  className="mb-0"
-                />
-              </Form.Group>
-            </Col>
-            <Col sm={6} >
-              <Form.Group controlId="available_discount">
-                <Form.Label>Discount on This Product</Form.Label>
-                <Form.Control
-                  type="number"
-                  name="available_discount"
-                  value={formData.available_discount}
-                  onChange={handleInputChange}
-                  className="mb-0"
-                />
-              </Form.Group>
-            </Col>
-          </Row>
-
-          <Form.Group controlId="ingredientSearch" className="mt-3">
-            <Form.Label>Search Ingredients</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Search ingredients..."
-              value={ingredientSearch}
-              onChange={handleIngredientSearchChange}
-              className="mb-0"
-            />
-          </Form.Group>
-
-          <Form.Group controlId="ingredients">
             <Row>
-              {filteredIngredients.map((ingredient) => (
-                <Col sm={3}>
-                  <FormCheck
-                    key={ingredient.id}
-                    id={`ingredient-${ingredient.id}`}
-                    type="checkbox"
-                    label={ingredient.name}
-                    onChange={(e) =>
-                      handleIngredientChange(ingredient.id, e.target.checked)
-                    }
+              <Col sm={4}>
+                <Form.Group controlId="fixed_price">
+                  <Form.Label>Fixed Price</Form.Label>
+                  <Form.Control
+                    type="number"
+                    name="fixed_price"
+                    value={formData.fixed_price}
+                    onChange={handleInputChange}
+                    className="mb-0"
                   />
-                </Col>
-              ))}
-            </Row>
-          </Form.Group>
-
-          <Form.Group controlId="productSearch" className="mt-3">
-            <Form.Label>Search Product Types</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Search product types..."
-              value={productSearch}
-              onChange={handleProductSearchChange}
-              className="mb-0"
-            />
-          </Form.Group>
-
-          <Form.Group controlId="productByProduct">
-            <Row>
-              {filteredProductByProduct.map((product) => (
-                <Col sm={3}>
-                  <Form.Check
-                    key={product.id}
-                    id={`product-${product.id}`}
-                    type="checkbox"
-                    label={product.name}
-                    onChange={(e) =>
-                      handleProductByProductChange(product.id, e.target.checked)
-                    }
+                </Form.Group>
+              </Col>
+              <Col sm={4}>
+                <Form.Group controlId="available_discount">
+                  <Form.Label>Discount on This Product</Form.Label>
+                  <Form.Control
+                    type="number"
+                    name="available_discount"
+                    value={formData.available_discount}
+                    onChange={handleInputChange}
+                    className="mb-0"
                   />
-                </Col>
-              ))}
-            </Row>
-          </Form.Group>
-
-          <Form.Group controlId="diseaseSearch" className="mt-3">
-            <Form.Label>Search Diseases</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Search diseases..."
-              value={diseaseSearch}
-              onChange={handleDiseaseSearchChange}
-              className="mb-0"
-            />
-          </Form.Group>
-
-          <Form.Group controlId="diseaseByDisease">
-            <Row>
-              {filteredDiseaseByDisease.map((disease) => (
-                <Col sm={3}>
-                  <Form.Check
-                    key={disease.id}
-                    id={`disease-${disease.id}`}
-                    type="checkbox"
-                    label={disease.name}
-                    onChange={(e) =>
-                      handleDiseaseByDiseaseChange(disease.id, e.target.checked)
-                    }
+                </Form.Group>
+              </Col>
+              <Col sm={4}>
+                <Form.Group controlId="distributed_price">
+                  <Form.Label>Distributing Amount</Form.Label>
+                  <Form.Control
+                    type="number"
+                    name="distributed_price"
+                    value={formData.distributed_price}
+                    onChange={handleInputChange}
+                    className="mb-0"
                   />
-                </Col>
-              ))}
+                </Form.Group>
+              </Col>
             </Row>
-          </Form.Group>
 
-          {/* <Form.Group controlId="available_quantity">
+            <Form.Group controlId="ingredientSearch" className="mt-3">
+              <Form.Label>Search Ingredients</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Search ingredients..."
+                value={ingredientSearch}
+                onChange={handleIngredientSearchChange}
+                className="mb-0"
+              />
+            </Form.Group>
+
+            <Form.Group controlId="ingredients">
+              <Row>
+                {filteredIngredients.map((ingredient) => (
+                  <Col sm={3}>
+                    <FormCheck
+                      key={ingredient.id}
+                      id={`ingredient-${ingredient.id}`}
+                      type="checkbox"
+                      label={ingredient.name}
+                      onChange={(e) =>
+                        handleIngredientChange(ingredient.id, e.target.checked)
+                      }
+                    />
+                  </Col>
+                ))}
+              </Row>
+            </Form.Group>
+
+            <Form.Group controlId="productSearch" className="mt-3">
+              <Form.Label>Search Product Types</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Search product types..."
+                value={productSearch}
+                onChange={handleProductSearchChange}
+                className="mb-0"
+              />
+            </Form.Group>
+
+            <Form.Group controlId="productByProduct">
+              <Row>
+                {filteredProductByProduct.map((product) => (
+                  <Col sm={3} key={product.id}>
+                    <Form.Check
+                      type="radio"
+                      id={`product-${product.id}`}
+                      label={product.name}
+                      checked={formData.product_by_product[0] === product.id}
+                      onChange={() => handleProductByProductChange(product.id)}
+                    />
+                  </Col>
+                ))}
+              </Row>
+            </Form.Group>
+
+            <Form.Group controlId="diseaseSearch" className="mt-3">
+              <Form.Label>Search Disease Type</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Search diseases..."
+                value={diseaseSearch}
+                onChange={handleDiseaseSearchChange}
+                className="mb-0"
+              />
+            </Form.Group>
+
+            <Form.Group controlId="diseaseByDisease">
+              <Row>
+                {filteredDiseaseByDisease.map((disease) => (
+                  <Col sm={3} key={disease.id}>
+                    <Form.Check
+                      type="radio"
+                      id={`disease-${disease.id}`}
+                      label={disease.name}
+                      checked={formData.product_by_disease[0] === disease.id}
+                      onChange={() => handleDiseaseByDiseaseChange(disease.id)}
+                    />
+                  </Col>
+                ))}
+              </Row>
+            </Form.Group>
+
+            {/* <Form.Group controlId="available_quantity">
           <Form.Label>Available Quantity for Sale</Form.Label>
           <Form.Control
             type="number"
@@ -360,176 +368,187 @@ const CreateProductNew = () => {
           />
         </Form.Group> */}
 
-          <Form.Group controlId="properties" className="mt-3">
-            <Form.Label>Properties in One Line</Form.Label>
-            {formData.properties.map((property, index) => (
-              <Row key={index}>
-                <Col sm={11}>
-                  <Form.Control
-                    type="text"
-                    value={property.title}
-                    onChange={(e) =>
-                      handleArrayInputChange(
-                        index,
-                        "properties",
-                        e.target.value
-                      )
-                    }
-                  />
-                </Col>
-                <Col>
-                  <Button
-                    variant="danger"
-                    onClick={() => handleRemoveField(index, "properties")}
-                  >
-                    Remove
-                  </Button>
-                </Col>
-              </Row>
-            ))}
-            <Button onClick={() => handleAddField("properties")}>
-              Add Property
+            <Form.Group controlId="properties" className="mt-3">
+              <Form.Label>Properties in One Line</Form.Label>
+              {formData.properties.map((property, index) => (
+                <Row key={index}>
+                  <Col sm={11}>
+                    <Form.Control
+                      type="text"
+                      value={property.title}
+                      onChange={(e) =>
+                        handleArrayInputChange(
+                          index,
+                          "properties",
+                          e.target.value
+                        )
+                      }
+                    />
+                  </Col>
+                  <Col>
+                    <Button
+                      variant="danger"
+                      onClick={() => handleRemoveField(index, "properties")}
+                    >
+                      Remove
+                    </Button>
+                  </Col>
+                </Row>
+              ))}
+              <Button onClick={() => handleAddField("properties")}>
+                Add Property
+              </Button>
+            </Form.Group>
+
+            <Form.Group controlId="benefits">
+              <Form.Label>Properties Keywords</Form.Label>
+              {formData.benefits.map((benefits, index) => (
+                <Row key={index}>
+                  <Col sm={11}>
+                    <Form.Control
+                      type="text"
+                      value={benefits.title}
+                      onChange={(e) =>
+                        handleArrayInputChange(
+                          index,
+                          "benefits",
+                          e.target.value
+                        )
+                      }
+                    />
+                  </Col>
+                  <Col>
+                    <Button
+                      variant="danger"
+                      onClick={() => handleRemoveField(index, "benefits")}
+                    >
+                      Remove
+                    </Button>
+                  </Col>
+                </Row>
+              ))}
+              <Button onClick={() => handleAddField("benefits")}>
+                Add Property
+              </Button>
+            </Form.Group>
+
+            <Form.Group controlId="howtouse">
+              <Form.Label>Direction to Use</Form.Label>
+              {formData.howtouse.map((howtouse, index) => (
+                <Row key={index}>
+                  <Col sm={11}>
+                    <Form.Control
+                      type="text"
+                      value={howtouse.title}
+                      onChange={(e) =>
+                        handleArrayInputChange(
+                          index,
+                          "howtouse",
+                          e.target.value
+                        )
+                      }
+                    />
+                  </Col>
+                  <Col>
+                    <Button
+                      variant="danger"
+                      onClick={() => handleRemoveField(index, "howtouse")}
+                    >
+                      Remove
+                    </Button>
+                  </Col>
+                </Row>
+              ))}
+              <Button onClick={() => handleAddField("howtouse")}>
+                Add Property
+              </Button>
+            </Form.Group>
+
+            <Form.Group controlId="note">
+              <Form.Label>Note</Form.Label>
+              {formData.note.map((note, index) => (
+                <Row key={index}>
+                  <Col sm={11}>
+                    <Form.Control
+                      type="text"
+                      value={note.title}
+                      onChange={(e) =>
+                        handleArrayInputChange(index, "note", e.target.value)
+                      }
+                    />
+                  </Col>
+                  <Col>
+                    <Button
+                      variant="danger"
+                      onClick={() => handleRemoveField(index, "note")}
+                    >
+                      Remove
+                    </Button>
+                  </Col>
+                </Row>
+              ))}
+              <Button onClick={() => handleAddField("note")}>
+                Add Property
+              </Button>
+            </Form.Group>
+
+            <Form.Group>
+              <Form.Label>Image 1</Form.Label>
+              <Form.Control
+                onChange={(e) => handleImageChange(e, 1)}
+                accept="image/*"
+                id="image1"
+                label="Choose file"
+                type="file"
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Image 2</Form.Label>
+              <Form.Control
+                onChange={(e) => handleImageChange(e, 2)}
+                accept="image/*"
+                id="image2"
+                label="Choose file"
+                type="file"
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Image 3</Form.Label>
+              <Form.Control
+                onChange={(e) => handleImageChange(e, 3)}
+                accept="image/*"
+                id="image3"
+                label="Choose file"
+                type="file"
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Image 4</Form.Label>
+              <Form.Control
+                onChange={(e) => handleImageChange(e, 4)}
+                accept="image/*"
+                id="image4"
+                label="Choose file"
+                type="file"
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Image 5</Form.Label>
+              <Form.Control
+                onChange={(e) => handleImageChange(e, 5)}
+                accept="image/*"
+                id="image5"
+                label="Choose file"
+                type="file"
+              />
+            </Form.Group>
+
+            <Button variant="primary" onClick={handleSubmit}>
+              Submit
             </Button>
-          </Form.Group>
-
-          <Form.Group controlId="benefits">
-            <Form.Label>Properties Keywords</Form.Label>
-            {formData.benefits.map((benefits, index) => (
-              <Row key={index}>
-                <Col sm={11}>
-                  <Form.Control
-                    type="text"
-                    value={benefits.title}
-                    onChange={(e) =>
-                      handleArrayInputChange(index, "benefits", e.target.value)
-                    }
-                  />
-                </Col>
-                <Col>
-                  <Button
-                    variant="danger"
-                    onClick={() => handleRemoveField(index, "benefits")}
-                  >
-                    Remove
-                  </Button>
-                </Col>
-              </Row>
-            ))}
-            <Button onClick={() => handleAddField("benefits")}>
-              Add Property
-            </Button>
-          </Form.Group>
-
-          <Form.Group controlId="howtouse">
-            <Form.Label>Direction to Use</Form.Label>
-            {formData.howtouse.map((howtouse, index) => (
-              <Row key={index}>
-                <Col sm={11}>
-                  <Form.Control
-                    type="text"
-                    value={howtouse.title}
-                    onChange={(e) =>
-                      handleArrayInputChange(index, "howtouse", e.target.value)
-                    }
-                  />
-                </Col>
-                <Col>
-                  <Button
-                    variant="danger"
-                    onClick={() => handleRemoveField(index, "howtouse")}
-                  >
-                    Remove
-                  </Button>
-                </Col>
-              </Row>
-            ))}
-            <Button onClick={() => handleAddField("howtouse")}>
-              Add Property
-            </Button>
-          </Form.Group>
-
-          <Form.Group controlId="note">
-            <Form.Label>Note</Form.Label>
-            {formData.note.map((note, index) => (
-              <Row key={index}>
-                <Col sm={11}>
-                  <Form.Control
-                    type="text"
-                    value={note.title}
-                    onChange={(e) =>
-                      handleArrayInputChange(index, "note", e.target.value)
-                    }
-                  />
-                </Col>
-                <Col>
-                  <Button
-                    variant="danger"
-                    onClick={() => handleRemoveField(index, "note")}
-                  >
-                    Remove
-                  </Button>
-                </Col>
-              </Row>
-            ))}
-            <Button onClick={() => handleAddField("note")}>Add Property</Button>
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Label>Image 1</Form.Label>
-            <Form.Control
-              onChange={(e) => handleImageChange(e, 1)}
-              accept="image/*"
-              id="image1"
-              label="Choose file"
-              type="file"
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Image 2</Form.Label>
-            <Form.Control
-              onChange={(e) => handleImageChange(e, 2)}
-              accept="image/*"
-              id="image2"
-              label="Choose file"
-              type="file"
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Image 3</Form.Label>
-            <Form.Control
-              onChange={(e) => handleImageChange(e, 3)}
-              accept="image/*"
-              id="image3"
-              label="Choose file"
-              type="file"
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Image 4</Form.Label>
-            <Form.Control
-              onChange={(e) => handleImageChange(e, 4)}
-              accept="image/*"
-              id="image4"
-              label="Choose file"
-              type="file"
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Image 5</Form.Label>
-            <Form.Control
-              onChange={(e) => handleImageChange(e, 5)}
-              accept="image/*"
-              id="image5"
-              label="Choose file"
-              type="file"
-            />
-          </Form.Group>
-
-          <Button variant="primary" onClick={handleSubmit}>
-            Submit
-          </Button>
-        </Form>
-      </Container>
+          </Form>
+        </Container>
+      </div>
     </div>
   );
 };

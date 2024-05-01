@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
-    username: '', // Will be populated with email value
+    username: '', 
     first_name: '',
     last_name: '',
     email: '',
