@@ -14,7 +14,7 @@ const CreateProductNew = () => {
     available_discount: 0,
     distributed_price: null,
     active_status: false,
-    available_quantity: 0,
+    available_quantity: 1,
     image1: null,
     image2: null,
     image3: null,
@@ -26,94 +26,43 @@ const CreateProductNew = () => {
   });
   console.log("formData", formData);
 
-  //   const [ingredientsData, setIngredientsData] = useState([]);
-  //   useEffect(() => {
-  //     axios
-  //       .get("http://118.139.165.183:8000/api/ingredients/")
-  //       .then((response) => {
-  //         setIngredientsData(response.data);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   }, []);
+    const [ingredientsData, setIngredientsData] = useState([]);
+    useEffect(() => {
+      axios
+        .get("http://118.139.165.183:8000/api/ingredients/")
+        .then((response) => {
+          setIngredientsData(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }, []);
 
-  const ingredientsData = [
-    {
-      id: 1,
-      name: "Cinnamon",
-      image:
-        "http://118.139.165.183:8000/uploads/ingredients_images/pngwing_1.png",
-      hindi_name: "दालचीनी",
-      url: "https://en.wikipedia.org/wiki/Cinnamon",
-    },
-    {
-      id: 2,
-      name: "Withania somnifera",
-      image:
-        "http://118.139.165.183:8000/uploads/ingredients_images/pngwing.png",
-      hindi_name: "अश्वगंधा",
-      url: "https://en.wikipedia.org/wiki/Withania_somnifera",
-    },
-    {
-      id: 3,
-      name: "Test",
-      image:
-        "http://118.139.165.183:8000/uploads/ingredients_images/aversa_apache2_config.png",
-      hindi_name: "Test hindi",
-      url: "http://www.aversaherbals.com/",
-    },
-    {
-      id: 4,
-      name: "test2",
-      image:
-        "http://118.139.165.183:8000/uploads/ingredients_images/aversa_apache2_config_lon9VGx.png",
-      hindi_name: "test2",
-      url: "http://www.aversaherbals.com/",
-    },
-  ];
+    const [productByProductType, setproductByProductType] = useState([]);
+    useEffect(() => {
+      axios
+        .get("http://118.139.165.183:8000/api/products-by-product/")
+        .then((response) => {
+            setproductByProductType(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }, []);
 
-  const productByProductType = [
-    {
-      id: 1,
-      name: "Test product by product",
-    },
-    {
-      id: 2,
-      name: "Test product by product",
-    },
-    {
-      id: 3,
-      name: "test product3",
-    },
-    {
-      id: 4,
-      name: "test product 4",
-    },
-    {
-      id: 5,
-      name: "test product 4",
-    },
-  ];
+    const [diseaseByDisease, setdiseaseByDisease] = useState([]);
+    useEffect(() => {
+      axios
+        .get("http://118.139.165.183:8000/api/products-by-disease/")
+        .then((response) => {
+            setdiseaseByDisease(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }, []);
 
-  const diseaseByDisease = [
-    {
-      id: 1,
-      name: "test2",
-    },
-    {
-      id: 2,
-      name: "test2",
-    },
-    {
-      id: 3,
-      name: "test2",
-    },
-    {
-      id: 4,
-      name: "test2",
-    },
-  ];
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -213,46 +162,55 @@ const CreateProductNew = () => {
 
   const handleSubmit = async () => {
     try {
+      const { image1, image2, image3, image4, image5, ...formDataWithoutImages } = formData;
+  
       const response = await fetch(
-        "http://118.139.165.183:8000/api/products-post/",
+        "http://118.139.165.183:8000/api/products/create/",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(formDataWithoutImages),
         }
       );
-
+  
       if (!response.ok) {
         throw new Error("Failed to save form data");
       }
-
+  
       const responseData = await response.json();
       const productId = responseData.id;
-
+  
       const formDataWithImages = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
-        if (key.startsWith("image")) {
+        if (key.startsWith("image") && value) {
           formDataWithImages.append(key, value);
         }
       });
-
-      const uploadResponse = await fetch(
-        `http://118.139.165.183:8000/api/products-put/${productId}`,
-        {
-          method: "PUT",
-          body: formDataWithImages,
+  
+      if (formDataWithImages.has("image1") ||
+          formDataWithImages.has("image2") ||
+          formDataWithImages.has("image3") ||
+          formDataWithImages.has("image4") ||
+          formDataWithImages.has("image5")) {
+        const uploadResponse = await fetch(
+          `http://118.139.165.183:8000/api/products/partial-update/${productId}/`,
+          {
+            method: "PATCH",
+            body: formDataWithImages,
+          }
+        );
+  
+        if (!uploadResponse.ok) {
+          throw new Error("Failed to upload images");
         }
-      );
-
-      if (!uploadResponse.ok) {
-        throw new Error("Failed to upload images");
       }
-
+  
       console.log("Form data and images uploaded successfully");
     } catch (error) {
       console.error(error);
     }
   };
+  
 
   return (
     <div className="add-product-page">

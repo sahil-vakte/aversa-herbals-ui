@@ -16,8 +16,11 @@ const ProductsPage = () => {
           product is crafted with care to support your journey towards optimal
           health and vitality.
         </p>
+        </Container>
+        <div>
         <ProductsList />
-
+        </div>
+    <Container>
         <h1 className="aversa-herbals-head-tag" style={{ textAlign: "center" }}>
         Why Choose Aversa Herbals Products?
         </h1>
@@ -52,7 +55,7 @@ const ProductsPage = () => {
             </Card>
           </Col>
         </Row>
-      </Container>
+        </Container>
       </div>
     </div>
   );

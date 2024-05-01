@@ -1,35 +1,38 @@
-import React, { useState } from 'react';
-import { Form, Button, Container } from 'react-bootstrap';
-import axios from 'axios';
+import React, { useState } from "react";
+import { Form, Button, Container } from "react-bootstrap";
+import axios from "axios";
 
 const CreateIngredients = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    name: "",
     image: null,
-    hindi_name: '',
-    url: ''
+    hindi_name: "",
+    url: "",
   });
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     setFormData({
       ...formData,
-      [name]: files ? files[0] : value
+      [name]: files ? files[0] : value,
     });
   };
 
   const handleSubmit = async () => {
     try {
       const formDataToSend = new FormData();
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('image', formData.image);
-      formDataToSend.append('hindi_name', formData.hindi_name);
-      formDataToSend.append('url', formData.url);
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("image", formData.image);
+      formDataToSend.append("hindi_name", formData.hindi_name);
+      formDataToSend.append("url", formData.url);
 
-      await axios.post('http://118.139.165.183:8000/api/ingredients/', formDataToSend);
-      alert('Ingredient added successfully');
+      await axios.post(
+        "http://118.139.165.183:8000/api/ingredients/",
+        formDataToSend
+      );
+      alert("Ingredient added successfully");
     } catch (error) {
-      console.error('Error adding ingredient:', error);
+      console.error("Error adding ingredient:", error);
     }
   };
 
@@ -50,11 +53,7 @@ const CreateIngredients = () => {
 
         <Form.Group controlId="image">
           <Form.Label>Image</Form.Label>
-          <Form.Control
-            type="file"
-            name="image"
-            onChange={handleChange}
-          />
+          <Form.Control type="file" name="image" onChange={handleChange} />
         </Form.Group>
 
         <Form.Group controlId="hindi_name">

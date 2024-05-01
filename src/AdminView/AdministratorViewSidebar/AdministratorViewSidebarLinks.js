@@ -262,6 +262,57 @@ const AdministratorViewSidebarLinks = ({ open, handleDrawerClose }) => {
             </ListItemButton>
           </ListItem>
         </Link>
+
+        <Link to="/admin/admin-aversa-all-disease-types-of-product" style={{ textDecoration: "none", color: "black" }}>
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+              onClick={handleLinkClick}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                <img src={DoctorLogo} alt="" className="" />
+              </ListItemIcon>
+              <ListItemText sx={{ opacity: open ? 1 : 0 }}>
+                <p className="sidebar-menu-text-p-tag">Disease Types</p>
+              </ListItemText>
+            </ListItemButton>
+          </ListItem>
+        </Link>
+        <Link to="/admin/admin-aversa-all-product-types-of-product" style={{ textDecoration: "none", color: "black" }}>
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+              onClick={handleLinkClick}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                <img src={AdminLogo} alt="" className="" />
+              </ListItemIcon>
+              <ListItemText sx={{ opacity: open ? 1 : 0 }}>
+                <p className="sidebar-menu-text-p-tag">Product Types</p>
+              </ListItemText>
+            </ListItemButton>
+          </ListItem>
+        </Link>
       </List>
     </div>
   );
