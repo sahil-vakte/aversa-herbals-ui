@@ -16,7 +16,7 @@ const ProductDiseaseTypeList = () => {
   const handleModalClose = () => {
     setShowModal(false);
     axios
-      .get("http://118.139.165.183:8000/api/products-by-disease/")
+      .get("https://aversaherbals.com/api/products-by-disease/")
       .then((response) => {
         setIngredientsData(response.data);
       });
@@ -24,7 +24,7 @@ const ProductDiseaseTypeList = () => {
 
   useEffect(() => {
     axios
-      .get("http://118.139.165.183:8000/api/products-by-disease/")
+      .get("https://aversaherbals.com/api/products-by-disease/")
       .then((response) => {
         setIngredientsData(response.data);
       })
@@ -50,7 +50,7 @@ const ProductDiseaseTypeList = () => {
     formData.append("name", updatedName);
     axios
       .patch(
-        `http://118.139.165.183:8000/api/products-by-disease/${id}/`,
+        `https://aversaherbals.com/api/products-by-disease/${id}/`,
         formData,
         {
           headers: {
@@ -61,7 +61,7 @@ const ProductDiseaseTypeList = () => {
       .then(() => {
         setEditModalShow(false);
         axios
-          .get("http://118.139.165.183:8000/api/products-by-disease/")
+          .get("https://aversaherbals.com/api/products-by-disease/")
           .then((response) => {
             setIngredientsData(response.data);
           })
@@ -77,11 +77,11 @@ const ProductDiseaseTypeList = () => {
   const handleDeleteSubmit = () => {
     const { id } = selectedIngredient;
     axios
-      .delete(`http://118.139.165.183:8000/api/products-by-disease/${id}/`)
+      .delete(`https://aversaherbals.com/api/products-by-disease/${id}/`)
       .then(() => {
         setDeleteModalShow(false);
         axios
-          .get("http://118.139.165.183:8000/api/products-by-disease/")
+          .get("https://aversaherbals.com/api/products-by-disease/")
           .then((response) => {
             setIngredientsData(response.data);
           })

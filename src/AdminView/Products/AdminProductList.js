@@ -13,7 +13,7 @@ const AdminProductList = () => {
   const [updatedDiscount, setUpdatedDiscount] = useState('');
 
   useEffect(() => {
-    axios.get(`http://118.139.165.183:8000/api/products/`)
+    axios.get(`https://aversaherbals.com/api/products/`)
       .then((response) => {
         setProductsList(response.data);
       })
@@ -36,12 +36,12 @@ const AdminProductList = () => {
 
   const handleEditSubmit = () => {
     const { id } = selectedProduct;
-    axios.patch(`http://118.139.165.183:8000/api/products/partial-update/${id}/`, {
+    axios.patch(`https://aversaherbals.com/api/products/partial-update/${id}/`, {
       fixed_price: updatedPrice,
       available_discount: updatedDiscount
     }).then(() => {
       setEditModalShow(false);
-      axios.get(`http://118.139.165.183:8000/api/products/`)
+      axios.get(`https://aversaherbals.com/api/products/`)
         .then((response) => {
           setProductsList(response.data);
         })
@@ -55,10 +55,10 @@ const AdminProductList = () => {
 
   const handleDeleteSubmit = () => {
     const { id } = selectedProduct;
-    axios.delete(`http://118.139.165.183:8000/api/products/delete/${id}/`)
+    axios.delete(`https://aversaherbals.com/api/products/delete/${id}/`)
       .then(() => {
         setDeleteModalShow(false);
-        axios.get(`http://118.139.165.183:8000/api/products/`)
+        axios.get(`https://aversaherbals.com/api/products/`)
           .then((response) => {
             setProductsList(response.data);
           })
@@ -96,6 +96,7 @@ const AdminProductList = () => {
           <thead>
             <tr>
               <th>ID</th>
+              {/* <th>Image</th> */}
               <th>Title</th>
               <th>Price</th>
               <th>Discount</th>
@@ -108,7 +109,14 @@ const AdminProductList = () => {
             {filteredProducts.map((product) => (
               <tr key={product.id}>
                 <td>{product.id}</td>
-                <td>{product.title}</td>
+                {/* <td>{product.image1 !== null &&
+                  <img src={product.image1} alt={product.title} style={{height:"50px",width:"50px"}}/>
+                }</td> */}
+                <td>
+                <Link to={`/admin/update-product-data/${product.id}/${product.title}`} style={{textDecoration:"none",cursor:"pointer"}}>
+                {product.title}
+                </Link>
+                </td>
                 <td>{product.fixed_price}</td>
                 <td>{product.available_discount}%</td>
                 <td>

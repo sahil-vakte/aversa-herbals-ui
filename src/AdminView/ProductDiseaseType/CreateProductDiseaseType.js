@@ -6,7 +6,7 @@ const CreateProductDiseaseType = ({ handleClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://118.139.165.183:8000/api/products-by-disease/', { name })
+    axios.post('https://aversaherbals.com/api/products-by-disease/', { name })
       .then((response) => {
         console.log('Disease type added successfully:', response.data);
         handleClose(); 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import axios from "axios";
 
-const CreateIngredients = () => {
+const CreateIngredients = ({ onSuccess }) => {
   const [formData, setFormData] = useState({
     name: "",
     image: null,
@@ -27,10 +27,10 @@ const CreateIngredients = () => {
       formDataToSend.append("url", formData.url);
 
       await axios.post(
-        "http://118.139.165.183:8000/api/ingredients/",
+        "https://aversaherbals.com/api/ingredients/",
         formDataToSend
       );
-      alert("Ingredient added successfully");
+      onSuccess("Ingredient added successfully");
     } catch (error) {
       console.error("Error adding ingredient:", error);
     }
@@ -38,7 +38,6 @@ const CreateIngredients = () => {
 
   return (
     <Container>
-      <h1>Add Ingredient</h1>
       <Form>
         <Form.Group controlId="name">
           <Form.Label>Name</Form.Label>
@@ -78,7 +77,7 @@ const CreateIngredients = () => {
           />
         </Form.Group>
 
-        <Button variant="primary" onClick={handleSubmit}>
+        <Button variant="primary" onClick={handleSubmit} className="mt-3">
           Submit
         </Button>
       </Form>

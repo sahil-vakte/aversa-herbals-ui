@@ -17,7 +17,7 @@ const AdminIngredientsList = () => {
 
   useEffect(() => {
     axios
-      .get("http://118.139.165.183:8000/api/ingredients/")
+      .get("https://aversaherbals.com/api/ingredients/")
       .then((response) => {
         setIngredientsData(response.data);
       })
@@ -50,7 +50,7 @@ const AdminIngredientsList = () => {
       formData.append("image", imageFile);
     }
     axios
-      .patch(`http://118.139.165.183:8000/api/ingredients/${id}/`, formData, {
+      .patch(`https://aversaherbals.com/api/ingredients/${id}/`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -58,7 +58,7 @@ const AdminIngredientsList = () => {
       .then(() => {
         setEditModalShow(false);
         axios
-          .get("http://118.139.165.183:8000/api/ingredients/")
+          .get("https://aversaherbals.com/api/ingredients/")
           .then((response) => {
             setIngredientsData(response.data);
           })
@@ -74,11 +74,11 @@ const AdminIngredientsList = () => {
   const handleDeleteSubmit = () => {
     const { id } = selectedIngredient;
     axios
-      .delete(`http://118.139.165.183:8000/api/ingredients/${id}/`)
+      .delete(`https://aversaherbals.com/api/ingredients/${id}/`)
       .then(() => {
         setDeleteModalShow(false);
         axios
-          .get("http://118.139.165.183:8000/api/ingredients/")
+          .get("https://aversaherbals.com/api/ingredients/")
           .then((response) => {
             setIngredientsData(response.data);
           })

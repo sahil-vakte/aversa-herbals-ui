@@ -6,6 +6,7 @@ import CreateIngredients from "../AdminView/Ingredients/CreateIngredients";
 import CreateProductNew from "../AdminView/Products/CreateProductNew";
 import ProductDiseaseTypeList from "../AdminView/ProductDiseaseType/ProductDiseaseTypeList";
 import ProductTypeList from "../AdminView/ProductType/ProductTypeList";
+import UpdateProductData from "../AdminView/Products/UpdateProductData";
 
 const AdminRoutes = () => {
   function ScrollToTop() {
@@ -24,6 +25,7 @@ const AdminRoutes = () => {
         <Route path="/" element=<AdminProductList/> />
         <Route path="/admin-aversa-all-products" element=<AdminProductList/> />
         <Route path="/create-products" element=<CreateProductNew/> />
+        <Route path="/update-product-data/:id/:title" element=<UpdateProductData/> />
         <Route path="/admin-aversa-all-ingredients" element=<AdminIngredientsList/> />
         <Route path="/create-ingredients" element=<CreateIngredients/> />
         <Route path="/admin-aversa-all-disease-types-of-product" element=<ProductDiseaseTypeList/> />

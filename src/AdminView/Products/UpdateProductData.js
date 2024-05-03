@@ -1,23 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import {
-  Form,
-  Button,
-  Container,
-  Row,
-  Col,
-  FormCheck,
-  Modal,
-} from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import { Form, Button, Container, Row, Col, FormCheck, Modal } from "react-bootstrap";
 import AdminLoader from "../AdminLoader/AdminLoader";
 import CreateIngredients from "../Ingredients/CreateIngredients";
-import { useNavigate } from "react-router-dom";
-
-const CreateProductNew = () => {
-  const [loading, setloading] = useState(false);
+const UpdateProductData = () => {
+  const paramsData = useParams();
   const [apiTrigger, setapiTrigger] = useState(false);
-  const navigate = useNavigate()
 
+  const [loading, setloading] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
     subtitle: "",
@@ -26,7 +17,6 @@ const CreateProductNew = () => {
     howtouse: [{ title: "" }],
     benefits: [{ title: "" }],
     fixed_price: null,
-    active_status: true,
     available_discount: 0,
     distributed_price: null,
     active_status: false,
@@ -40,6 +30,36 @@ const CreateProductNew = () => {
     product_by_product: [],
     product_by_disease: [],
   });
+
+  console.log("formData", formData);
+ 
+  useEffect(() => {
+    axios
+      .get(`https://aversaherbals.com/api/products/${paramsData.id}`)
+      .then((response) => {
+        const data = response.data;
+        // Update state for checkboxes and radio buttons
+        const selectedIngredients = data.ingredients.map(
+          (ingredient) => ingredient.name
+        );
+        const selectedProductType = data.product_by_product.map(
+          (product) => product.name
+        );
+        const selectedDisease = data.product_by_disease.map(
+          (disease) => disease.name
+        );
+
+        setFormData({
+          ...data,
+          ingredients: selectedIngredients,
+          product_by_product: selectedProductType,
+          product_by_disease: selectedDisease,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const [ingredientsData, setIngredientsData] = useState([]);
   useEffect(() => {
@@ -172,9 +192,9 @@ const CreateProductNew = () => {
       } = formData;
 
       const response = await fetch(
-        "https://aversaherbals.com/api/products/create/",
+        `https://aversaherbals.com/api/products/partial-update/${paramsData.id}/`,
         {
-          method: "POST",
+          method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formDataWithoutImages),
         }
@@ -189,7 +209,7 @@ const CreateProductNew = () => {
 
       const formDataWithImages = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
-        if (key.startsWith("image") && value) {
+        if (key.startsWith("image") && value instanceof File) {
           formDataWithImages.append(key, value);
         }
       });
@@ -202,7 +222,7 @@ const CreateProductNew = () => {
         formDataWithImages.has("image5")
       ) {
         const uploadResponse = await fetch(
-          `https://aversaherbals.com/api/products/partial-update/${productId}/`,
+          `https://aversaherbals.com/api/products/partial-update/${paramsData.id}/`,
           {
             method: "PATCH",
             body: formDataWithImages,
@@ -215,13 +235,13 @@ const CreateProductNew = () => {
         }
       }
       setloading(false);
-      navigate("/admin/admin-aversa-all-products/")
       console.log("Form data and images uploaded successfully");
     } catch (error) {
       console.error(error);
       setloading(false);
     }
   };
+
 
   const [CreateIngredientsModal, setCreateIngredientsModal] = useState(false);
 
@@ -306,19 +326,22 @@ const CreateProductNew = () => {
               <Form.Label>Search Ingredients</Form.Label>
               <Row>
                 <Col sm={10}>
-                  <Form.Control
-                    type="text"
-                    placeholder="Search ingredients..."
-                    value={ingredientSearch}
-                    onChange={handleIngredientSearchChange}
-                    className="mb-0"
-                  />
+
+              <Form.Control
+                type="text"
+                placeholder="Search ingredients..."
+                value={ingredientSearch}
+                onChange={handleIngredientSearchChange}
+                className="mb-0"
+              />
                 </Col>
+                
                 <Col sm={2}>
                   <Button onClick={OpenCreateIngredientsModal}>
                     + Add New Ingredients
                   </Button>
                 </Col>
+                
               </Row>
             </Form.Group>
 
@@ -330,7 +353,8 @@ const CreateProductNew = () => {
                       key={ingredient.id}
                       id={`ingredient-${ingredient.id}`}
                       type="checkbox"
-                      label={ingredient.name + " || " + ingredient.hindi_name}
+                      label={ingredient.name}
+                      checked={formData.ingredients.includes(ingredient.name)}
                       onChange={(e) =>
                         handleIngredientChange(
                           ingredient.name,
@@ -401,43 +425,34 @@ const CreateProductNew = () => {
               </Row>
             </Form.Group>
 
-            {/* <Form.Group controlId="available_quantity">
-          <Form.Label>Available Quantity for Sale</Form.Label>
-          <Form.Control
-            type="number"
-            name="available_quantity"
-            value={formData.available_quantity}
-            onChange={handleInputChange}
-          />
-        </Form.Group> */}
-
             <Form.Group controlId="properties" className="mt-3">
               <Form.Label>Properties in One Line</Form.Label>
-              {formData.properties.map((property, index) => (
-                <Row key={index}>
-                  <Col sm={11}>
-                    <Form.Control
-                      type="text"
-                      value={property.title}
-                      onChange={(e) =>
-                        handleArrayInputChange(
-                          index,
-                          "properties",
-                          e.target.value
-                        )
-                      }
-                    />
-                  </Col>
-                  <Col>
-                    <Button
-                      variant="danger"
-                      onClick={() => handleRemoveField(index, "properties")}
-                    >
-                      Remove
-                    </Button>
-                  </Col>
-                </Row>
-              ))}
+              {formData.properties &&
+                formData.properties?.map((property, index) => (
+                  <Row key={index}>
+                    <Col sm={11}>
+                      <Form.Control
+                        type="text"
+                        value={property.title}
+                        onChange={(e) =>
+                          handleArrayInputChange(
+                            index,
+                            "properties",
+                            e.target.value
+                          )
+                        }
+                      />
+                    </Col>
+                    <Col>
+                      <Button
+                        variant="danger"
+                        onClick={() => handleRemoveField(index, "properties")}
+                      >
+                        Remove
+                      </Button>
+                    </Col>
+                  </Row>
+                ))}
               <Button onClick={() => handleAddField("properties")}>
                 Add Property
               </Button>
@@ -445,31 +460,32 @@ const CreateProductNew = () => {
 
             <Form.Group controlId="benefits">
               <Form.Label>Properties Keywords</Form.Label>
-              {formData.benefits.map((benefits, index) => (
-                <Row key={index}>
-                  <Col sm={11}>
-                    <Form.Control
-                      type="text"
-                      value={benefits.title}
-                      onChange={(e) =>
-                        handleArrayInputChange(
-                          index,
-                          "benefits",
-                          e.target.value
-                        )
-                      }
-                    />
-                  </Col>
-                  <Col>
-                    <Button
-                      variant="danger"
-                      onClick={() => handleRemoveField(index, "benefits")}
-                    >
-                      Remove
-                    </Button>
-                  </Col>
-                </Row>
-              ))}
+              {formData.benefits &&
+                formData.benefits?.map((benefits, index) => (
+                  <Row key={index}>
+                    <Col sm={11}>
+                      <Form.Control
+                        type="text"
+                        value={benefits.title}
+                        onChange={(e) =>
+                          handleArrayInputChange(
+                            index,
+                            "benefits",
+                            e.target.value
+                          )
+                        }
+                      />
+                    </Col>
+                    <Col>
+                      <Button
+                        variant="danger"
+                        onClick={() => handleRemoveField(index, "benefits")}
+                      >
+                        Remove
+                      </Button>
+                    </Col>
+                  </Row>
+                ))}
               <Button onClick={() => handleAddField("benefits")}>
                 Add Property
               </Button>
@@ -477,31 +493,32 @@ const CreateProductNew = () => {
 
             <Form.Group controlId="howtouse">
               <Form.Label>Direction to Use</Form.Label>
-              {formData.howtouse.map((howtouse, index) => (
-                <Row key={index}>
-                  <Col sm={11}>
-                    <Form.Control
-                      type="text"
-                      value={howtouse.title}
-                      onChange={(e) =>
-                        handleArrayInputChange(
-                          index,
-                          "howtouse",
-                          e.target.value
-                        )
-                      }
-                    />
-                  </Col>
-                  <Col>
-                    <Button
-                      variant="danger"
-                      onClick={() => handleRemoveField(index, "howtouse")}
-                    >
-                      Remove
-                    </Button>
-                  </Col>
-                </Row>
-              ))}
+              {formData.howtouse &&
+                formData.howtouse?.map((howtouse, index) => (
+                  <Row key={index}>
+                    <Col sm={11}>
+                      <Form.Control
+                        type="text"
+                        value={howtouse.title}
+                        onChange={(e) =>
+                          handleArrayInputChange(
+                            index,
+                            "howtouse",
+                            e.target.value
+                          )
+                        }
+                      />
+                    </Col>
+                    <Col>
+                      <Button
+                        variant="danger"
+                        onClick={() => handleRemoveField(index, "howtouse")}
+                      >
+                        Remove
+                      </Button>
+                    </Col>
+                  </Row>
+                ))}
               <Button onClick={() => handleAddField("howtouse")}>
                 Add Property
               </Button>
@@ -509,27 +526,28 @@ const CreateProductNew = () => {
 
             <Form.Group controlId="note">
               <Form.Label>Note</Form.Label>
-              {formData.note.map((note, index) => (
-                <Row key={index}>
-                  <Col sm={11}>
-                    <Form.Control
-                      type="text"
-                      value={note.title}
-                      onChange={(e) =>
-                        handleArrayInputChange(index, "note", e.target.value)
-                      }
-                    />
-                  </Col>
-                  <Col>
-                    <Button
-                      variant="danger"
-                      onClick={() => handleRemoveField(index, "note")}
-                    >
-                      Remove
-                    </Button>
-                  </Col>
-                </Row>
-              ))}
+              {formData.note &&
+                formData.note?.map((note, index) => (
+                  <Row key={index}>
+                    <Col sm={11}>
+                      <Form.Control
+                        type="text"
+                        value={note.title}
+                        onChange={(e) =>
+                          handleArrayInputChange(index, "note", e.target.value)
+                        }
+                      />
+                    </Col>
+                    <Col>
+                      <Button
+                        variant="danger"
+                        onClick={() => handleRemoveField(index, "note")}
+                      >
+                        Remove
+                      </Button>
+                    </Col>
+                  </Row>
+                ))}
               <Button onClick={() => handleAddField("note")}>
                 Add Property
               </Button>
@@ -546,15 +564,16 @@ const CreateProductNew = () => {
               />
             </Form.Group>
             <div>
-              {formData.image1 && formData.image1 !== null && (
-                <img src={URL.createObjectURL(formData.image1)} 
-
-                alt="Uploaded Image"
+              {formData.image1 instanceof File ? (
+                <img
+                  src={URL.createObjectURL(formData.image1)}
+                  alt="Uploaded Image"
                 />
+              ) : (
+                <img src={formData.image1} />
               )}
             </div>
-            
-           
+
             {/* <Form.Group>
               <Form.Label>Image 2</Form.Label>
               <Form.Control
@@ -596,8 +615,8 @@ const CreateProductNew = () => {
               />
             </Form.Group> */}
 
-            <Button variant="primary" onClick={handleSubmit}>
-              Submit
+            <Button variant="primary" onClick={handleSubmit} className="mt-3">
+              Update Details
             </Button>
           </Form>
         </Container>
@@ -625,4 +644,4 @@ const CreateProductNew = () => {
   );
 };
 
-export default CreateProductNew;
+export default UpdateProductData;
