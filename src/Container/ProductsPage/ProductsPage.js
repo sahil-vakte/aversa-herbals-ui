@@ -20,7 +20,7 @@ const ProductsPage = () => {
         <div>
         <ProductsList />
         </div>
-    <Container>
+    {/* <Container>
         <h1 className="aversa-herbals-head-tag" style={{ textAlign: "center" }}>
         Why Choose Aversa Herbals Products?
         </h1>
@@ -56,7 +56,7 @@ const ProductsPage = () => {
           </Col>
         </Row>
         </Container>
-      </div>
+      </div> */}
     </div>
   );
 };

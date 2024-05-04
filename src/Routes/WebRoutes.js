@@ -10,6 +10,7 @@ import WebsiteFooter from "../Components/WebsiteFooter/WebsiteFooter";
 import BusinessOpportunity from "../Container/BusinessOpportunityPage/BusinessOpportunity";
 import RegistrationPage from "../Container/RegistrationPage/RegistrationPage";
 import LoginPage from "../Container/LoginPage/LoginPage";
+import ProductDetailsPage from "../Container/ProductDetailsPage/ProductDetailsPage";
 
 const WebRoutes = () => {
   function ScrollToTop() {
@@ -29,6 +30,7 @@ const WebRoutes = () => {
       <Routes>
         <Route path="/*" element=<WebsiteHomepage /> />
         <Route path="/aversa-herbal-products" element=<ProductsPage /> />
+        <Route path="/aversa-herbal-product-details/:id/:title" element=<ProductDetailsPage/> />
         <Route path="/aversa-herbal-wellness-resources" element=<WellnessResourcesPage /> />
         <Route path="/aversa-herbal-about-us" element=<AboutUsPage /> />
         <Route path="/aversa-herbal-contact-us" element=<ContactPage /> />

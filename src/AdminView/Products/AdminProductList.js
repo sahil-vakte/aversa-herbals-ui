@@ -70,6 +70,22 @@ const AdminProductList = () => {
       });
   };
 
+  const handleActiveStatusChange = (productId, activeStatus) => {
+    axios.patch(`https://aversaherbals.com/api/products/partial-update/${productId}/`, {
+      active_status: activeStatus
+    }).then(() => {
+      axios.get(`https://aversaherbals.com/api/products/`)
+        .then((response) => {
+          setProductsList(response.data);
+        })
+        .catch((error) => {
+          console.error('Error fetching products:', error);
+        });
+    }).catch((error) => {
+      console.error('Error updating active status:', error);
+    });
+  };
+
   const filteredProducts = productsList.filter(product =>
     product.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -96,22 +112,19 @@ const AdminProductList = () => {
           <thead>
             <tr>
               <th>ID</th>
-              {/* <th>Image</th> */}
               <th>Title</th>
               <th>Price</th>
               <th>Discount</th>
               <th>Selling Price</th>
               <th>Edit</th>
               <th>Delete</th>
+              <th>Active Status</th>
             </tr>
           </thead>
           <tbody>
             {filteredProducts.map((product) => (
               <tr key={product.id}>
                 <td>{product.id}</td>
-                {/* <td>{product.image1 !== null &&
-                  <img src={product.image1} alt={product.title} style={{height:"50px",width:"50px"}}/>
-                }</td> */}
                 <td>
                 <Link to={`/admin/update-product-data/${product.id}/${product.title}`} style={{textDecoration:"none",cursor:"pointer"}}>
                 {product.title}
@@ -127,6 +140,13 @@ const AdminProductList = () => {
                 </td>
                 <td style={{ textAlign: "center" }}>
                   <Button variant='danger' onClick={() => handleDelete(product)}>Delete</Button>
+                </td>
+                <td style={{ textAlign: "center" }}>
+                  <input
+                    type="checkbox"
+                    checked={product.active_status}
+                    onChange={(e) => handleActiveStatusChange(product.id, e.target.checked)}
+                  />
                 </td>
               </tr>
             ))}

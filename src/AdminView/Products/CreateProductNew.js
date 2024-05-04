@@ -29,7 +29,7 @@ const CreateProductNew = () => {
     active_status: true,
     available_discount: 0,
     distributed_price: null,
-    active_status: false,
+    active_status: true,
     available_quantity: 1,
     image1: null,
     image2: null,

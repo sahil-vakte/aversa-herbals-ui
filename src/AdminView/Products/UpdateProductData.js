@@ -353,7 +353,7 @@ const UpdateProductData = () => {
                       key={ingredient.id}
                       id={`ingredient-${ingredient.id}`}
                       type="checkbox"
-                      label={ingredient.name}
+                      label={ingredient.name + " || " + ingredient.hindi_name}
                       checked={formData.ingredients.includes(ingredient.name)}
                       onChange={(e) =>
                         handleIngredientChange(
