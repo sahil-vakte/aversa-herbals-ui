@@ -89,7 +89,7 @@ const WebsiteNavbar = () => {
               >
                 Contact US
               </Link>
-              <Link
+              {/* <Link
                 className={
                   location.pathname === "/aversa-herbal-login"
                     ? "selected-nav-link-navbar"
@@ -98,7 +98,7 @@ const WebsiteNavbar = () => {
                 to="/aversa-herbal-login"
               >
                 Login
-              </Link>
+              </Link> */}
               <Link
                 className={
                   location.pathname === "/aversa-herbal-sign-up"
@@ -131,9 +131,9 @@ const WebsiteNavbar = () => {
             width:"100%",
             left: "50%",
             transform: "translateX(-50%)",
-            zIndex: 1000, // Set a high z-index value
-            backgroundColor: "#fff", // Optional: add background color
-            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Optional: add box shadow
+            zIndex: 1000, 
+            backgroundColor: "#fff", 
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", 
             padding: "10px",
           }}
         >

@@ -9,7 +9,7 @@ const ProductsPage = () => {
         <h1 className="aversa-herbals-head-tag" style={{ textAlign: "center" }}>
           Welcome to the Aversa Herbals Product Collection
         </h1>
-        <p className="aversa-herbals-para-tag-one">
+        <p className="aversa-herbals-para-tag-one" style={{textAlign:"center"}}>
           Discover a world of natural wellness with our curated selection of
           premium herbal remedies. From time-tested traditional formulas to
           innovative blends backed by modern science, each Aversa Herbals
@@ -17,7 +17,7 @@ const ProductsPage = () => {
           health and vitality.
         </p>
         </Container>
-        <div>
+        <div className="mt-5">
         <ProductsList />
         </div>
     {/* <Container>

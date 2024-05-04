@@ -2,12 +2,14 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import ImageDropper from "../../Assets/Rectangle 77.png"
+import ImageDropper from "../../Assets/Rectangle 77.png";
+import AdminLoader from "../../AdminView/AdminLoader/AdminLoader";
 
 const ProductsList = () => {
   const [productsList, setProductsList] = useState([]);
-
+  const [loading, setloading] = useState(false);
   useEffect(() => {
+    setloading(true)
     axios
       .get(`https://aversaherbals.com/api/products/`)
       .then((response) => {
@@ -17,8 +19,10 @@ const ProductsList = () => {
             product.active_status === true
         );
         setProductsList(activeProducts);
+        setloading(false)
       })
       .catch((error) => {
+        setloading(false)
         console.error("Error fetching products:", error);
       });
   }, []);
@@ -48,21 +52,33 @@ const ProductsList = () => {
   }, []);
 
   return (
+    <div>
+    {loading && <AdminLoader/>}
     <div className="product-list-component-padding">
       <Row>
-        <Col sm={2} >
-        <div className="aversa-products-category-sectiopn">
-          <div className="product-category-card-in-list">
-            <div>
-              {diseaseList && diseaseList.map((index) => <p className="product-category-types-p-tag-in-list">{index.name}</p>)}
+        <Col sm={2}>
+          <div className="aversa-products-category-sectiopn">
+            <div className="product-category-card-in-list">
+              <div>
+                {diseaseList &&
+                  diseaseList.map((index) => (
+                    <p className="product-category-types-p-tag-in-list">
+                      {index.name}
+                    </p>
+                  ))}
+              </div>
+              <div>
+                {productTypeList &&
+                  productTypeList.map((index) => (
+                    <p className="product-category-types-p-tag-in-list">
+                      {index.name}
+                    </p>
+                  ))}
+              </div>
             </div>
-            <div>
-              {productTypeList && productTypeList.map((index) => <p className="product-category-types-p-tag-in-list">{index.name}</p>)}
+            <div className="mt-5">
+              <img src={ImageDropper} style={{ width: "100%" }} />
             </div>
-          </div>
-          <div className="mt-5">
-            <img src={ImageDropper} style={{width:"100%"}}/>
-          </div>
           </div>
         </Col>
         <Col sm={10}>
@@ -143,6 +159,7 @@ const ProductsList = () => {
           </Row>
         </Col>
       </Row>
+    </div>
     </div>
   );
 };
