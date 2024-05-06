@@ -15,9 +15,9 @@ const WebsiteHomepage = () => {
       <div style={{marginTop:"80px"}}><SectionTwo/></div>
       <div style={{marginTop:"80px"}}><TopProducts/></div>
       <div style={{marginTop:"80px"}}><SectionThree/></div>
-      <div style={{marginTop:"80px"}}>
+      {/* <div style={{marginTop:"80px"}}>
         <img src={MainImage} style={{width:"100%"}}/>
-      </div>
+      </div> */}
       <div style={{marginTop:"80px"}}><BusinessOpportunityInfo/></div>
     </div>
   )
