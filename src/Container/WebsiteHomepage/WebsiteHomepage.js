@@ -5,7 +5,6 @@ import BusinessOpportunityInfo from '../../Components/HomePage/BusinessOpportuni
 import SectionTwo from '../../Components/HomePage/SectionTwo'
 import SectionThree from '../../Components/HomePage/SectionThree'
 import WebNavbarAdd from '../../Components/WebsiteNavbar/WebNavbarAdd'
-import MainImage from "../../Assets/professional perspective.svg"
 
 const WebsiteHomepage = () => {
   return (
