@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import kahalbattaImage from "../../Assets/full colour khalbatta 1.svg";
+import kahalbattaImage from "../../Assets/khalbattass.PNG";
 import BranchImage from "../../Assets/BRANCH.png";
 import { Link } from "react-router-dom";
 import { IoIosArrowDropright } from "react-icons/io";
