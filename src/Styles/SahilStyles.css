@@ -76,19 +76,27 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../Assets/mockup 3.jpg");
+    /* background-image: url("../Assets/mockup 3.jpg"); */
     background-size: cover;
     background-position: center;
-    filter: blur(12px);
+    /* filter: blur(12px); */
+    background-color: #D9D9D9;
   }
   
   .registration-content {
     z-index: 0; /* Ensure the content is on top of the blurred background */
-    background-color: rgb(196 196 196 / 70%);
-    padding-top: 20px;
+    /* background-color: rgb(196 196 196 / 70%); */
+    /* padding-top: 20px; */
     padding-bottom: 20px;
    
   }
+  .regi-stration-from-bg{
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+
 
   .registration-input-form-input-tag{
     width: 100%;
@@ -98,7 +106,6 @@
   .registration-input-form-input-tag:focus{
     outline: none;
   }
-
   .login-page-background {
     position: relative;
     width: 100%;
@@ -424,7 +431,10 @@
   color: #676D75;
   font-size: 15px;
 }
-
+.registration-form-main-div .form-label{
+margin-bottom: 0px;
+margin-top: 5px;
+}
 /* Container styles */
 .scrolling-text-container {
   background-color: #eff5ff;
@@ -527,6 +537,11 @@
       }
       .share-button-in-product-details{
         display: none;
+      }
+      .regi-stration-from-bg{
+        background-color: white;
+        padding: 10px;
+        border-radius: 15px;
       }
     }
   

@@ -29,7 +29,9 @@ const RegistrationPage = () => {
               </p>
             </Col>
             <Col sm={6}>
+            <div className="regi-stration-from-bg">
               <RegistrationForm/>
+            </div>
             </Col>
           </Row>
         </Container>

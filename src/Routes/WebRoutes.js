@@ -11,17 +11,20 @@ import BusinessOpportunity from "../Container/BusinessOpportunityPage/BusinessOp
 import RegistrationPage from "../Container/RegistrationPage/RegistrationPage";
 import LoginPage from "../Container/LoginPage/LoginPage";
 import ProductDetailsPage from "../Container/ProductDetailsPage/ProductDetailsPage";
+import PaymentForm from "../Components/RazerpayPayments/PaymentForm";
+import Policies from "../Components/Policies/Policies";
 
 const WebRoutes = () => {
   function ScrollToTop() {
     const { pathname } = useLocation();
-  
     useEffect(() => {
       window.scrollTo(0, 0);
     }, [pathname]);
-  
+    
     return null;
   }
+  
+  const { pathname } = useLocation();
   return (
     <div>
     <ScrollToTop/>
@@ -37,9 +40,11 @@ const WebRoutes = () => {
         <Route path="/aversa-herbal-business-opportunity" element=<BusinessOpportunity/> />
         <Route path="/aversa-herbal-sign-up" element=<RegistrationPage/> />
         <Route path="/aversa-herbal-login" element=<LoginPage/> />
+        <Route path="/aversa-herbal-other-links" element=<Policies/> />
+        {/* <Route path="/aversa-herbal-login" element=<PaymentForm/> /> */}
       </Routes>
     </div>
-    <div style={{marginTop:"40px"}}>
+    <div style={{marginTop: pathname == "/aversa-herbal-sign-up" ? "0px" : "40px"}}>
     <WebsiteFooter/>
     </div>
     </div>

@@ -6,7 +6,7 @@ import Aversalogo from "../../Assets/aversa_full_colour_1.svg";
 import { Link, useLocation } from "react-router-dom"; 
 import "./WebsiteNavbar.css";
 import { FaChevronDown } from "react-icons/fa";
-import NavProductList from "./NavProductList"; // Import NavProductList component
+import NavProductList from "./NavProductList"; 
 
 const WebsiteNavbar = () => {
   const location = useLocation(); 
@@ -19,6 +19,8 @@ const WebsiteNavbar = () => {
   const handleProductLinkLeave = () => {
     setShowProductList(false);
   };
+
+  
 
   return (
     <div>
@@ -50,7 +52,7 @@ const WebsiteNavbar = () => {
                 }
                 to="/aversa-herbal-about-us"
               >
-                About Us
+                About
               </Link>
               <div
                 onMouseEnter={handleProductLinkHover}
@@ -87,7 +89,7 @@ const WebsiteNavbar = () => {
                 }
                 to="/aversa-herbal-contact-us"
               >
-                Contact US
+                Contact
               </Link>
               {/* <Link
                 className={
@@ -118,7 +120,7 @@ const WebsiteNavbar = () => {
                 }
                 to="/cart"
               >
-                Cart <BsCart4 className="nav-bar-icons" />
+                 <BsCart4 className="nav-bar-icons" />
               </Link>
             </Nav>
           </Navbar.Collapse>

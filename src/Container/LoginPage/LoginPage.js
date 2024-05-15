@@ -7,7 +7,7 @@ import LoginForm from "./LoginForm";
 const LoginPage = () => {
   return (
     <div className="login-page-background">
-      <div className="registration-content">
+      <div className="registration-content" style={{backgroundColor:"rgb(196 196 196 / 70%)"}}>
         <Container>
           <Row className="align-items-center">
             <Col sm={8}>
