@@ -554,5 +554,8 @@ margin-top: 5px;
         padding-left: 0px;
         padding-right: 0px;
       }
+      .nav-bar-of-aversa-cart-count-div{
+        display: none;
+      }
     }
   

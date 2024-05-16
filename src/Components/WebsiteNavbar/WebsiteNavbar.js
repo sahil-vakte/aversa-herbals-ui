@@ -8,10 +8,12 @@ import "./WebsiteNavbar.css";
 import { FaChevronDown } from "react-icons/fa";
 import NavProductList from "./NavProductList";
 import eventBus from "../CartPage/EventBus";
+import axios from "axios";
 
 const WebsiteNavbar = () => {
   const location = useLocation();
   const [showProductList, setShowProductList] = useState(false);
+  const userId = localStorage.getItem("userId");
 
   const handleProductLinkHover = () => {
     setShowProductList(true);
@@ -22,18 +24,27 @@ const WebsiteNavbar = () => {
   };
 
   const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    if (userId) {
+      axios
+        .get(`https://aversaherbals.com/api/cart/${userId}/`)
+        .then((response) => {
+          setCartCount(response.data.length); 
+        })
+        .catch((error) => {
+          console.error("Error fetching cart data:", error);
+        });
+    }
+  }, []);
+
   useEffect(() => {
     const subscription = eventBus.on("cartCountChanged", (newCount) => {
       setCartCount(newCount);
     });
 
-    // return () => {
-    //   subscription.remove();
-    // };
   }, []);
-  // useEffect(() => {
-  //   setcartCount(localStorage.getItem("cartCount"));
-  // });
+
 
   return (
     <div>
@@ -133,6 +144,7 @@ const WebsiteNavbar = () => {
                 }
                 to="/aversa-herbal-cart"
               >
+              <div className="nav-bar-of-aversa-cart-count-div">
                 <div
                   style={{
                     position: "absolute",
@@ -149,6 +161,7 @@ const WebsiteNavbar = () => {
                   }}
                 >
                   {cartCount}
+                </div>
                 </div>
                 <BsCart4 className="nav-bar-icons" />
 

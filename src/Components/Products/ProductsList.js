@@ -85,6 +85,7 @@ const ProductsList = () => {
         .get(`https://aversaherbals.com/api/cart/${userId}/`)
         .then((response) => {
           setCartData(response.data);
+          setCartCount(response.data.length);
         })
         .catch((error) => {
           console.error("Error fetching cart data:", error);
@@ -92,12 +93,6 @@ const ProductsList = () => {
     }
   }, [userId, fetchApiData]);
 
-  useEffect(() => {
-    const storedCartCount = localStorage.getItem("cartCount");
-    if (storedCartCount) {
-      setCartCount(parseInt(storedCartCount));
-    }
-  }, []);
 
   const handleAddToCart = (productId) => {
     const userId = localStorage.getItem("userId");

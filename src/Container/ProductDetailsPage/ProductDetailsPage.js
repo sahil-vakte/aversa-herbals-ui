@@ -6,11 +6,13 @@ import { FiPlusCircle, FiMinusCircle } from "react-icons/fi";
 import { FaShareAlt } from "react-icons/fa";
 import { IoMdCart, IoIosHeartEmpty } from "react-icons/io";
 import AdminLoader from "../../AdminView/AdminLoader/AdminLoader";
+import eventBus from "../../Components/CartPage/EventBus";
 
 const ProductDetailsPage = () => {
   const paramsData = useParams();
   const [ProductDetails, setProductDetails] = useState(null);
   const [loading, setloading] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
     setloading(true);
@@ -62,6 +64,7 @@ const ProductDetailsPage = () => {
         .get(`https://aversaherbals.com/api/cart/${userId}/`)
         .then((response) => {
           setCartData(response.data);
+          setCartCount(response.data.length);
         })
         .catch((error) => {
           console.error("Error fetching cart data:", error);
@@ -80,6 +83,9 @@ const ProductDetailsPage = () => {
         })
         .then((response) => {
           setfetchApiData(!fetchApiData);
+          const newCartCount = cartCount + 1;
+          setCartCount(newCartCount);
+          eventBus.emit("cartCountChanged", newCartCount);
         })
         .catch((error) => {
           console.error("Error adding to cart:", error);
@@ -94,6 +100,9 @@ const ProductDetailsPage = () => {
         .delete(`https://aversaherbals.com/api/cart/item/delete/${productId}/`)
         .then((response) => {
           setfetchApiData(!fetchApiData);
+          const newCartCount = cartCount - 1;
+          setCartCount(newCartCount);
+          eventBus.emit("cartCountChanged", newCartCount);
         })
         .catch((error) => {
           console.error("Error removing from cart:", error);

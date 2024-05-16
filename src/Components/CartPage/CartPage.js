@@ -4,12 +4,14 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FiPlusCircle, FiMinusCircle } from "react-icons/fi";
 import EmptyCart from "./EmptyCart";
+import eventBus from "./EventBus";
 
 const CartPage = () => {
   const userId = localStorage.getItem("userId");
   const [cartData, setCartData] = useState([]);
   const [fetchApiData, setfetchApiData] = useState(false);
-  console.log("cartData", cartData.length);
+  const [cartCount, setCartCount] = useState(0);
+
 
   useEffect(() => {
     if (userId) {
@@ -17,6 +19,7 @@ const CartPage = () => {
         .get(`https://aversaherbals.com/api/cart/${userId}/`)
         .then((response) => {
           setCartData(response.data);
+          setCartCount(response.data.length);
         })
         .catch((error) => {
           console.error("Error fetching cart data:", error);
@@ -30,6 +33,9 @@ const CartPage = () => {
         .delete(`https://aversaherbals.com/api/cart/item/delete/${productId}/`)
         .then((response) => {
           setfetchApiData(!fetchApiData);
+          const newCartCount = cartCount - 1;
+          setCartCount(newCartCount);
+          eventBus.emit("cartCountChanged", newCartCount);
         })
         .catch((error) => {
           console.error("Error removing from cart:", error);
