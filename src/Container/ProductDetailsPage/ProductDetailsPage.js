@@ -13,20 +13,19 @@ const ProductDetailsPage = () => {
   const [loading, setloading] = useState(false);
 
   useEffect(() => {
-    setloading(true)
+    setloading(true);
     axios
-      .get(`https://aversaherbals.com/api/products/${paramsData.id}`)
+      .get(`https://aversaherbals.com/api/products/${paramsData.id}/`)
       .then((response) => {
         const data = response.data;
         setProductDetails(data);
-        setloading(false)
+        setloading(false);
       })
       .catch((error) => {
         console.log(error);
-        setloading(false)
+        setloading(false);
       });
-  }, [paramsData.id]); // Adding paramsData.id to the dependency array
-
+  }, [paramsData.id]);
 
   const calculateSellingPrice = () => {
     if (
@@ -54,9 +53,86 @@ const ProductDetailsPage = () => {
     );
   };
 
+  const [fetchApiData, setfetchApiData] = useState(false);
+  const userId = localStorage.getItem("userId");
+  const [cartData, setCartData] = useState([]);
+  useEffect(() => {
+    if (userId) {
+      axios
+        .get(`https://aversaherbals.com/api/cart/${userId}/`)
+        .then((response) => {
+          setCartData(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching cart data:", error);
+        });
+    }
+  }, [userId, fetchApiData]);
+
+  const handleAddToCart = (productId) => {
+    const userId = localStorage.getItem("userId");
+    if (userId) {
+      axios
+        .post("https://aversaherbals.com/api/cart/add/", {
+          user_id: userId,
+          product_id: productId,
+          quantity: 1,
+        })
+        .then((response) => {
+          setfetchApiData(!fetchApiData);
+        })
+        .catch((error) => {
+          console.error("Error adding to cart:", error);
+        });
+    }
+  };
+
+  const handleRemoveFromCart = (productId) => {
+    const userId = localStorage.getItem("userId");
+    if (userId) {
+      axios
+        .delete(`https://aversaherbals.com/api/cart/item/delete/${productId}/`)
+        .then((response) => {
+          setfetchApiData(!fetchApiData);
+        })
+        .catch((error) => {
+          console.error("Error removing from cart:", error);
+        });
+    }
+  };
+
+  const handleUpdateProductQuantity = (productId, quantityChange) => {
+    console.log("productId", productId);
+    if (userId) {
+      const product = cartData.find((item) => item.id === productId);
+      const newQuantity = product.quantity + quantityChange;
+
+      if (newQuantity <= 0) {
+        handleRemoveFromCart(productId);
+      } else {
+        axios
+          .put(`https://aversaherbals.com/api/cart/item/${productId}/`, {
+            quantity: newQuantity,
+          })
+          .then((response) => {
+            setfetchApiData(!fetchApiData);
+          })
+          .catch((error) => {
+            console.error("Error updating product quantity:", error);
+          });
+      }
+    }
+  };
+
+  const isProductInCart = cartData.some(
+    (item) => item.product.id === ProductDetails?.id
+  );
+  const cartItem = cartData.find((item) => item.product.id === ProductDetails?.id);
+
+
   return (
     <div style={{ paddingTop: "30px" }}>
-    {loading && <AdminLoader/>}
+      {loading && <AdminLoader />}
       <Container>
         <Row>
           <Col sm={6}>
@@ -106,6 +182,8 @@ const ProductDetailsPage = () => {
                 </p>
               </div>
             </div>
+            {isProductInCart &&
+            <>
             <div
               style={{
                 backgroundColor: "#D9D9D9",
@@ -118,19 +196,80 @@ const ProductDetailsPage = () => {
               }}
               className="mt-3"
             >
-              <FiPlusCircle style={{ color: "#266431", fontSize: "25px" }} />
+            <FiMinusCircle
+                style={{
+                  color: "#266431",
+                  fontSize: "25px",
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  const cartItem = cartData.find(
+                    (item) => item.product.id === ProductDetails.id
+                  );
+                  handleUpdateProductQuantity(cartItem.id, -1);
+                }}
+              />
+              
               <p style={{ margin: "0px", color: "#50565E", fontSize: "18px" }}>
-                01
+              {cartItem.quantity}
               </p>
-              <FiMinusCircle style={{ color: "#266431", fontSize: "25px" }} />
+              <FiPlusCircle
+                style={{
+                  color: "#266431",
+                  fontSize: "25px",
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  const cartItem = cartData.find(
+                    (item) => item.product.id === ProductDetails.id
+                  );
+                  handleUpdateProductQuantity(cartItem.id, 1);
+                }}
+              />
+              
             </div>
+            
+            <p>
+          Subtotal : ₹ {(parseFloat(calculateSellingPrice()) * cartItem.quantity).toFixed(2)}
+        </p>
+        </>
+            }
             <div className="mt-3">
               <Row>
                 <Col sm={6} className="mt-3">
-                  <button className="add-to-cart-product-details-btn">
+                  {cartData &&
+                  cartData?.some(
+                    (item) => item.product.id === ProductDetails.id
+                  ) ? (
+                    <button
+                      className="add-to-cart-product-details-btn"
+                      style={{
+                        backgroundColor: "red",
+                        border: "1px solid red",
+                      }}
+                      onClick={() => {
+                        const cartItem = cartData.find(
+                          (item) => item.product.id === ProductDetails.id
+                        );
+                        handleRemoveFromCart(cartItem.id);
+                      }}
+                    >
+                      <IoMdCart style={{ fontSize: "38px" }} />
+                      {"  "} Remove from Cart
+                    </button>
+                  ) : (
+                    <button
+                      className="add-to-cart-product-details-btn"
+                      onClick={() => handleAddToCart(ProductDetails.id)}
+                    >
+                      <IoMdCart style={{ fontSize: "38px" }} />
+                      {"  "} Add to Cart
+                    </button>
+                  )}
+                  {/* <button className="add-to-cart-product-details-btn">
                     <IoMdCart style={{ fontSize: "38px" }} />
                     {"  "} ADD TO CART
-                  </button>
+                  </button> */}
                 </Col>
                 <Col sm={6} className="mt-3">
                   <button className="add-to-wishlist-product-details-btn">
@@ -194,7 +333,7 @@ const ProductDetailsPage = () => {
                   <div>
                     <div className="ingredients-background-div-in-product-details">
                       <img
-                        src={`http://aversaherbals.com/${index.image}`}
+                        src={index.image}
                         className="ingredients-image-inproduct-details"
                       />
                     </div>

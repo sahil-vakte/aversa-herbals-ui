@@ -129,6 +129,10 @@
     filter: blur(12px);
   }
   
+  .cart-page-of-aversa-bg{
+    background-color: #8080802b;
+    padding: 30px;
+  }
 
   .products-page-linear-gradient-bg{
     background: linear-gradient(45deg, #eec80d, #0dcaf080, #eec80d);
@@ -542,6 +546,13 @@ margin-top: 5px;
         background-color: white;
         padding: 10px;
         border-radius: 15px;
+      }
+      .cart-page-of-aversa-bg{
+        background-color: #8080802b;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 0px;
+        padding-right: 0px;
       }
     }
   
