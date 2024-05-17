@@ -26,6 +26,10 @@ const WebRoutes = () => {
   }
   
   const { pathname } = useLocation();
+
+  useEffect(()=>{
+    localStorage.setItem("userId",2)
+  })
   return (
     <div>
     <ScrollToTop/>
