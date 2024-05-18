@@ -4,6 +4,7 @@ import "../src/Styles/KNimbalkarStyles.css"
 import "../src/Styles/KJadhavStyles.css"
 import "../src/Styles/SahilStyles.css"
 import AdministratorViewSidebar from './AdminView/AdministratorViewSidebar/AdministratorViewSidebar';
+import AadharKyc from './Components/KYCVerifications/AadharKyc';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
          <Routes>
         <Route path="/*" element=<WebRoutes /> />
         <Route path="/admin/*" element=<AdministratorViewSidebar/> />
+        <Route path="/aadharkyc" element=<AadharKyc/> />
       </Routes>
     </div>
   );

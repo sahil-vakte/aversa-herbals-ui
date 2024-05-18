@@ -52,7 +52,7 @@ const CuSectionTwo = () => {
                 <br />
                 If you have a marketing inquiry or idea you’d like to share, email us 
                 <br />
-                at aversaherbals@gmail.com
+                at info@aversaherbals.com
                             
               </p>
             </div>

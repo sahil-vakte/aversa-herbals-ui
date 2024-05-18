@@ -74,10 +74,10 @@ const WebsiteFooter = () => {
               <p
                 className="website-footer-para-tag"
                 onClick={() => {
-                  window.location.href = "mailto:aversaherbals@gmail.com";
+                  window.location.href = "mailto:info@aversaherbals.com";
                 }}
               >
-                aversaherbals@gmail.com
+                info@aversaherbals.com
               </p>
               <Link
                 to="/aversa-herbal-other-links"

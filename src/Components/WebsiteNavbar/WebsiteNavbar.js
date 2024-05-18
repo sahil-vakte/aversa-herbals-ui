@@ -79,20 +79,26 @@ const WebsiteNavbar = () => {
                 About
               </Link>
               <div
-                onMouseEnter={handleProductLinkHover}
-                onMouseLeave={handleProductLinkLeave}
+                // onMouseEnter={handleProductLinkHover}
+                // onMouseLeave={handleProductLinkLeave}
                 style={{ position: "relative" }}
               >
                 <Link
+                  // className={
+                  //   location.pathname === "/aversa-herbal-products"
+                  //     ? "selected-nav-link-navbar"
+                  //     : "nav-link"
+                  // }
                   className={
-                    location.pathname === "/aversa-herbal-products"
-                      ? "selected-nav-link-navbar"
-                      : "nav-link"
-                  }
+                  location.pathname === "/aversa-herbal-business-opportunity"
+                    ? "selected-nav-link-navbar"
+                    : "nav-link"
+                }
                   to="/aversa-herbal-products"
                   style={{ display: "flex", gap: "5px", alignItems: "center" }}
                 >
-                  Products <FaChevronDown />
+                  Products 
+                  {/* <FaChevronDown /> */}
                 </Link>
               </div>
               <Link

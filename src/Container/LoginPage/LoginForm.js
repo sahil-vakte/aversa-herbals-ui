@@ -28,12 +28,12 @@ const LoginForm = () => {
     try {
       let response;
       if (loginData.loginOption === 'email') {
-        response = await axios.post('http://localhost:3000/api/login', {
-          email: loginData.email,
+        response = await axios.post('https://aversaherbals.com/api/login/', {
+          username: loginData.email,
           password: loginData.password
         });
       } else if (loginData.loginOption === 'phone') {
-        response = await axios.post('http://localhost:3000/api/login', {
+        response = await axios.post('https://aversaherbals.com/api/login/', {
           contact_number: loginData.contact_number,
           password: loginData.password
         });
@@ -52,7 +52,7 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit}>
         {loginData.loginOption === 'email' && (
           <Col className='mb-2'>
-            <input type="email" placeholder='Registered Email Address' name="email" value={loginData.email} onChange={handleChange} required className='registration-input-form-input-tag'/>
+            <input type="text" placeholder='Registered Email Address' name="email" value={loginData.email} onChange={handleChange} required className='registration-input-form-input-tag'/>
           </Col>
         )}
         {loginData.loginOption === 'phone' && (
