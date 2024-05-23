@@ -90,7 +90,7 @@ const WebsiteNavbar = () => {
                   //     : "nav-link"
                   // }
                   className={
-                  location.pathname === "/aversa-herbal-business-opportunity"
+                  location.pathname === "/aversa-herbal-products"
                     ? "selected-nav-link-navbar"
                     : "nav-link"
                 }

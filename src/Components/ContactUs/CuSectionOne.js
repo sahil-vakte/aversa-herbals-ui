@@ -15,6 +15,9 @@ const CuSectionOne = () => {
                 <h1 className="aversa-herbals-head-tag-contact-us">
                 Contact Us
               </h1>
+                <h5 className="aversa-herbals-head-tag-contact-us" style={{fontSize:"2rem"}}>
+                AVERSA HEALTHCARE PRIVATE LIMITED
+              </h5>
               <p className="aversa-herbals-para-tag-one">
               Need support? We’ve got you covered. Reach out anytime for questions about products, your business, you name it.
                

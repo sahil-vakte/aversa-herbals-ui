@@ -61,7 +61,7 @@ const WebsiteFooter = () => {
                 />
               </div>
             </Col>
-            <Col sm={3}>
+            <Col sm={2}>
               <h1 className="website-footer-heading">Contact</h1>
               <p
                 className="website-footer-para-tag"
@@ -80,13 +80,13 @@ const WebsiteFooter = () => {
                 info@aversaherbals.com
               </p>
               <Link
-                to="/aversa-herbal-other-links"
+                to="/aversa-herbal-terms-and-conditions"
                 style={{ textDecoration: "none" }}
               >
-                <p className="website-footer-para-tag">Our Policies</p>
+                <p className="website-footer-para-tag">Terms and Conditions </p>
               </Link>
             </Col>
-            <Col sm={3}>
+            <Col sm={2}>
               <h1 className="website-footer-heading">Browse</h1>
               <p className="website-footer-para-tag">Products</p>
               <p className="website-footer-para-tag">Wellness Resources</p>
@@ -98,6 +98,18 @@ const WebsiteFooter = () => {
                 Plot No - 368, Niti Khand - 1, <br /> Indira Puram, Ghaziabad{" "}
                 <br /> Uttar Pradesh - 201014
               </p>
+            </Col>
+            <Col sm={2}>
+              <h1 className="website-footer-heading">Our Policies</h1>
+              <Link to="/aversa-herbal-privacy-policy" style={{textDecoration:"none"}}>
+              <p className="website-footer-para-tag">Privacy Policy </p>
+              </Link>
+              <Link to="/aversa-herbal-refund-and-cancellation-policy" style={{textDecoration:"none"}}>
+              <p className="website-footer-para-tag">Refunds & Cancellations</p>
+              </Link>
+              <Link to="/aversa-herbal-shipping-policy" style={{textDecoration:"none"}}>
+              <p className="website-footer-para-tag">Shipping policy</p>
+              </Link>
             </Col>
           </Row>
         </Container>

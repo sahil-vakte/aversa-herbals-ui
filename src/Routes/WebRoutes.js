@@ -12,8 +12,11 @@ import RegistrationPage from "../Container/RegistrationPage/RegistrationPage";
 import LoginPage from "../Container/LoginPage/LoginPage";
 import ProductDetailsPage from "../Container/ProductDetailsPage/ProductDetailsPage";
 import PaymentForm from "../Components/RazerpayPayments/PaymentForm";
-import Policies from "../Components/Policies/Policies";
+import TermsandConditions from "../Components/Policies/TermsandConditions";
 import CartPage from "../Components/CartPage/CartPage";
+import PrivacyPolicy from "../Components/Policies/PrivacyPolicy";
+import RefundandCancellation from "../Components/Policies/RefundandCancellation";
+import ShippingPolicy from "../Components/Policies/ShippingPolicy";
 
 const WebRoutes = () => {
   function ScrollToTop() {
@@ -27,9 +30,6 @@ const WebRoutes = () => {
   
   const { pathname } = useLocation();
 
-  useEffect(()=>{
-    localStorage.setItem("userId",2)
-  })
   return (
     <div>
     <ScrollToTop/>
@@ -46,7 +46,10 @@ const WebRoutes = () => {
         <Route path="/aversa-herbal-sign-up" element=<RegistrationPage/> />
         <Route path="/aversa-herbal-login" element=<LoginPage/> />
         <Route path="/aversa-herbal-cart" element=<CartPage/> />
-        <Route path="/aversa-herbal-other-links" element=<Policies/> />
+        <Route path="/aversa-herbal-terms-and-conditions" element=<TermsandConditions/> />
+        <Route path="/aversa-herbal-privacy-policy" element=<PrivacyPolicy/> />
+        <Route path="/aversa-herbal-refund-and-cancellation-policy" element=<RefundandCancellation/> />
+        <Route path="/aversa-herbal-shipping-policy" element=<ShippingPolicy/> />
         {/* <Route path="/aversa-herbal-login" element=<PaymentForm/> /> */}
       </Routes>
     </div>

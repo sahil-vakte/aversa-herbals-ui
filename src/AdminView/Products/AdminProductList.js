@@ -38,7 +38,8 @@ const AdminProductList = () => {
     const { id } = selectedProduct;
     axios.patch(`https://aversaherbals.com/api/products/partial-update/${id}/`, {
       fixed_price: updatedPrice,
-      available_discount: updatedDiscount
+      available_discount: updatedDiscount,
+      active_status:true
     }).then(() => {
       setEditModalShow(false);
       axios.get(`https://aversaherbals.com/api/products/`)

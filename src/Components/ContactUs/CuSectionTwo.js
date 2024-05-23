@@ -32,7 +32,9 @@ const CuSectionTwo = () => {
               >
                 <FaPhone /> Telephone
               </h1>
-              <p className="aversa-herbals-para-tag-one">
+              <p className="aversa-herbals-para-tag-one"  onClick={() => {
+                  window.location.href = "tel:+919733242832";
+                }}>
               +91 97332 42832
                 <br />
                 Monday - Saturday | 10a.m. - 6p.m. India Standard Time
@@ -52,7 +54,14 @@ const CuSectionTwo = () => {
                 <br />
                 If you have a marketing inquiry or idea you’d like to share, email us 
                 <br />
-                at info@aversaherbals.com
+                at <span  
+                style={{cursor:"pointer",color:"blue"}}
+                onClick={() => {
+                  window.location.href = "mailto:info@aversaherbals.com";
+                }}>
+
+                info@aversaherbals.com
+                </span>
                             
               </p>
             </div>
