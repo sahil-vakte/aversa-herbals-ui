@@ -1,9 +1,14 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import startYourBusinessImage from '../../Assets/starturbusiness.png';
+// import DirectSellingBusinessModal from "../../Assets/Group 69945direct selling bussiness modle.svg";
+import DirectSellingBusinessModal from "../../Assets/Group 7005301.svg";
+import DirectSellingBusinessModalOne from "../../Assets/Group 69941versa herbals.svg";
+
 
 const BoSectionOne = () => {
   return (
+    <div>
     <div style={{ position: 'relative' }}>
       <img
         src={startYourBusinessImage}
@@ -34,9 +39,22 @@ const BoSectionOne = () => {
         <p style={{ color: 'white', textAlign: 'center',fontStyle:"italic",fontFamily:"Century Gothic",margin:"0px" }}>With unlimited earning potential</p>
       </div>
       </div>
-      <Container>
-        {/* Your content here */}
+     
+    </div>
+    <Container>
+      <div style={{ marginTop: "60px" }}>
+          <Row>
+            {/* <Col sm={6}></Col> */}
+            {/* <Col sm={6}> */}
+              <img src={DirectSellingBusinessModal}/>
+            {/* </Col> */}
+          </Row>
+        </div>
       </Container>
+      <div style={{ marginTop: "60px" }}>
+
+              <img src={DirectSellingBusinessModalOne} style={{width:"100%"}}/>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import AdminLoader from '../../AdminView/AdminLoader/AdminLoader';
+import eventBus from '../../Components/CartPage/EventBus';
 
 const LoginForm = () => {
   const [loginData, setLoginData] = useState({
@@ -12,6 +16,8 @@ const LoginForm = () => {
 
   const [errors, setErrors] = useState({});
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,6 +31,7 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
     try {
       let response;
       if (loginData.loginOption === 'email') {
@@ -42,16 +49,59 @@ const LoginForm = () => {
       const { token, user } = response.data;
       localStorage.setItem('userData', JSON.stringify(response.data.user));
       localStorage.setItem('userId', response.data.user.id);
-      setMessage('Login successful');
+      localStorage.setItem('token', response.data.token);
+      // setMessage('Login successful');
+      Swal.fire({
+        title: "Login Successful!",
+        // text: "Login to Your Account to Start Shopping!",
+        confirmButtonColor: "#266431",
+        showClass: {
+          popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+          `,
+        },
+        hideClass: {
+          popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+          `,
+        },
+      }).then(() => {
+        setTimeout(() => {
+          setLoading(false)
+          navigate('/aversa-herbal-products')
+          if (response.data.user.id) {
+            axios
+              .get(`https://aversaherbals.com/api/cart/${response.data.user.id}/`)
+              .then((response) => {
+                // setCartCount(response.data.length);
+                eventBus.emit("cartCountChanged", response.data.length);
+              })
+              .catch((error) => {
+                console.error("Error fetching cart data:", error);
+              });
+          }
+
+        }, 1000);
+      });
+
     } catch (error) {
-      console.error('Error:', error.response.data);
-      setErrors(error.response.data.errors || {});
-      setMessage(error.response.data.message || '');
+      setLoading(false)
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please Enter Correct Login Credentials!",
+        confirmButtonColor: "#266431",
+      });
     }
   };
 
   return (
     <div>
+      {loading && <AdminLoader />}
       <form onSubmit={handleSubmit}>
         {loginData.loginOption === 'email' && (
           <Col className='mb-2'>
@@ -75,7 +125,7 @@ const LoginForm = () => {
         )}
         {message && <div>{message}</div>}
         <div style={{textAlign:"right"}}>
-      <button type="submit" className="see-all-products-button">Login</button>
+      <button type="submit" className="see-all-products-button" style={{width:"200px"}}>Login</button>
       </div>
       </form>
       {/* <div>

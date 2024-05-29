@@ -22,13 +22,13 @@ const BusinessOpportunity = () => {
           your life.
         </p>
       </Container>
-      <div>
+      <div style={{marginTop: "60px"}}>
         <BoSectionOne />
       </div>
-      <div style={{ marginTop: "30px" }}>
+      <div style={{ marginTop: "60px" }}>
         <BoSectionTwo />
       </div>
-      <div style={{ marginTop: "30px" }}>
+      <div style={{ marginTop: "60px" }}>
         <BoSectionThree />
       </div>
     </div>

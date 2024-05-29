@@ -83,25 +83,27 @@ const CartPage = () => {
     state: userData ? userData.state : "",
     zip: userData ? userData.zip : "",
     mobile: userData ? userData.mobile : "",
-    orderStatus: "Order Placed",
+    orderstatus: "Order Placed",
     orderAccepted: false,
-    totalItemsInCart: totalItems,
+    totalitemincart: totalItems,
+    customerID: userId,
+    // orderID: 1,
     subtotalAmountOfProduct: finalAmount,
     shippingCharges: 0,
-    gstCharges: 0,
+    gstcharges: 0,
     razorpayTransactionId: "",
-    finalAmountToPay: finalAmount,
-    cartItems: cartData.map((item) => ({
-      cartItemId: item.id,
-      paidQuantity: item.quantity,
-      giftQuantity: 0,
-      singleProductSellingPrice: item.product.fixed_price,
-      totalPrice: (
+    FinalAmountToPaid: finalAmount,
+    items: cartData.map((item) => ({
+      cartItemid: item.id,
+      paidquantity: item.quantity,
+      giftquantity: 0,
+      singleproductsellingprice: item.product.fixed_price,
+      totalprice: (
         item.product.fixed_price *
         (1 - item.product.available_discount / 100) *
         item.quantity
       ).toFixed(2),
-      productId: item.product.id,
+      product: item.product.id,
     })),
   });
 
@@ -110,17 +112,17 @@ const CartPage = () => {
       ...prevFormData,
       totalItemsInCart: totalItems,
       subtotalAmountOfProduct: finalAmount,
-      cartItems: cartData.map((item) => ({
-        cartItemId: item.id,
-        paidQuantity: item.quantity,
-        giftQuantity: 0,
-        singleProductSellingPrice: item.product.fixed_price,
-        totalPrice: (
+      items: cartData.map((item) => ({
+        cartItemid: item.id,
+        paidquantity: item.quantity,
+        giftquantity: 0,
+        singleproductsellingprice: item.product.fixed_price,
+        totalprice: (
           item.product.fixed_price *
           (1 - item.product.available_discount / 100) *
           item.quantity
         ).toFixed(2),
-        productId: item.product.id,
+        product: item.product.id,
       })),
     }));
   }, [cartData, totalItems, finalAmount]);
@@ -132,10 +134,18 @@ const CartPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const token = localStorage.getItem("token");
+
     try {
       const response = await axios.post(
-        "https://aversaherbals.com/orders/create/",
-        formData
+        "https://aversaherbals.com/api/orders/create/",
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Add the token to the headers
+          },
+        }
       );
       console.log("Response:", response.data);
     } catch (error) {

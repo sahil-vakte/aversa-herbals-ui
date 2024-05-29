@@ -1,180 +1,172 @@
-.aversa-images-of-hexagone{
-    height: 100%;
-    width: 100%;
-    clip-path: polygon(18% 0,100% 0,80% 100%,0 100%);
+.aversa-images-of-hexagone {
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(18% 0, 100% 0, 80% 100%, 0 100%);
 }
 
-.aversa-herbals-head-tag{
-    color: rgb(22,98,51);
-    /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
-    font-size: 3rem;
-    line-height: 1;
-    padding: 9px;
+.aversa-herbals-head-tag {
+  color: rgb(22, 98, 51);
+  /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
+  font-size: 3rem;
+  line-height: 1;
+  padding: 9px;
 }
 
-.aversa-herbals-para-tag-one{
-    /* color: #000000; */
-    color: rgb(22,98,51);;
-    text-align: justify;
-    /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
-    font-size: 1rem;
-    padding: 9px;
+.aversa-herbals-para-tag-one {
+  /* color: #000000; */
+  color: rgb(22, 98, 51);
+  text-align: justify;
+  /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
+  font-size: 1rem;
+  padding: 9px;
 }
 
-.landing-page-section-one-bg{
-    background: linear-gradient(45deg, #c8ffd3, transparent);
+.landing-page-section-one-bg {
+  background: linear-gradient(45deg, #c8ffd3, transparent);
 }
 
-.aversa-product-title{
-    color: white;
-    /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
-    font-size: 2rem;
-    /* text-align: center; */
+.aversa-product-title {
+  color: white;
+  /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
+  font-size: 2rem;
+  /* text-align: center; */
 }
 
-.aversa-prducts-price{
-    /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
-    font-size: 1rem;
-    color: black;
-    margin: 0px;   
+.aversa-prducts-price {
+  /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
+  font-size: 1rem;
+  color: black;
+  margin: 0px;
 }
 
-.see-all-products-button{
-    background-color: rgb(22,98,51);
-    border-radius: 20px;
-    color: white;
-    /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
-    padding: 8px;
-    border: none;
+.see-all-products-button {
+  background-color: rgb(22, 98, 51);
+  border-radius: 20px;
+  color: white;
+  /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
+  padding: 8px;
+  border: none;
 }
 
-.see-all-top-detail-button{
-  background-color: rgb(22,98,51);
-    border-radius: 20px;
-    color: white;
-    /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
-    padding: 8px;
-    border: none;
-    cursor: context-menu;
-    font-size: 13px;
+.see-all-top-detail-button {
+  background-color: rgb(22, 98, 51);
+  border-radius: 20px;
+  color: white;
+  /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
+  padding: 8px;
+  border: none;
+  cursor: context-menu;
+  font-size: 13px;
 }
 
 .registration-page-background {
-    position: relative;
-    width: 100%;
-    min-height: 100vh; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  
-  .registration-page-background::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background-image: url("../Assets/mockup 3.jpg"); */
-    background-size: cover;
-    background-position: center;
-    /* filter: blur(12px); */
-    background-color: #D9D9D9;
-  }
-  
-  .registration-content {
-    z-index: 0; /* Ensure the content is on top of the blurred background */
-    /* background-color: rgb(196 196 196 / 70%); */
-    /* padding-top: 20px; */
-    padding-bottom: 20px;
-   
-  }
-  .regi-stration-from-bg{
-    background-color: white;
-    padding: 20px;
-    border-radius: 15px;
-  }
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.registration-page-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-image: url("../Assets/mockup 3.jpg"); */
+  background-size: cover;
+  background-position: center;
+  /* filter: blur(12px); */
+  background-color: #d9d9d9;
+}
 
+.registration-content {
+  z-index: 0; /* Ensure the content is on top of the blurred background */
+  /* background-color: rgb(196 196 196 / 70%); */
+  /* padding-top: 20px; */
+  padding-bottom: 20px;
+}
+.regi-stration-from-bg {
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+}
 
-  .registration-input-form-input-tag{
-    width: 100%;
-    border: none;
-    padding: 5px;
-  }
-  .registration-input-form-input-tag:focus{
-    outline: none;
-  }
-  .login-page-background {
-    position: relative;
-    width: 100%;
-    min-height: 100vh; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  
-  .login-page-background::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("../Assets/mockup 1.jpg");
-    background-size: cover;
-    background-position: center;
-    filter: blur(12px);
-  }
-  
-  .cart-page-of-aversa-bg{
-    background-color: #8080802b;
-    padding: 30px;
-  }
+.registration-input-form-input-tag {
+  width: 100%;
+  border: none;
+  padding: 5px;
+}
+.registration-input-form-input-tag:focus {
+  outline: none;
+}
+.login-page-background {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .products-page-linear-gradient-bg{
-    background: linear-gradient(45deg, #eec80d, #0dcaf080, #eec80d);
+.login-page-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../Assets/mockup 1.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(12px);
+}
 
-  }
+.cart-page-of-aversa-bg {
+  background-color: #8080802b;
+  padding: 30px;
+}
 
-  .businessopportunity-background{
-    background-image: url("../Assets/businessopportunitybg.webp");
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-  }
+.products-page-linear-gradient-bg {
+  background: linear-gradient(45deg, #eec80d, #0dcaf080, #eec80d);
+}
 
+.businessopportunity-background {
+  background-image: url("../Assets/businessopportunitybg.webp");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
 
+.aversa-herbals-head-tag-business {
+  color: white;
+  font-family: Prata, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+  font-size: 5rem;
+  line-height: 1;
+  padding: 9px;
+}
+.aversa-herbals-head-tag-contact-us {
+  color: rgb(22, 98, 51);
+  font-family: Prata, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+  font-size: 6rem;
+  line-height: 1;
+  padding: 9px;
+}
 
-  .aversa-herbals-head-tag-business{
-    color: white;
-    font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif;
-    font-size: 5rem;
-    line-height: 1;
-    padding: 9px;
-  }
-  .aversa-herbals-head-tag-contact-us{
-    color: rgb(22,98,51);
-    font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif;
-    font-size: 6rem;
-    line-height: 1;
-    padding: 9px;
-  }
+.aversa-images-of-no-hexagone {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+}
 
-  .aversa-images-of-no-hexagone{
-    height: 100%;
-    width: 100%;
-    border-radius: 20px;
-    }
-
-    .landing-page-team-img{
-      width: 100%;
-      max-height: 400px;
-      border-radius: 40px;
-    }
-.branch-image{
+.landing-page-team-img {
+  width: 100%;
+  max-height: 400px;
+  border-radius: 40px;
+}
+.branch-image {
   /* width: 100%; */
   max-height: 400px;
   position: absolute;
@@ -182,7 +174,7 @@
   margin-top: -85px;
 }
 
-.background-video{
+.background-video {
   /* position: absolute; */
   top: 0;
   left: 0;
@@ -194,7 +186,7 @@
   border-bottom-right-radius: 50px;
 }
 
-.landing-page-scroll-product{
+.landing-page-scroll-product {
   display: flex;
   overflow-y: hidden;
   gap: 20px;
@@ -205,62 +197,60 @@
   /* width: 3px;  */
   height: 10px;
   cursor: pointer;
-
 }
 
 .landing-page-scroll-product::-webkit-scrollbar-track {
-  background-color: transparent; 
+  background-color: transparent;
 }
 
 .landing-page-scroll-product::-webkit-scrollbar-thumb {
-  background-color: rgb(22,98,51); 
-  border-radius: 10px; 
+  background-color: rgb(22, 98, 51);
+  border-radius: 10px;
 }
-
 
 .landing-page-scroll-product::-webkit-scrollbar-corner {
-  background-color: transparent; 
+  background-color: transparent;
 }
 
-.web-navbar-advertise-bg{
-  background-color: #AC1F29;
+.web-navbar-advertise-bg {
+  background-color: #ac1f29;
   padding: 5px;
   color: white;
 }
 
-.home-page-advertise-h-tag{
+.home-page-advertise-h-tag {
   font-size: 23px;
   margin: 0px;
   font-family: Koulen;
 }
 
-.business-opportunity-bg-padding{
+.business-opportunity-bg-padding {
   padding-left: 40px;
   padding-right: 40px;
   margin-top: 200px;
 }
-.business-opportunity-bg{
-  background-color: #D9D9D9;
+.business-opportunity-bg {
+  background-color: #d9d9d9;
   padding: 30px;
-  border-top-left-radius: 170px; 
+  border-top-left-radius: 170px;
   border-bottom-right-radius: 170px;
 }
 
-.images-in-business-in-home-page{
+.images-in-business-in-home-page {
   height: 300px;
   width: 80%;
   border-radius: 15px;
   box-shadow: 0 0 5px 1px #266431;
 }
-.images-in-business-in-home-page-h3-tag{
+.images-in-business-in-home-page-h3-tag {
   color: #266431;
   font-family: Century Gothic;
   text-align: center;
   font-weight: 700;
   font-size: 20px;
   padding-top: 10px;
-} 
-.images-in-business-in-home-page-p-tag{
+}
+.images-in-business-in-home-page-p-tag {
   color: #266431;
   font-family: Century Gothic;
   text-align: center;
@@ -271,58 +261,58 @@
   margin-top: -135px;
 }
 
-.add-product-page .form-label{
+.add-product-page .form-label {
   margin: 0px;
   font-weight: 700;
 }
-.add-product-page .form-control{
+.add-product-page .form-control {
   margin-bottom: 15px;
 }
-.add-product-page .btn-primary{
+.add-product-page .btn-primary {
   margin-bottom: 10px;
 }
-.add-product-page .btn-danger{
+.add-product-page .btn-danger {
   margin-bottom: 10px;
 }
 
-.custom-div-in-top-products{
+.custom-div-in-top-products {
   padding-left: 40px;
   padding-right: 40px;
 }
 
-.product-list-product-image{
+.product-list-product-image {
   /* height: 100%;
   width: 100%; */
   height: 400px;
 }
 
-.product-list-product-image-below-div{
+.product-list-product-image-below-div {
   /* background-color: #D9D9D9; */
   background-color: #d9d9d924;
   padding: 10px;
   margin-top: -150px;
   border-radius: 11px;
 }
-.product-list-product-image-below-div-two{
+.product-list-product-image-below-div-two {
   padding-top: 150px;
 }
-.product-list-component-padding{
+.product-list-component-padding {
   padding-left: 25px;
   padding-right: 90px;
 }
-.product-list-product-image-below-div-two h3{
+.product-list-product-image-below-div-two h3 {
   margin: 0px;
   color: #266431;
   font-family: Century Gothic;
   font-weight: 700;
 }
 
-.product-list-product-image-below-div-two p{
+.product-list-product-image-below-div-two p {
   margin: 0px;
-  color: #676D75;
+  color: #676d75;
   font-size: 15px;
 }
-.button-for-add-to-wishlist{
+.button-for-add-to-wishlist {
   width: 100%;
   background-color: transparent;
   border: 1px solid #000000;
@@ -333,7 +323,17 @@
   padding: 5px;
   margin-top: 5px;
 }
-.button-for-add-to-cart{
+.web-navba-profile-screen {
+  position: absolute;
+  top: 60px;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 2.1);
+  padding: 10px;
+  border-radius: 25px;
+}
+.button-for-add-to-cart {
   width: 100%;
   background-color: #000000;
   border: 1px solid #000000;
@@ -345,14 +345,14 @@
   padding: 5px;
   margin-top: 5px;
 }
-.share-button-in-product-details{
-  background-color: #D9D9D9;
+.share-button-in-product-details {
+  background-color: #d9d9d9;
   border-radius: 25px;
   padding: 11px;
   width: fit-content;
 }
 
-.add-to-cart-product-details-btn{
+.add-to-cart-product-details-btn {
   width: 100%;
   padding: 10px;
   background-color: #266431;
@@ -363,7 +363,7 @@
   border-radius: 15px;
   font-weight: 700;
 }
-.add-to-wishlist-product-details-btn{
+.add-to-wishlist-product-details-btn {
   width: 100%;
   padding: 10px;
   background-color: white;
@@ -374,7 +374,7 @@
   border-radius: 15px;
   font-weight: 700;
 }
-.product-details-benefits-div{
+.product-details-benefits-div {
   background-color: #266431;
   color: white;
   text-align: center;
@@ -382,25 +382,25 @@
   padding: 11px;
   /* margin-bottom: 9px; */
 }
-.product-category-card-in-list{
-  background-color: #D9D9D9;
+.product-category-card-in-list {
+  background-color: #d9d9d9;
   padding: 10px;
   border-radius: 11px;
   width: 100%;
 }
 
-.ingredients-image-inproduct-details{
+.ingredients-image-inproduct-details {
   height: 170px;
-  width:170px;
+  width: 170px;
 }
-.ingredients-background-div-in-product-details{
-  background-color: #D9D9D9;
+.ingredients-background-div-in-product-details {
+  background-color: #d9d9d9;
   text-align: center;
   width: fit-content;
   border-radius: 92px;
 }
 
-.product-category-types-p-tag-in-list{
+.product-category-types-p-tag-in-list {
   color: #266431;
   font-weight: 600;
   cursor: pointer;
@@ -413,12 +413,13 @@
   padding: 8px;
 }
 
-.billing-table th, .billing-table td {
+.billing-table th,
+.billing-table td {
   border: 1px solid black;
   padding: 8px;
 }
 
-.billing-table th{
+.billing-table th {
   text-align: center;
 }
 
@@ -426,30 +427,33 @@
   background-color: #f2f2f2;
 }
 
-.product-list-price-span-tag{
+.product-list-price-span-tag {
   font-size: 25px;
   color: black;
   font-weight: 700;
 }
 
-.product-details-main-page-products-detail-naem p{
+.product-details-main-page-products-detail-naem p {
   margin: 0px;
-  color: #676D75;
+  color: #676d75;
   font-size: 15px;
 }
-.registration-form-main-div .form-label{
-margin-bottom: 0px;
-margin-top: 5px;
+.registration-form-main-div .form-label {
+  margin-bottom: 0px;
+  margin-top: 5px;
 }
 
-.register-now-business-opp-btn{
+.register-now-business-opp-btn {
   border: 1px solid #266431;
   background-color: white;
   padding: 5px;
   border-radius: 10px;
   color: #266431;
   min-width: 150px;
+}
 
+.display-mobile-abdul-image {
+  display: none;
 }
 
 /* Container styles */
@@ -491,87 +495,104 @@ margin-top: 5px;
   }
 }
 
-
-    @media screen and (max-width: 768px) {
-      .aversa-herbals-head-tag-business{
-        color: white;
-        font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif;
-        font-size: 3rem;
-        line-height: 1;
-        padding: 9px;
-      }
-      .aversa-herbals-head-tag-contact-us{
-        color: rgb(22,98,51);
-        font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif;
-        font-size: 3rem;
-        text-align: center;
-        line-height: 1;
-        padding: 9px;
-      }
-      .branch-image{
-        display: none;
-      }
-      .business-opportunity-bg-padding{
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-top: 0px;
-      }
-      .business-opportunity-bg .custom-business-opportunity-home-page-row {
-        margin-top: 0px;
-      }
-      .images-in-business-in-home-page{
-        height: 300px;
-        width: 100%;
-        border-radius: 15px;
-      }
-      .business-opportunity-bg{
-        background-color: #D9D9D9;
-        padding: 20px;
-       border-radius: 20px;
-      }
-      .custom-div-in-top-products{
-        padding-left: 5px;
-        padding-right: 5px;
-      }
-.product-list-product-image{
-  height: 350px;
+@media screen and (max-width: 768px) {
+  .aversa-herbals-head-tag-business {
+    color: white;
+    font-family: Prata, ui-serif, Georgia, Cambria, Times New Roman, Times,
+      serif;
+    font-size: 3rem;
+    line-height: 1;
+    padding: 9px;
+  }
+  .aversa-herbals-head-tag-contact-us {
+    color: rgb(22, 98, 51);
+    font-family: Prata, ui-serif, Georgia, Cambria, Times New Roman, Times,
+      serif;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 1;
+    padding: 9px;
+  }
+  .branch-image {
+    display: none;
+  }
+  .business-opportunity-bg-padding {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 0px;
+  }
+  .business-opportunity-bg .custom-business-opportunity-home-page-row {
+    margin-top: 0px;
+  }
+  .images-in-business-in-home-page {
+    height: 300px;
+    width: 100%;
+    border-radius: 15px;
+  }
+  .business-opportunity-bg {
+    background-color: #d9d9d9;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .custom-div-in-top-products {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .product-list-product-image {
+    height: 350px;
+  }
+  .product-list-product-image-below-div {
+    background-color: #d9d9d9;
+    padding: 10px;
+    margin-top: -145px;
+    border-radius: 11px;
+  }
+  .product-list-product-image-below-div-two {
+    padding-top: 140px;
+  }
+  .product-list-component-padding {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .aversa-products-category-sectiopn {
+    display: none;
+  }
+  .share-button-in-product-details {
+    display: none;
+  }
+  .regi-stration-from-bg {
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+  }
+  .cart-page-of-aversa-bg {
+    background-color: #8080802b;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .nav-bar-of-aversa-cart-count-div {
+    display: none;
+  }
+  .business-opp-image-text {
+    display: none;
+  }
+  .non-display-things {
+    display: none;
+  }
+  .display-mobile-abdul-image {
+    display: block;
+  }
+  .web-navba-profile-screen {
+    position: absolute;
+    /* top: 60px; */
+    right: 0;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 2.1);
+    padding: 10px;
+    border-radius: 25px;
+  }
 }
-      .product-list-product-image-below-div{
-        background-color: #D9D9D9;
-        padding: 10px;
-        margin-top: -145px;
-        border-radius: 11px;
-      }
-      .product-list-product-image-below-div-two{
-        padding-top: 140px;
-      }
-      .product-list-component-padding{
-        padding-left: 25px;
-        padding-right: 25px;
-      }
-      .aversa-products-category-sectiopn{
-        display: none;
-      }
-      .share-button-in-product-details{
-        display: none;
-      }
-      .regi-stration-from-bg{
-        background-color: white;
-        padding: 10px;
-        border-radius: 15px;
-      }
-      .cart-page-of-aversa-bg{
-        background-color: #8080802b;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 0px;
-        padding-right: 0px;
-      }
-      .nav-bar-of-aversa-cart-count-div{
-        display: none;
-      }
-      .business-opp-image-text{
-        display: none;
-      }
-    }
-  

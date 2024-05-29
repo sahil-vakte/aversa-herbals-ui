@@ -17,6 +17,7 @@ import CartPage from "../Components/CartPage/CartPage";
 import PrivacyPolicy from "../Components/Policies/PrivacyPolicy";
 import RefundandCancellation from "../Components/Policies/RefundandCancellation";
 import ShippingPolicy from "../Components/Policies/ShippingPolicy";
+import MyOrdersPage from "../Container/MyOrdersPage/MyOrdersPage";
 
 const WebRoutes = () => {
   function ScrollToTop() {
@@ -50,6 +51,7 @@ const WebRoutes = () => {
         <Route path="/aversa-herbal-privacy-policy" element=<PrivacyPolicy/> />
         <Route path="/aversa-herbal-refund-and-cancellation-policy" element=<RefundandCancellation/> />
         <Route path="/aversa-herbal-shipping-policy" element=<ShippingPolicy/> />
+        <Route path="/aversa-herbal-my-orders-page" element=<MyOrdersPage/> />
         {/* <Route path="/aversa-herbal-login" element=<PaymentForm/> /> */}
       </Routes>
     </div>

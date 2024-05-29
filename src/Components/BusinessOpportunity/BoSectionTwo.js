@@ -5,7 +5,7 @@ import UserImageDiscuss from "../../Assets/300-SM1085970 1.png"
 
 const BoSectionTwo = () => {
   return (
-    <div>
+    <div >
         <Container>
       
             <Row className="align-items-center">
