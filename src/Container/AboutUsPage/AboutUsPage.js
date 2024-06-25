@@ -7,8 +7,6 @@ const AboutUsPage = () => {
     <div>
       <div>
         <AboutSectionOne />
-      </div>
-      <div style={{ marginTop: "30px" }}>
         <AboutSectionTwo />
       </div>
     </div>

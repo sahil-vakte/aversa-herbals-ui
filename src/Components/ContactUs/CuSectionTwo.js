@@ -1,89 +1,72 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
-import { FaPhone,FaLocationDot  } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
+import { Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
+import bottomimgaboutcontact from "../../Assets/bottomimgaboutcontact.jpeg";
 
 const CuSectionTwo = () => {
   return (
-    <div className="products-page-linear-gradient-bg" style={{paddingTop:"20px",paddingBottom:"20px"}}>
-      <Container>
-        <Row>
-          <Col sm={5}>
-            <h1 className="aversa-herbals-head-tag">​​We’re here to help.​</h1>
-            <p className="aversa-herbals-para-tag-one">
-              Whether you have product questions or an interest in the Herbalife
-              business opportunity, we encourage you to reach out to your local
-              Herbalife Independent Associate. They are dedicated to answering
-              your questions and providing you with the personalised support you
-              need.
-              <br />
-              <br />
-              We also understand that you may need to contact Herbalife directly
-              for a question. Here’s how to connect with your local Herbalife
-              Customer Service.             
-            </p>
-          </Col>
-          <Col sm={1}></Col>
-          <Col sm={6}>
-            <div style={{ borderBottom: "2px solid gray" }}>
-              <h1
-                className="aversa-herbals-head-tag"
-                style={{ fontSize: "2rem" }}
-              >
-                <FaPhone /> Telephone
-              </h1>
-              <p className="aversa-herbals-para-tag-one"  onClick={() => {
-                  window.location.href = "tel:+919733242832";
-                }}>
-              +91 97332 42832
-                <br />
-                Monday - Saturday | 10a.m. - 6p.m. India Standard Time
-                            
-              </p>
+    <div className="border-[2px] border-green-700 rounded-lg w-[75em] flex m-auto">
+      <Row className="flex items-center justify-between">
+        <Col sm={4} className="">
+          <img
+            src={bottomimgaboutcontact}
+            alt=""
+            className="w-[30em] h-[30em]"
+          />
+        </Col>
+        <Col sm={6}>
+          <p className="text-3xl sm:text-4xl md:text-1xl font-bold mb-6">
+            Join Us
+          </p>
+          <p className="text-base sm:text-sm">
+            Discover the benefits of Aversa Herbals and join our mission to
+            empower dreams and transform lives. Together, we can achieve
+            holistic well-being and financial freedom for all.
+          </p>
+          <div className="flex justify-center gap-8 py-2">
+            <div className="sm:col-span-3">
+              <div className="mt-2">
+                <input
+                  type="text"
+                  className="border-[1px] border-green-800 p-2 rounded-lg w-full"
+                  placeholder="Name *"
+                />
+              </div>
             </div>
-            <div style={{ borderBottom: "2px solid gray" }}>
-              <h1
-                className="aversa-herbals-head-tag"
-                style={{ fontSize: "2rem" }}
-              >
-                <MdEmail /> Email
-              </h1>
-              <p className="aversa-herbals-para-tag-one">
-              Your satisfaction is everything to Herbalife, and that's why we want to be sure you receive accurate, personalised answers. As email responses can often be short, unsatisfying or incomplete, we choose to focus on meaningful customer service, preferably through a personal conversation with Herbalife Head Office or your local Herbalife Independent Associate.
-                <br />
-                <br />
-                If you have a marketing inquiry or idea you’d like to share, email us 
-                <br />
-                at <span  
-                style={{cursor:"pointer",color:"blue"}}
-                onClick={() => {
-                  window.location.href = "mailto:info@aversaherbals.com";
-                }}>
 
-                info@aversaherbals.com
-                </span>
-                            
-              </p>
+            <div className="sm:col-span-3">
+              <div className="mt-2">
+                <input
+                  type="text"
+                  className="border-[1px] border-green-800 p-2 rounded-lg w-full"
+                  placeholder="Phone *"
+                />
+              </div>
             </div>
-            <div>
-              <h1
-                className="aversa-herbals-head-tag"
-                style={{ fontSize: "2rem" }}
-              >
-                <FaLocationDot  /> Head Office
-              </h1>
-              <p className="aversa-herbals-para-tag-one">
-              
-                Plot No - 368, Niti Khand - 1,
-Indira Puram, Ghaziabad
-                <br />
-Uttar Pradesh - 201014
-                            
-              </p>
+          </div>
+          <div className="flex justify-center gap-8 py-2">
+            <div className="sm:col-span-3">
+              <div className="mt-2">
+                <input
+                  type="text"
+                  className="border-[1px] border-green-800 p-2 rounded-lg w-full"
+                  placeholder="Your Email Address *"
+                />
+              </div>
             </div>
-          </Col>
-        </Row>
-      </Container>
+
+            <div className="sm:col-span-3">
+              <div className="mt-2">
+                <input
+                  type="text"
+                  className="border-[1px] border-green-800 p-2 rounded-lg w-full"
+                  placeholder="Location/Place"
+                />
+              </div>
+            </div>
+          </div>
+        </Col>
+      </Row>
     </div>
   );
 };

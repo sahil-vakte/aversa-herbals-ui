@@ -12,7 +12,8 @@ const SectionTwo = () => {
         <Row>
           <Col sm={6}>
             <h1 className="aversa-herbals-head-tag">
-            <span style={{fontWeight:"400"}}>Welcome to </span><br/> 
+              <span style={{ fontWeight: "400" }}>Welcome to </span>
+              <br />
               <b>Aversa Herbals,</b>
             </h1>
             <p className="aversa-herbals-head-tag">
@@ -39,15 +40,15 @@ const SectionTwo = () => {
               every individual we touch.
             </p>
             <div style={{ textAlign: "right" }}>
-        <Link to="/aversa-herbal-products">
-          <button className="see-all-products-button">
-            More About Us{" "}
-            <IoIosArrowDropright
-              style={{ color: "white", height: "20px", width: "20px" }}
-            />
-          </button>
-          </Link>
-        </div>
+              <Link to="/aversa-herbal-products">
+                <button className="see-all-products-button">
+                  More About Us{" "}
+                  <IoIosArrowDropright
+                    style={{ color: "white", height: "20px", width: "20px" }}
+                  />
+                </button>
+              </Link>
+            </div>
           </Col>
         </Row>
       </Container>
