@@ -486,6 +486,101 @@
   animation: scroll 15s linear infinite; /* Adjust duration and timing function as needed */
 }
 
+/* ak styles css */
+
+.aversa-herbals-head-tag {
+  font-size: 48px;
+  color: #266431;
+  line-height: 51px;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+.aversa-herbals-para-tag-one {
+  font-size: 21px;
+  color: #266431;
+  margin-top: -20px;
+}
+
+.contact-us-icon {
+  width: 91.81px;
+  height: 91.82px;
+  /* top: 10.6px;
+left: 10.59px; */
+  gap: 0px;
+  border: 6.25px 0px 0px 0px;
+  opacity: 0px;
+}
+.icon-texts {
+  font-family: Century Gothic;
+  font-size: 21px;
+  font-style: italic;
+  font-weight: 400;
+  color: #676d75;
+
+  text-align: center;
+}
+
+.icon-texts-text {
+  font-family: Century Gothic;
+  color: #676d75;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 7px;
+  text-align: center;
+}
+.icon-div-conact-us {
+  display: flex;
+  align-items: center;
+}
+.about-section-heading {
+  font-family: Inter;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 51px;
+  text-align: left;
+  color: #266431;
+}
+
+.about-sub-heading {
+  font-family: Century Gothic;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 58.85px;
+  text-align: left;
+  color: #266431ad;
+}
+.para-sub-heading-about {
+  font-family: Century Gothic;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28.2px;
+  text-align: left;
+  color: #676d75;
+}
+.title-cu {
+  position: absolute;
+  top: 93%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 5rem;
+  width: 41%;
+  font-style: italic;
+}
+.title-about {
+  position: absolute;
+  top: 95%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 5rem;
+  width: 41%;
+  font-style: italic;
+}
+
 @keyframes scroll {
   from {
     transform: translateX(0); /* Start from initial position */
@@ -594,5 +689,41 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 2.1);
     padding: 10px;
     border-radius: 25px;
+  }
+
+  /* akash css */
+  .first-row-contact {
+    /* width: 100%; */
+    padding: 0.5em;
+    margin: 0;
+    border-radius: 5px;
+  }
+  .title-cu {
+    top: 98%;
+    left: 60%;
+    font-size: 2.2rem;
+  }
+  .map {
+    width: 100%;
+    height: 500px;
+  }
+  .container-for-contact {
+    width: 100%;
+    padding: 0.5em;
+    margin: 0;
+    border-radius: 5px;
+  }
+  .icons-row {
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+  .action-btn-contact {
+    margin-left: 10%;
+  }
+  .title-about {
+    top: 98%;
+    left: 60%;
+    font-size: 2.2rem;
   }
 }

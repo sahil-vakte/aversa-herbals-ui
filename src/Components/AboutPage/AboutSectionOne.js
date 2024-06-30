@@ -17,30 +17,13 @@ const AboutSectionOne = () => {
   return (
     <>
       <Row>
-        <Col
-          className=""
-          style={{ position: "relative", display: "inline-block" }}
-        >
+        <Col className="relative inline-block">
           <img
             src={aboutusimage}
             alt=""
-            style={{ height: "20em", width: "100%" }}
-            className="object-cover"
+            className="object-cover w-full h-80 sm:h-96 md:h-112 lg:h-128"
           />
-          <h1
-            className="aversa-herbals-head-tag sm:text-3xl sm:[top:0, left:0] md:text-4xl lg:text-5xl italic"
-            style={{
-              position: "absolute",
-              top: "93%",
-              left: "80%",
-              transform: "translate(-50%, -50%)",
-              color: "white",
-              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
-              fontSize: "5rem",
-              width: "32%",
-              fontStyle: "italic",
-            }}
-          >
+          <h1 className="title-cu sm:text-3xl sm:[top:0, left:0] md:text-4xl lg:text-5xl italic">
             About Us
           </h1>
         </Col>
@@ -96,7 +79,7 @@ const AboutSectionOne = () => {
           </Col>
         </Row>
         <Row>
-          <p className="text-3xl sm:text-4xl md:text-1xl font-bold mb-6">
+          <p className="about-section-heading sm:text-4xl md:text-1xl font-bold mb-6 ">
             Our Story
           </p>
         </Row>
@@ -112,20 +95,20 @@ const AboutSectionOne = () => {
           </Col>
           <Col sm={4}>
             <div className="contain-text-para-for-founding-vision">
-              <h3 className="text-xl sm:text-2xl font-semibold mb-2">
+              <h3 className="text-xl sm:text-2xl  mb-2 about-sub-heading">
                 Founding Vision
               </h3>
-              <p className="font-medium mb-4">Rahul J.Jha</p>
-              <p className="text-base sm:text-lg">
+              <p className="font-bold text-xl mb-4">Rahul J.Jha</p>
+              <p className="text-base sm:text-lg para-sub-heading-about">
                 The inception of Aversa Herbals was driven by the vision of
-                Rahul K. Jha, whose innovative approach transformed the direct
-                selling industry.
+                &nbsp;<b>Rahul K. Jha</b>, whose innovative approach transformed
+                the direct selling industry.
                 <br />
                 <br />
-                This vision has been further expanded and shaped by Dr. Vikas
-                Sharma, Chairman of the Aversa Group. Their leadership has
-                guided Aversa Herbals to new heights, making it a trusted name
-                in herbal healthcare.
+                This vision has been further expanded and shaped by{" "}
+                <b>Dr. Vikas Sharma </b>, Chairman of the Aversa Group. Their
+                leadership has guided Aversa Herbals to new heights, making it a
+                trusted name in herbal healthcare.
               </p>
             </div>
           </Col>
@@ -133,22 +116,23 @@ const AboutSectionOne = () => {
         <Row className="container-for-our-story flex justify-center gap-12 items-center py-12">
           <Col sm={4}>
             <div className="contain-text-para-for-founding-vision">
-              <h2 className="text-xl sm:text-2xl font-semibold mb-2">
+              <h2 className="text-xl sm:text-2xl font-semibold mb-2 about-sub-heading">
                 Growth and Expansion
               </h2>
-              <p className="font-medium mb-4">Rahul J.Jha</p>
-              <p className="text-base sm:text-lg">
-                Under the leadership of MD Urvashi Pathak, Dr. Vikas Sharma, and
-                Rahul K. Jha, Aversa Herbals has grown exponentially. <br />
+
+              <p className="text-base sm:text-lg para-sub-heading-about">
+                Under the leadership of <b>MD Urvashi Pathak </b>,{" "}
+                <b>Dr. Vikas Sharma </b>, and <b> Rahul K. Jha </b>, Aversa
+                Herbals has grown exponentially. <br />
                 <br />
-                We have not only made a significant impact in India but are also
-                expanding our reach to neighboring countries like Bhutan and
-                Nepal.
+                We have not only made a significant impact in <b> India </b> but
+                are also expanding our reach to neighboring countries like
+                <b> Bhutan </b> and <b> Nepal </b>.
                 <br />
                 <br />
-                With more than 65+ products catering to diverse health needs, we
-                are opening doors to endless possibilities and empowering people
-                to unlock their full potential.
+                With more than <b> 65+ products </b> catering to diverse health
+                needs, we are opening doors to endless possibilities and
+                empowering people to unlock their full potential.
               </p>
             </div>
           </Col>{" "}
@@ -174,12 +158,12 @@ const AboutSectionOne = () => {
           </Col>
           <Col sm={4}>
             <div className="contain-text-para-for-founding-vision">
-              <h3 className="text-xl sm:text-2xl font-semibold mb-4">
+              <h3 className="about-sub-heading text-xl sm:text-2xl font-semibold mb-4">
                 Leadership Team
               </h3>
               <h2 className="font-medium ">DR. Vikas Sharma</h2>
-              <p>Occupation</p>
-              <p className="text-base sm:text-lg">
+              <p className="para-sub-heading-about">Occupation</p>
+              <p className="text-base sm:text-lg para-sub-heading-about">
                 An alumnus of Government JIWAJI University, Dr. Sharma's deep
                 understanding of Ayurveda and herbal medicines was shaped during
                 his tenure in BAMS.
@@ -195,8 +179,10 @@ const AboutSectionOne = () => {
           <Col sm={4}>
             <div className="contain-text-para-for-founding-vision">
               <h2 className="font-medium">MD Urvashi Pathak</h2>
-              <p className=" mb-4">M.Sc. Clinical Research</p>
-              <p className="text-base sm:text-lg">
+              <p className=" mb-4 para-sub-heading-about">
+                M.Sc. Clinical Research
+              </p>
+              <p className="text-base sm:text-lg para-sub-heading-about">
                 Born to an Army serving father and currently residing in
                 Indirapuram, Ghaziabad, Urvashi Pathak completed her schooling
                 from K.V. and higher studies from Patiala University, Punjab.
@@ -233,22 +219,23 @@ const AboutSectionOne = () => {
           <Col sm={4}>
             <div className="contain-text-para-for-founding-vision">
               <h2 className="font-medium">Rahul K. Jha</h2>{" "}
-              <p className="mb-4">founder and CMO </p>
-              <p className="text-base sm:text-lg">
-                The founder whose vision laid the foundation for Aversa Herbals’
-                success and transformation in the direct selling landscape.
+              <p className="mb-4 para-sub-heading-about">founder and CMO </p>
+              <p className="text-base sm:text-lg para-sub-heading-about">
+                The founder whose vision laid the foundation for{" "}
+                <b>Aversa Herbals’</b>&nbsp; success and transformation in the
+                direct selling landscape.
               </p>
             </div>
           </Col>
         </Row>
         <Row className="py-4">
-          <p className="text-3xl sm:text-4xl md:text-1xl font-bold mb-6">
+          <p className=" about-sub-heading text-3xl sm:text-4xl md:text-1xl font-bold mb-6">
             Our Mission
           </p>
         </Row>
         <Row>
           <Col sm={8}>
-            <p className="text-base sm:text-lg">
+            <p className="text-base sm:text-lg para-sub-heading-about">
               Aversa Herbals aims to empower individuals by providing a platform
               for personal and professional growth. We are driven by a passion
               to help people take charge of their destiny, unlock their full
@@ -258,13 +245,13 @@ const AboutSectionOne = () => {
           </Col>
         </Row>
         <Row className="py-4">
-          <p className="text-3xl sm:text-4xl md:text-1xl font-bold mb-6">
+          <p className="about-sub-heading text-3xl sm:text-4xl md:text-1xl font-bold mb-6">
             Our Commitment
           </p>
         </Row>
         <Row className="py-4">
           <Col sm={12}>
-            <div className="w-full">
+            <div className="w-full para-sub-heading-about">
               <ol className="space-y-2">
                 <ListItem
                   count={1}
@@ -301,8 +288,8 @@ const ListItem = ({ count, text1, text2 }) => {
           </span>
         </p>
         <section>
-          <h5>{text1}</h5>
-          <p>{text2}</p>
+          <h5 className="font-bold">{text1}</h5>
+          <p className="text-base">{text2}</p>
         </section>
       </div>
     </>
