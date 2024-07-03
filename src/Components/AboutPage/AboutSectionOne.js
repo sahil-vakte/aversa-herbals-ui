@@ -83,17 +83,18 @@ const AboutSectionOne = () => {
             Our Story
           </p>
         </Row>
-        <Row className="container-for-our-story flex justify-center gap-12 items-center py-12">
-          <Col sm={4}>
-            <div className="contain-image-for-founding-vision flex items-center justify-center">
+        <Row className="align-items-center">
+          <Col sm={6}>
+            <div className="contain-image-for-founding-vision ">
               <img
                 src={foundingvison}
+                style={{ borderRadius: "11px" }}
                 alt="Contact Us"
-                className="w-full sm:w-[30em]"
+                className="w-full sm:w-[30em] h-[500px] "
               />
             </div>
           </Col>
-          <Col sm={4}>
+          <Col sm={6}>
             <div className="contain-text-para-for-founding-vision">
               <h3 className="text-xl sm:text-2xl  mb-2 about-sub-heading">
                 Founding Vision
@@ -113,8 +114,8 @@ const AboutSectionOne = () => {
             </div>
           </Col>
         </Row>
-        <Row className="container-for-our-story flex justify-center gap-12 items-center py-12">
-          <Col sm={4}>
+        <Row className="align-items-center">
+          <Col sm={6}>
             <div className="contain-text-para-for-founding-vision">
               <h2 className="text-xl sm:text-2xl font-semibold mb-2 about-sub-heading">
                 Growth and Expansion
@@ -136,27 +137,32 @@ const AboutSectionOne = () => {
               </p>
             </div>
           </Col>{" "}
-          <Col sm={4}>
-            <div className="contain-image-for-founding-vision flex items-center justify-center">
+          <Col sm={6}>
+            <div
+              className="contain-image-for-founding-vision  "
+              style={{ display: "flex", justifyContent: "end" }}
+            >
               <img
                 src={growthandexpansion}
+                style={{ borderRadius: "11px" }}
                 alt="Contact Us"
-                className="w-full sm:w-[30em]"
+                className="w-full sm:w-[30em] h-[500px] "
               />
             </div>
           </Col>
         </Row>
-        <Row className="container-for-our-story flex justify-center gap-12 items-center py-12">
-          <Col sm={4}>
-            <div className="contain-image-for-founding-vision flex items-center justify-center">
+        <Row className="align-items-center">
+          <Col sm={6}>
+            <div className="contain-image-for-founding-vision ">
               <img
                 src={drvikassharma}
+                style={{ borderRadius: "11px" }}
                 alt="Contact Us"
-                className="w-full sm:w-[30em]"
+                className="w-full sm:w-[30em] h-[500px] "
               />
             </div>
           </Col>
-          <Col sm={4}>
+          <Col sm={6}>
             <div className="contain-text-para-for-founding-vision">
               <h3 className="about-sub-heading text-xl sm:text-2xl font-semibold mb-4">
                 Leadership Team
@@ -175,8 +181,8 @@ const AboutSectionOne = () => {
             </div>
           </Col>
         </Row>
-        <Row className="container-for-our-story flex justify-center gap-12 items-center py-12">
-          <Col sm={4}>
+        <Row className="align-items-center">
+          <Col sm={6}>
             <div className="contain-text-para-for-founding-vision">
               <h2 className="font-medium">MD Urvashi Pathak</h2>
               <p className=" mb-4 para-sub-heading-about">
@@ -196,27 +202,32 @@ const AboutSectionOne = () => {
               </p>
             </div>
           </Col>
-          <Col sm={4}>
-            <div className="contain-image-for-founding-vision flex items-center justify-center">
+          <Col sm={6}>
+            <div
+              className="contain-image-for-founding-vision "
+              style={{ display: "flex", justifyContent: "end" }}
+            >
               <img
                 src={urvashipathak}
+                style={{ borderRadius: "11px" }}
                 alt="Contact Us"
-                className="w-full sm:w-[30em]"
+                className="w-full sm:w-[30em] h-[500px] "
               />
             </div>
           </Col>
         </Row>
-        <Row className="container-for-our-story flex justify-center gap-12 items-center py-12">
-          <Col sm={4}>
-            <div className="contain-image-for-founding-vision flex items-center justify-center">
+        <Row className="align-items-center">
+          <Col sm={6}>
+            <div className="contain-image-for-founding-vision ">
               <img
                 src={rahulkjha}
+                style={{ borderRadius: "11px" }}
                 alt="Contact Us"
-                className="w-full sm:w-[30em]"
+                className="w-full sm:w-[30em] h-[500px] "
               />
             </div>
           </Col>
-          <Col sm={4}>
+          <Col sm={6}>
             <div className="contain-text-para-for-founding-vision">
               <h2 className="font-medium">Rahul K. Jha</h2>{" "}
               <p className="mb-4 para-sub-heading-about">founder and CMO </p>

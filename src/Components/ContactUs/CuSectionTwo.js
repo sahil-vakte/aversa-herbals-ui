@@ -5,7 +5,7 @@ import bottomimgaboutcontact from "../../Assets/bottomimgaboutcontact.jpeg";
 
 const CuSectionTwo = () => {
   return (
-    <div className="border-2 border-green-700 rounded-lg w-full max-w-6xl flex flex-col sm:flex-row m-auto p-4">
+    <div className="border-2 border-green-700 rounded-lg w-full max-w-7xl flex flex-col sm:flex-row m-auto p-4">
       <Row className="flex items-center justify-between w-full">
         <Col sm={4} className="flex justify-center">
           <img
