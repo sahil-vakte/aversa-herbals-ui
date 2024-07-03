@@ -1,11 +1,11 @@
 import React from "react";
-import StartYourBusinessImage from "../../Assets/Group 69940start your bussiness.svg";
-import StartYourBusinessImagetwo from "../../Assets/Group 69946start your bussiness 2.svg";
-import BackendSupport from "../../Assets/Group 69933back end support 1.svg";
+import StartYourBusinessImage from "../../Assets/Group 69940start your bussiness.png";
+import StartYourBusinessImagetwo from "../../Assets/Group 69946start your bussiness 2.png";
+import BackendSupport from "../../Assets/Group 69933.png";
 import BackendSupport2 from "../../Assets/Group 69932.svg";
-import AbdulKalam from "../../Assets/Group 69925pro. prespective final 2 1abdul kalam jii.svg";
 import AbdulKalam2 from "../../Assets/abdul-kalam-small.png";
-import benefitsOfDirectSelling from "../../Assets/benefitsofds.svg";
+import benefitsOfDirectSelling1 from "../../Assets/Group 70053@2x.png";
+import benefitsOfDirectSelling2 from "../../Assets/Group 70054@2x.png";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { IoCall } from "react-icons/io5";
@@ -17,11 +17,10 @@ const BoSectionThree = () => {
         <img src={StartYourBusinessImage} style={{ width: "100%" }} />
       </div>
       <Container>
-     
         <div style={{ marginTop: "60px" }}>
           <img src={StartYourBusinessImagetwo} style={{ width: "100%" }} />
         </div>
-       
+
         <div style={{ marginTop: "60px" }}>
           <Row>
             <Col sm={5}>
@@ -64,22 +63,33 @@ const BoSectionThree = () => {
         </div>
       </Container>
 
-      <div>
-        <img
-          src={AbdulKalam}
-          alt=""
-          style={{ width: "100%" }}
-          className="non-display-things"
-        />
+      <div style={{ padding: "0 160px" }}>
         <img
           src={AbdulKalam2}
           alt=""
           style={{ width: "100%" }}
-          className="display-mobile-abdul-image"
+          className="non-display-things"
         />
+        {/* <img
+          src={AbdulKalam2}
+          alt=""
+          style={{ width: "100%" }}
+          className="display-mobile-abdul-image"
+        /> */}
       </div>
-      <div style={{ marginTop: "60px" }}>
-        <img src={benefitsOfDirectSelling} style={{ width: "100%" }}/>
+      <div
+        style={{
+          marginTop: "60px",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <div>
+          <img src={benefitsOfDirectSelling1} style={{ width: "100%" }} />
+        </div>
+        <div>
+          <img src={benefitsOfDirectSelling2} style={{ width: "100%" }} />
+        </div>
       </div>
     </div>
   );
