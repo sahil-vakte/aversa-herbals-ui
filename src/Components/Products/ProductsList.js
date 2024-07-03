@@ -93,7 +93,6 @@ const ProductsList = () => {
     }
   }, [userId, fetchApiData]);
 
-
   const handleAddToCart = (productId) => {
     const userId = localStorage.getItem("userId");
 
@@ -186,7 +185,13 @@ const ProductsList = () => {
                     products.map((index) => (
                       <Col sm={4} className="mb-5">
                         <div>
-                          <div style={{ textAlign: "center" }}>
+                          <div
+                            style={{
+                              textAlign: "center",
+                              display: "flex",
+                              justifyContent: "center",
+                            }}
+                          >
                             <img
                               className="product-list-product-image"
                               src={index.image1}

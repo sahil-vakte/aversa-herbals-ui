@@ -136,8 +136,9 @@ const ProductDetailsPage = () => {
   const isProductInCart = cartData.some(
     (item) => item.product.id === ProductDetails?.id
   );
-  const cartItem = cartData.find((item) => item.product.id === ProductDetails?.id);
-
+  const cartItem = cartData.find(
+    (item) => item.product.id === ProductDetails?.id
+  );
 
   return (
     <div style={{ paddingTop: "30px" }}>
@@ -152,6 +153,8 @@ const ProductDetailsPage = () => {
                 borderRadius: "29px",
                 width: "100%",
                 textAlign: "center",
+                display: "flex",
+                justifyContent: "center",
               }}
             >
               {ProductDetails && (
@@ -191,58 +194,66 @@ const ProductDetailsPage = () => {
                 </p>
               </div>
             </div>
-            {isProductInCart &&
-            <>
-            <div
-              style={{
-                backgroundColor: "#D9D9D9",
-                padding: "10px",
-                borderRadius: "11px",
-                maxWidth: "150px",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-              className="mt-3"
-            >
-            <FiMinusCircle
-                style={{
-                  color: "#266431",
-                  fontSize: "25px",
-                  cursor: "pointer",
-                }}
-                onClick={() => {
-                  const cartItem = cartData.find(
-                    (item) => item.product.id === ProductDetails.id
-                  );
-                  handleUpdateProductQuantity(cartItem.id, -1);
-                }}
-              />
-              
-              <p style={{ margin: "0px", color: "#50565E", fontSize: "18px" }}>
-              {cartItem.quantity}
-              </p>
-              <FiPlusCircle
-                style={{
-                  color: "#266431",
-                  fontSize: "25px",
-                  cursor: "pointer",
-                }}
-                onClick={() => {
-                  const cartItem = cartData.find(
-                    (item) => item.product.id === ProductDetails.id
-                  );
-                  handleUpdateProductQuantity(cartItem.id, 1);
-                }}
-              />
-              
-            </div>
-            
-            <p>
-          Subtotal : ₹ {(parseFloat(calculateSellingPrice()) * cartItem.quantity).toFixed(2)}
-        </p>
-        </>
-            }
+            {isProductInCart && (
+              <>
+                <div
+                  style={{
+                    backgroundColor: "#D9D9D9",
+                    padding: "10px",
+                    borderRadius: "11px",
+                    maxWidth: "150px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                  className="mt-3"
+                >
+                  <FiMinusCircle
+                    style={{
+                      color: "#266431",
+                      fontSize: "25px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => {
+                      const cartItem = cartData.find(
+                        (item) => item.product.id === ProductDetails.id
+                      );
+                      handleUpdateProductQuantity(cartItem.id, -1);
+                    }}
+                  />
+
+                  <p
+                    style={{
+                      margin: "0px",
+                      color: "#50565E",
+                      fontSize: "18px",
+                    }}
+                  >
+                    {cartItem.quantity}
+                  </p>
+                  <FiPlusCircle
+                    style={{
+                      color: "#266431",
+                      fontSize: "25px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => {
+                      const cartItem = cartData.find(
+                        (item) => item.product.id === ProductDetails.id
+                      );
+                      handleUpdateProductQuantity(cartItem.id, 1);
+                    }}
+                  />
+                </div>
+
+                <p>
+                  Subtotal : ₹{" "}
+                  {(
+                    parseFloat(calculateSellingPrice()) * cartItem.quantity
+                  ).toFixed(2)}
+                </p>
+              </>
+            )}
             <div className="mt-3">
               <Row>
                 <Col sm={6} className="mt-3">

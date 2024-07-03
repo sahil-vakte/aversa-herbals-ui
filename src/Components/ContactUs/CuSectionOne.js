@@ -23,10 +23,7 @@ const CuSectionOne = () => {
             }}
             className="object-cover"
           />
-          <h1
-            className="title-cu sm:text-3xl sm:[top:0, left:0] md:text-4xl lg:text-5xl italic"
-            
-          >
+          <h1 className="title-cu sm:text-3xl sm:[top:0, left:0] md:text-4xl lg:text-5xl italic">
             Contact Us
           </h1>
         </Col>
@@ -45,123 +42,110 @@ const CuSectionOne = () => {
         </p>
       </Row>
       <Container className="container-for-contact">
-        <Row className="flex justify-center">
-          <Col sm={12} className="grid items-center justify-center text-center">
-            <h1 className="aversa-herbals-head-tag ">How Can We Assist You?​</h1>
+        <Row className="">
+          <Col sm={12} className="grid items-center  text-center">
+            <h1 className="aversa-herbals-head-tag ">
+              How Can We Assist You?​
+            </h1>
             <p className="aversa-herbals-para-tag-one text-center">
               Feel free to reach out to us at your convenience.
             </p>
           </Col>
         </Row>
         <div className="action-btn-contact">
-          
-        
-        <Row className="icons-row flex justify-center items-center text-[rgb(22,98,51)] ">
-          <Col sm={3}>
-            <div
-              style={{
-                border: "1px solid gray",
-                padding: "3em",
-                borderRadius: "0.5em",
-                height: "18em",
-                width: "18em",
-              }}
-              className="flex flex-col gap-4 justify-center text-center items-center"
-            >
-              <h1 className="grid justify-center items-center">
-                <FaPhone className="contact-us-icon" />
-              </h1>
-
-              <section>
-                
-
-                <i className="icon-texts">Talk to us</i>
-                <br />
-               
-                <b
-                  className="icon-texts-text"
-                  onClick={() => {
-                    window.location.href = "tel:+91 97332 42832 ";
-                  }}
-                >
-                  +91 97332 42832
-                </b>
-                <br />
-                <p className="icon-texts-text">All Days (11:00AM -06:00PM)</p>
-              </section>
-            </div>
-          </Col>
-           <Col sm={3}>
-            <div
-              style={{
-                border: "1px solid gray",
-                padding: "3em",
-                borderRadius: "0.5em",
-                height: "18em",
-                width: "18em",
-              }}
-              className="flex flex-col gap-4 justify-center text-center items-center"
-            >
-              <h1
-                className="grid justify-center items-center"
-               
-              >
-                <MdEmail  className="contact-us-icon" />
-              </h1>
-              
-              <span>
-                <i className="icon-texts">Write E-mail to us</i>
-                <br />
-
-              <b className="icon-texts-text"
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  window.location.href = "mailto:info@aversaherbals.com";
+          <Row className="icons-row flex justify-center items-center text-[rgb(22,98,51)] ">
+            <Col sm={4}>
+              <div
+                style={{
+                  border: "1px solid gray",
+                  padding: "3em",
+                  borderRadius: "0.5em",
+                  height: "18em",
+                  width: "100%",
                 }}
+                className="flex flex-col gap-4 justify-center text-center items-center"
               >
-                info@aversaherbals.com
-              </b>
-              <p style={{display:""}}>.</p>
-              </span>
-            </div>
-          </Col>
-          <Col sm={3}>
-            <div
-              style={{
-                border: "1px solid gray",
-                padding: "2em",
-                borderRadius: "0.5em",
-                height: "18em",
-                width: "18em",
-              }}
-              className="flex flex-col gap-4 justify-center text-center items-center"
-            >
-              <h1
-                className="grid justify-center items-center"
-              
+                <h1 className="grid justify-center items-center">
+                  <FaPhone className="contact-us-icon" />
+                </h1>
+
+                <section>
+                  <i className="icon-texts">Talk to us</i>
+                  <br />
+
+                  <b
+                    className="icon-texts-text"
+                    onClick={() => {
+                      window.location.href = "tel:+91 97332 42832 ";
+                    }}
+                  >
+                    +91 97332 42832
+                  </b>
+                  <br />
+                  <p className="icon-texts-text">All Days (11:00AM -06:00PM)</p>
+                </section>
+              </div>
+            </Col>
+            <Col sm={4}>
+              <div
+                style={{
+                  border: "1px solid gray",
+                  padding: "3em",
+                  borderRadius: "0.5em",
+                  height: "18em",
+                  width: "100%",
+                }}
+                className="flex flex-col gap-4 justify-center text-center items-center"
               >
-                <BiMessage  className="contact-us-icon" />
-              </h1>
-              
-              
-              <section>
-                <i className="icon-texts">Chat with us</i>
-                <br />
-                <b className="icon-texts-text">On WhatsApp</b>
-                <br />
-                <b className="icon-texts-text">
+                <h1 className="grid justify-center items-center">
+                  <MdEmail className="contact-us-icon" />
+                </h1>
 
-                +91 97332 42832
-                </b>
-              </section>
-            </div>
-          </Col>
-         
-        </Row>
+                <span>
+                  <i className="icon-texts">Write E-mail to us</i>
+                  <br />
 
+                  <b
+                    className="icon-texts-text"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      window.location.href = "mailto:info@aversaherbals.com";
+                    }}
+                  >
+                    info@aversaherbals.com
+                  </b>
+                  <p style={{ display: "" }}>.</p>
+                </span>
+              </div>
+            </Col>
+            <Col sm={4}>
+              <div
+                style={{
+                  border: "1px solid gray",
+                  alignItems: "right",
+                  borderRadius: "0.5em",
+                  height: "18em",
+                  width: "100%",
+                }}
+                className="flex flex-col gap-4 justify-center text-center items-center"
+              >
+                <h1 className="grid justify-center items-center">
+                  <BiMessage className="contact-us-icon" />
+                </h1>
+
+                <section>
+                  <i className="icon-texts">Chat with us</i>
+                  <br />
+                  <b className="icon-texts-text">On WhatsApp</b>
+                  <br />
+                  <b className="icon-texts-text">+91 97332 42832</b>
+                </section>
+              </div>
+            </Col>
+          </Row>
         </div>
-        <Row className="flex justify-center gap-40 py-20 text-[rgb(22,98,51)]">
-          <Col sm={4} className="italic flex flex-col gap-3">
+        <Row className=" py-12 text-[rgb(22,98,51)]">
+          <Col sm={6} className="italic">
             <h4>ADDRESS</h4>
             <h6>AVERSA HEALTHCARE PRIVATE LIMITED</h6>
             <h6>Corporate Office</h6>
@@ -192,7 +176,7 @@ const CuSectionOne = () => {
               PMSunday : Closed
             </p>
           </Col>
-          <Col sm={4}>
+          <Col sm={6}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.4627518005177!2d77.36190067554311!3d28.645859775657417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfab1acc75e71%3A0xa26b7052c5b598c8!2s368%2C%20Niti%20Khand%20I%2C%20Indirapuram%2C%20Ghaziabad%2C%20Uttar%20Pradesh%20201014!5e0!3m2!1sen!2sin!4v1719257721953!5m2!1sen!2sin"
               style={{ border: 0 }}

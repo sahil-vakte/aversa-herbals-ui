@@ -11,7 +11,7 @@ const CuSectionTwo = () => {
           <img
             src={bottomimgaboutcontact}
             alt=""
-            className="w-60 sm:w-72 md:w-80 lg:w-96 h-auto"
+            className="w-full sm:w-72 md:w-80 lg:w-96 h-auto"
           />
         </Col>
         <Col sm={6} className="flex flex-col items-center sm:items-start p-4">
