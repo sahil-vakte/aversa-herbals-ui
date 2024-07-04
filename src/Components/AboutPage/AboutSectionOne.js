@@ -7,7 +7,7 @@ import { IoIosArrowDropright } from "react-icons/io";
 import businessopportunitybg from "../../Assets/businessopportunitybg.webp";
 import contactus from "../../Assets/contactus.jpg";
 import branch from "../../Assets/BRANCH.png";
-import foundingvison from "../../Assets/founding-vision.jpeg";
+import foundingvison from "../../Assets/Rahul K Jha.jpg";
 import growthandexpansion from "../../Assets/growthandexpansion.jpeg";
 import drvikassharma from "../../Assets/Leadership Team.jpeg";
 import urvashipathak from "../../Assets/MD Urvashi Pathak.jpeg";
@@ -83,23 +83,23 @@ const AboutSectionOne = () => {
             Our Story
           </p>
         </Row>
-        <Row className="align-items-center">
-          <Col sm={6}>
+        <Row className="align-items-center flex justify-center gap-12 py-8">
+          <Col sm={5}>
             <div className="contain-image-for-founding-vision ">
               <img
                 src={foundingvison}
                 style={{ borderRadius: "11px" }}
                 alt="Contact Us"
-                className="w-full sm:w-[30em] h-[500px] "
+                className="w-full sm:w-[25em] h-[500px] "
               />
             </div>
           </Col>
-          <Col sm={6}>
+          <Col sm={5}>
             <div className="contain-text-para-for-founding-vision">
               <h3 className="text-xl sm:text-2xl  mb-2 about-sub-heading">
                 Founding Vision
               </h3>
-              <p className="font-bold text-xl mb-4">Rahul J.Jha</p>
+              <p className="font-bold text-xl mb-4">Rahul K.Jha</p>
               <p className="text-base sm:text-lg para-sub-heading-about">
                 The inception of Aversa Herbals was driven by the vision of
                 &nbsp;<b>Rahul K. Jha</b>, whose innovative approach transformed
@@ -114,8 +114,8 @@ const AboutSectionOne = () => {
             </div>
           </Col>
         </Row>
-        <Row className="align-items-center">
-          <Col sm={6}>
+        <Row className="align-items-center flex justify-center gap-12 py-8 ">
+          <Col sm={5}>
             <div className="contain-text-para-for-founding-vision">
               <h2 className="text-xl sm:text-2xl font-semibold mb-2 about-sub-heading">
                 Growth and Expansion
@@ -137,7 +137,7 @@ const AboutSectionOne = () => {
               </p>
             </div>
           </Col>{" "}
-          <Col sm={6}>
+          <Col sm={5}>
             <div
               className="contain-image-for-founding-vision  "
               style={{ display: "flex", justifyContent: "end" }}
@@ -146,23 +146,23 @@ const AboutSectionOne = () => {
                 src={growthandexpansion}
                 style={{ borderRadius: "11px" }}
                 alt="Contact Us"
-                className="w-full sm:w-[30em] h-[500px] "
+                className="w-full sm:w-[25em] h-[500px] "
               />
             </div>
           </Col>
         </Row>
-        <Row className="align-items-center">
-          <Col sm={6}>
+        <Row className="align-items-center flex justify-center gap-12 py-8 ">
+          <Col sm={5}>
             <div className="contain-image-for-founding-vision ">
               <img
                 src={drvikassharma}
                 style={{ borderRadius: "11px" }}
                 alt="Contact Us"
-                className="w-full sm:w-[30em] h-[500px] "
+                className="w-full sm:w-[25em] h-[500px] "
               />
             </div>
           </Col>
-          <Col sm={6}>
+          <Col sm={5}>
             <div className="contain-text-para-for-founding-vision">
               <h3 className="about-sub-heading text-xl sm:text-2xl font-semibold mb-4">
                 Leadership Team
@@ -181,8 +181,8 @@ const AboutSectionOne = () => {
             </div>
           </Col>
         </Row>
-        <Row className="align-items-center">
-          <Col sm={6}>
+        <Row className="align-items-center flex justify-center gap-12 py-8 ">
+          <Col sm={5}>
             <div className="contain-text-para-for-founding-vision">
               <h2 className="font-medium">MD Urvashi Pathak</h2>
               <p className=" mb-4 para-sub-heading-about">
@@ -202,7 +202,7 @@ const AboutSectionOne = () => {
               </p>
             </div>
           </Col>
-          <Col sm={6}>
+          <Col sm={5}>
             <div
               className="contain-image-for-founding-vision "
               style={{ display: "flex", justifyContent: "end" }}
@@ -211,23 +211,23 @@ const AboutSectionOne = () => {
                 src={urvashipathak}
                 style={{ borderRadius: "11px" }}
                 alt="Contact Us"
-                className="w-full sm:w-[30em] h-[500px] "
+                className="w-full sm:w-[25em] h-[500px] "
               />
             </div>
           </Col>
         </Row>
-        <Row className="align-items-center">
-          <Col sm={6}>
+        <Row className="align-items-center flex justify-center gap-12 py-8 ">
+          <Col sm={5}>
             <div className="contain-image-for-founding-vision ">
               <img
                 src={rahulkjha}
                 style={{ borderRadius: "11px" }}
                 alt="Contact Us"
-                className="w-full sm:w-[30em] h-[500px] "
+                className="w-full sm:w-[25em] h-[500px] "
               />
             </div>
           </Col>
-          <Col sm={6}>
+          <Col sm={5}>
             <div className="contain-text-para-for-founding-vision">
               <h2 className="font-medium">Rahul K. Jha</h2>{" "}
               <p className="mb-4 para-sub-heading-about">founder and CMO </p>
