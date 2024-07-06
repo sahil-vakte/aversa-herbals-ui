@@ -13,6 +13,7 @@ import drvikassharma from "../../Assets/Leadership Team.jpeg";
 import urvashipathak from "../../Assets/MD Urvashi Pathak.jpeg";
 import rahulkjha from "../../Assets/rahul jha ceo.jpeg";
 import aboutusimage from "../../Assets/aboutusimg.jpeg";
+
 const AboutSectionOne = () => {
   return (
     <>
@@ -56,18 +57,18 @@ const AboutSectionOne = () => {
                 gap: "1em",
               }}
             >
-              <h3 className="text-2xl sm:text-3xl md:text-4xl">
+              <p className="sm:text-3xl md:text-4xl header-for-abouts-section-text">
                 Welcome To,
-                <br /> <b className="font-bold">Aversa Herbals</b>
-              </h3>
-              <h5 className="text-lg italic">
+                <br />{" "}
+                <b className="font-bold header-for-abouts-section-text">
+                  Aversa Herbals
+                </b>
+              </p>
+              <h5 className="text-lg italic MISSION-for-abouts-section-text">
                 ON A MISSION TO HEALTHY & WEALTHY BHARAT
               </h5>
 
-              <p
-                className="text-base sm:text-lg italic"
-                style={{ fontStyle: "italic" }}
-              >
+              <p className="sm:text-lg para-text-for-the-abouts-section">
                 Aversa Herbals has evolved from a small, traditional business
                 delivering services from shop to shop in its early days to a
                 prominent player in the direct selling industry. Our journey,
@@ -85,7 +86,7 @@ const AboutSectionOne = () => {
         </Row>
         <Row className="align-items-center flex justify-center gap-12 py-8">
           <Col sm={5}>
-            <div className="contain-image-for-founding-vision ">
+            <div className="contain-image-for-founding-vision">
               <img
                 src={foundingvison}
                 style={{ borderRadius: "11px" }}
@@ -139,7 +140,7 @@ const AboutSectionOne = () => {
           </Col>{" "}
           <Col sm={5}>
             <div
-              className="contain-image-for-founding-vision  "
+              className="contain-image-for-founding-vision"
               style={{ display: "flex", justifyContent: "end" }}
             >
               <img

@@ -11,41 +11,50 @@ const SectionTwo = () => {
       <Container>
         <Row>
           <Col sm={6}>
-            <h1 className="aversa-herbals-head-tag">
-              <span style={{ fontWeight: "400" }}>Welcome to </span>
-              <br />
-              <b>Aversa Herbals,</b>
-            </h1>
-            <p className="aversa-herbals-head-tag">
-              ON A MISSION <br />
-              TO HEALTHY & WEALTHY <br /> BHARAT.
-            </p>
-            <img src={BranchImage} alt="" className="branch-image" />
+            <div>
+              <p className="sm:text-3xl md:text-4xl header-for-abouts-section-text">
+                Welcome To,
+                <br />{" "}
+                <b className="font-bold header-for-abouts-section-text">
+                  Aversa Herbals
+                </b>
+              </p>
+
+              <h5 className="text-lg MISSION-bharat-for-abouts-section-text ">
+                ON A MISSION <br />
+                TO HEALTHY & WEALTHY <br /> BHARAT.
+              </h5>
+            </div>
+            <div>
+              <img src={BranchImage} alt="" className="branch-image" />
+            </div>
           </Col>
-          <Col sm={6}>
+          <Col sm={6} className="right-column-for-home-page-first-div">
             <img
               src={GroupImage}
               alt="team image"
               className="landing-page-team-img"
             />
-            <p className="aversa-herbals-para-tag-one">
+            <p className="text-base sm:text-lg para-sub-heading-about">
               At Aversa Herbals, we're on a mission to promote health and wealth
               across Bharat. As a leading Herbal Product Company, we operate on
               the principles of direct selling and multi-level marketing,
               empowering individuals to achieve their wellness and financial
-              goals. <br /> Our dedicated team of owners, directors, and
+              goals. <br /> <br /> Our dedicated team of owners, directors, and
               employees are committed to delivering high-quality herbal products
               and unparalleled support to our valued customers and partners.
+              <br /> <br />
               Together, we strive to create a healthier and wealthier future for
               every individual we touch.
             </p>
             <div style={{ textAlign: "right" }}>
-              <Link to="/aversa-herbal-products">
-                <button className="see-all-products-button">
-                  More About Us{" "}
-                  <IoIosArrowDropright
-                    style={{ color: "white", height: "20px", width: "20px" }}
-                  />
+              <Link
+                to="/contact-us-page-aversa-herbal"
+                className="no-underline"
+              >
+                <button className="see-all-products-button flex items-center gap-3">
+                  Show Herbal Products
+                  {/* <IoIosArrowDropright style={{ color: "white" }} /> */}
                 </button>
               </Link>
             </div>

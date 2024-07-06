@@ -9,18 +9,20 @@ const ProductsPage = () => {
         <h1 className="aversa-herbals-head-tag" style={{ textAlign: "center" }}>
           Welcome to the Aversa Herbals Product Collection
         </h1>
-        <p className="aversa-herbals-para-tag-one" style={{textAlign:"center"}}>
+        <p
+          className="aversa-herbals-para-tag-one"
+          style={{ textAlign: "center" }}
+        >
           Discover a world of natural wellness with our curated selection of
           premium herbal remedies. From time-tested traditional formulas to
           innovative blends backed by modern science, each Aversa Herbals
           product is crafted with care to support your journey towards optimal
           health and vitality.
         </p>
-        </Container>
-        <div className="mt-5">
+      </Container>
+      <div className="mt-5">
         <ProductsList />
-        </div>
-   
+      </div>
     </div>
   );
 };

@@ -11,32 +11,37 @@ const SectionThree = () => {
       <Container>
         <Row className="align-items-center">
           <Col sm={6}>
-            <h1 className="aversa-herbals-head-tag">
-            <span style={{fontWeight:"400"}}>Why </span> 
-            <br/><b>Herbal</b> {" "} 
-            <span style={{fontWeight:"400"}}>Products ?</span> 
+            <h1 className="explore-our-range-of-text-home-page">
+              <span style={{ fontWeight: "400" }}>Why </span>
+              <br />
+              <b>Herbal</b>{" "}
+              <span style={{ fontWeight: "400" }}>Products ?</span>
             </h1>
-            <p className="aversa-herbals-para-tag-one">
-              At Aversa Herbals, we're on a mission to promote health and wealth
-              across Bharat. As a leading Herbal Product Company, we operate on
-              the principles of direct selling and multi-level marketing,
-              empowering individuals to achieve their wellness and financial
-              goals. <br /> Our dedicated team of owners, directors, and
-              employees are committed to delivering high-quality herbal products
-              and unparalleled support to our valued customers and partners.
-              Together, we strive to create a healthier and wealthier future for
-              every individual we touch.
+            <p className="paragraph-text-for-home-page-third-section-why-products">
+              Herbs are nature’s gift of health and longevity. They do not have
+              any side effects, <br />
+              <br /> They are absorbed easily and because of their different
+              characteristics such as tastes, potencies, qualities they
+              influence body and mind.
+              <br />
+              <br />
+              "Herbal products are natural and gentle on the body, made from
+              plants. They have no side effects and can help improve health
+              without harsh chemicals.
+              <br />
+              <br />
+              They treat the root cause of issues and are safe to use."
             </p>
             <div style={{ textAlign: "left" }}>
-        <Link to="/aversa-herbal-products">
-          <button className="see-all-products-button">
-            More About Us{" "}
-            <IoIosArrowDropright
-              style={{ color: "white", height: "20px", width: "20px" }}
-            />
-          </button>
-          </Link>
-        </div>
+              <Link to="/aversa-herbal-products" className="no-underline">
+                <button className="see-all-products-button">
+                  Shop Herbal Products
+                  {/* <IoIosArrowDropright
+                    style={{ color: "white", height: "20px", width: "20px" }}
+                  /> */}
+                </button>
+              </Link>
+            </div>
             {/* <img src={BranchImage} alt="" className="branch-image" /> */}
           </Col>
           <Col sm={6}>
@@ -44,9 +49,7 @@ const SectionThree = () => {
               src={kahalbattaImage}
               alt="team image"
               className="landing-page-team-img"
-              style={{maxHeight:"500px"}}
             />
-     
           </Col>
         </Row>
       </Container>

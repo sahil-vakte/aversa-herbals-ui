@@ -35,7 +35,7 @@ const BoSectionThree = () => {
                 Once you have become an Independent Direct seller, you have
                 exclusive access to our dedicate business center that provides
                 back-end support, product information videos, digital and social
-                tools for marketing etc.              
+                tools for marketing etc.
                 <br />
                 Our customized training program will help you learn the nuances
                 of marketing like building customer base, sales techniques, and
@@ -62,21 +62,10 @@ const BoSectionThree = () => {
           </Row>
         </div>
       </Container>
-
-      <div style={{ padding: "0 160px" }}>
-        <img
-          src={AbdulKalam2}
-          alt=""
-          style={{ width: "100%" }}
-          className="non-display-things"
-        />
-        {/* <img
-          src={AbdulKalam2}
-          alt=""
-          style={{ width: "100%" }}
-          className="display-mobile-abdul-image"
-        /> */}
+      <div style={{}}>
+        <img src={AbdulKalam2} alt="" className="non-display-things" />
       </div>
+
       <div
         style={{
           marginTop: "60px",

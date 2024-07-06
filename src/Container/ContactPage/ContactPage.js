@@ -8,7 +8,7 @@ const ContactPage = () => {
       <div>
         <CuSectionOne />
       </div>
-      <div style={{ marginTop: "30px" }}>
+      <div className="py-12">
         <CuSectionTwo />
       </div>
     </div>

@@ -41,7 +41,7 @@ const CuSectionOne = () => {
           Get in touch !
         </p>
       </Row>
-      <Container className="container-for-contact">
+      <Container className="container-for-contact ">
         <Row className="">
           <Col sm={12} className="grid items-center  text-center">
             <h1 className="aversa-herbals-head-tag ">
@@ -53,8 +53,8 @@ const CuSectionOne = () => {
           </Col>
         </Row>
         <div className="action-btn-contact">
-          <Row className="icons-row flex justify-center items-center text-[rgb(22,98,51)] ">
-            <Col sm={4}>
+          <Row className="icons-row flex justify-center items-center text-[rgb(22,98,51)] email-contact-chat-with-us-cards-section">
+            <Col>
               <div
                 style={{
                   border: "1px solid gray",
@@ -86,7 +86,7 @@ const CuSectionOne = () => {
                 </section>
               </div>
             </Col>
-            <Col sm={4}>
+            <Col>
               <div
                 style={{
                   border: "1px solid gray",
@@ -118,7 +118,7 @@ const CuSectionOne = () => {
                 </span>
               </div>
             </Col>
-            <Col sm={4}>
+            <Col>
               <div
                 style={{
                   border: "1px solid gray",
@@ -144,8 +144,8 @@ const CuSectionOne = () => {
             </Col>
           </Row>
         </div>
-        <Row className=" py-12 text-[rgb(22,98,51)]">
-          <Col sm={6} className="italic">
+        <Row className="py-12 text-[rgb(22,98,51)] address-and-the-map-section-contact-us">
+          <Col sm={4} className="italic column-for-map-and-address-contact">
             <h4>ADDRESS</h4>
             <h6>AVERSA HEALTHCARE PRIVATE LIMITED</h6>
             <h6>Corporate Office</h6>
@@ -176,7 +176,7 @@ const CuSectionOne = () => {
               PMSunday : Closed
             </p>
           </Col>
-          <Col sm={6}>
+          <Col sm={4} className="column-for-map-and-address-contact">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.4627518005177!2d77.36190067554311!3d28.645859775657417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfab1acc75e71%3A0xa26b7052c5b598c8!2s368%2C%20Niti%20Khand%20I%2C%20Indirapuram%2C%20Ghaziabad%2C%20Uttar%20Pradesh%20201014!5e0!3m2!1sen!2sin!4v1719257721953!5m2!1sen!2sin"
               style={{ border: 0 }}

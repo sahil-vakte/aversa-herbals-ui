@@ -61,6 +61,13 @@ const BoSectionOne = () => {
       </div>
       <Container>
         <div style={{ marginTop: "60px" }}>
+          <p className="para-for-main-bussiness-op-pag">
+            Welcome to Aversa Herbals, Where direct selling transforms lives
+            discover the power of this unique business model and embark on a
+            journey of empowerment and success. Learn what direct selling is all
+            about and how becoming a distributor with Aversa Herbals, Can change
+            your life.
+          </p>
           <Row>
             {/* <Col sm={6}></Col> */}
             {/* <Col sm={6}> */}

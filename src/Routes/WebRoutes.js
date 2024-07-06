@@ -18,6 +18,7 @@ import PrivacyPolicy from "../Components/Policies/PrivacyPolicy";
 import RefundandCancellation from "../Components/Policies/RefundandCancellation";
 import ShippingPolicy from "../Components/Policies/ShippingPolicy";
 import MyOrdersPage from "../Container/MyOrdersPage/MyOrdersPage";
+import BoFormSection from "../Components/BusinessOpportunity/BoFormSection";
 
 const WebRoutes = () => {
   function ScrollToTop() {
@@ -25,40 +26,75 @@ const WebRoutes = () => {
     useEffect(() => {
       window.scrollTo(0, 0);
     }, [pathname]);
-    
+
     return null;
   }
-  
+
   const { pathname } = useLocation();
 
   return (
     <div>
-    <ScrollToTop/>
+      <ScrollToTop />
       <WebsiteNavbar />
-      <div style={{marginTop:"75px"}}>
-      <Routes>
-        <Route path="/*" element=<WebsiteHomepage /> />
-        <Route path="/aversa-herbal-products" element=<ProductsPage /> />
-        <Route path="/aversa-herbal-product-details/:id/:title" element=<ProductDetailsPage/> />
-        <Route path="/aversa-herbal-wellness-resources" element=<WellnessResourcesPage /> />
-        <Route path="/aversa-herbal-about-us" element=<AboutUsPage /> />
-        <Route path="/aversa-herbal-contact-us" element=<ContactPage /> />
-        <Route path="/aversa-herbal-business-opportunity" element=<BusinessOpportunity/> />
-        <Route path="/aversa-herbal-sign-up" element=<RegistrationPage/> />
-        <Route path="/aversa-herbal-login" element=<LoginPage/> />
-        <Route path="/aversa-herbal-cart" element=<CartPage/> />
-        <Route path="/aversa-herbal-terms-and-conditions" element=<TermsandConditions/> />
-        <Route path="/aversa-herbal-privacy-policy" element=<PrivacyPolicy/> />
-        <Route path="/aversa-herbal-refund-and-cancellation-policy" element=<RefundandCancellation/> />
-        <Route path="/aversa-herbal-shipping-policy" element=<ShippingPolicy/> />
-        <Route path="/aversa-herbal-my-orders-page" element=<MyOrdersPage/> />
-        {/* <Route path="/aversa-herbal-login" element=<PaymentForm/> /> */}
-      </Routes>
-    </div>
-    <div style={{ marginTop: (pathname === "/aversa-herbal-sign-up" || pathname === "/aversa-herbal-cart") ? "0px" : "40px" }}>
-  <WebsiteFooter />
-</div>
-
+      <div style={{ marginTop: "75px" }}>
+        <Routes>
+          <Route path="/*" element=<WebsiteHomepage /> />
+          <Route path="/aversa-herbal-products" element=<ProductsPage /> />
+          <Route
+            path="/aversa-herbal-product-details/:id/:title"
+            element=<ProductDetailsPage />
+          />
+          <Route
+            path="/aversa-herbal-wellness-resources"
+            element=<WellnessResourcesPage />
+          />
+          <Route path="/aversa-herbal-about-us" element=<AboutUsPage /> />
+          <Route path="/aversa-herbal-contact-us" element=<ContactPage /> />
+          <Route
+            path="/aversa-herbal-business-opportunity"
+            element=<BusinessOpportunity />
+          />
+          <Route path="/aversa-herbal-sign-up" element=<RegistrationPage /> />
+          <Route path="/aversa-herbal-login" element=<LoginPage /> />
+          <Route path="/aversa-herbal-cart" element=<CartPage /> />
+          <Route
+            path="/aversa-herbal-terms-and-conditions"
+            element=<TermsandConditions />
+          />
+          <Route
+            path="/aversa-herbal-privacy-policy"
+            element=<PrivacyPolicy />
+          />
+          <Route
+            path="/aversa-herbal-refund-and-cancellation-policy"
+            element=<RefundandCancellation />
+          />
+          <Route
+            path="/aversa-herbal-shipping-policy"
+            element=<ShippingPolicy />
+          />
+          <Route
+            path="/aversa-herbal-my-orders-page"
+            element=<MyOrdersPage />
+          />{" "}
+          <Route
+            path="/aversa-herbal-business-opportunity-form"
+            element=<BoFormSection />
+          />
+          {/* <Route path="/aversa-herbal-login" element=<PaymentForm/> /> */}
+        </Routes>
+      </div>
+      <div
+        style={{
+          marginTop:
+            pathname === "/aversa-herbal-sign-up" ||
+            pathname === "/aversa-herbal-cart"
+              ? "0px"
+              : "40px",
+        }}
+      >
+        <WebsiteFooter />
+      </div>
     </div>
   );
 };

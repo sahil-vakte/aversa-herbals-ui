@@ -5,16 +5,18 @@
 }
 
 .aversa-herbals-head-tag {
-  color: rgb(22, 98, 51);
-  /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
-  font-size: 3rem;
-  line-height: 1;
-  padding: 9px;
+  font-family: Century Gothic;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 51px;
+  text-align: center;
+  color: #266431;
+  font-style: bold;
 }
 
 .aversa-herbals-para-tag-one {
   /* color: #000000; */
-  color: rgb(22, 98, 51);
+  color: #266431;
   text-align: justify;
   /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
   font-size: 1rem;
@@ -37,26 +39,6 @@
   font-size: 1rem;
   color: black;
   margin: 0px;
-}
-
-.see-all-products-button {
-  background-color: rgb(22, 98, 51);
-  border-radius: 20px;
-  color: white;
-  /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
-  padding: 8px;
-  border: none;
-}
-
-.see-all-top-detail-button {
-  background-color: rgb(22, 98, 51);
-  border-radius: 20px;
-  color: white;
-  /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
-  padding: 8px;
-  border: none;
-  cursor: context-menu;
-  font-size: 13px;
 }
 
 .registration-page-background {
@@ -148,7 +130,7 @@
   padding: 9px;
 }
 .aversa-herbals-head-tag-contact-us {
-  color: rgb(22, 98, 51);
+  color: #266431;
   font-family: Prata, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
   font-size: 6rem;
   line-height: 1;
@@ -159,19 +141,6 @@
   height: 100%;
   width: 100%;
   border-radius: 20px;
-}
-
-.landing-page-team-img {
-  width: 100%;
-  max-height: 400px;
-  border-radius: 40px;
-}
-.branch-image {
-  /* width: 100%; */
-  max-height: 400px;
-  position: absolute;
-  left: 80px;
-  margin-top: -85px;
 }
 
 .background-video {
@@ -189,7 +158,7 @@
 .landing-page-scroll-product {
   display: flex;
   overflow-y: hidden;
-  gap: 20px;
+  /* gap: 20px; */
   overflow-x: scroll;
 }
 
@@ -204,7 +173,7 @@
 }
 
 .landing-page-scroll-product::-webkit-scrollbar-thumb {
-  background-color: rgb(22, 98, 51);
+  background-color: #266431;
   border-radius: 10px;
 }
 
@@ -227,7 +196,7 @@
 .business-opportunity-bg-padding {
   padding-left: 40px;
   padding-right: 40px;
-  margin-top: 200px;
+  margin: 9em 0;
 }
 .business-opportunity-bg {
   background-color: #d9d9d9;
@@ -281,20 +250,22 @@
 }
 
 .product-list-product-image {
-  /* height: 100%;
-  width: 100%; */
-  height: 400px;
+  height: 293px;
+  object-fit: cover;
+  width: 40%;
 }
 
 .product-list-product-image-below-div {
-  /* background-color: #D9D9D9; */
-  background-color: #d9d9d924;
-  padding: 10px;
+  background-color: #d9d9d9;
+  /* background-color: #d9d9d924; */
+  /* padding: 10px; */
   margin-top: -150px;
   border-radius: 11px;
+  padding: 1em;
 }
 .product-list-product-image-below-div-two {
   padding-top: 150px;
+  background-color: #d9d9d9;
 }
 .product-list-component-padding {
   padding-left: 25px;
@@ -305,12 +276,13 @@
   color: #266431;
   font-family: Century Gothic;
   font-weight: 700;
+  font-size: 19px;
 }
 
 .product-list-product-image-below-div-two p {
   margin: 0px;
   color: #676d75;
-  font-size: 15px;
+  font-size: 10px;
 }
 .button-for-add-to-wishlist {
   width: 100%;
@@ -319,7 +291,7 @@
   border-radius: 9px;
   font-weight: 700;
   font-family: Century Gothic;
-  font-size: 20px;
+  font-size: 14px;
   padding: 5px;
   margin-top: 5px;
 }
@@ -341,7 +313,7 @@
   color: white;
   font-weight: 700;
   font-family: Century Gothic;
-  font-size: 20px;
+  font-size: 14px;
   padding: 5px;
   margin-top: 5px;
 }
@@ -436,7 +408,7 @@
 }
 
 .product-list-price-span-tag {
-  font-size: 25px;
+  font-size: 20px;
   color: black;
   font-weight: 700;
 }
@@ -455,9 +427,13 @@
   border: 1px solid #266431;
   background-color: white;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 24px;
   color: #266431;
-  min-width: 150px;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  width: 9em;
+  justify-content: center;
 }
 
 .display-mobile-abdul-image {
@@ -496,13 +472,6 @@
 
 /* ak styles css */
 
-.aversa-herbals-head-tag {
-  font-size: 48px;
-  color: #266431;
-  line-height: 51px;
-  margin-bottom: 0;
-  margin-top: 20px;
-}
 .aversa-herbals-para-tag-one {
   font-size: 21px;
   color: #266431;
@@ -589,6 +558,228 @@ left: 10.59px; */
   font-style: italic;
 }
 
+/* contact us css Prasad*/
+.container-for-contact {
+  width: 75em;
+}
+.join-us-form-containers {
+  width: 75em;
+
+  border-radius: 20px;
+  border: 3px solid #266431;
+  opacity: 0px;
+}
+.action-btn-contact {
+  display: flex;
+  justify-content: center;
+  padding: 3em 0;
+}
+.email-contact-chat-with-us-cards-section {
+  width: 60em;
+}
+.address-and-the-map-section-contact-us {
+  display: flex;
+  justify-content: space-around;
+}
+.column-for-map-and-address-contact {
+  height: 45em;
+  width: 40%;
+  gap: 1em;
+  flex-direction: column;
+  display: flex;
+}
+.image-container-for-join-us-section-two-contact-page {
+  height: 384px;
+  background-image: url("../Assets/bottomimgaboutcontact.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding-left: 4em;
+  margin-left: 12px;
+  border-radius: 20px 0 0 20px;
+}
+.image-container-for-join-us-section-two-business-opportunity-page {
+  height: 384px;
+  background-image: url("../Assets/businessformimg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding-left: 4em;
+  margin-left: 12px;
+  border-radius: 20px 0 0 20px;
+}
+
+.header-text-join-us-section {
+  /* font-family: Raleway; */
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 43.2px;
+  text-align: left;
+  color: #266431b2;
+}
+.bottom-text-join-us-section {
+  font-family: Century Gothic;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17.18px;
+  text-align: left;
+  color: #676d75;
+}
+.I-agree-to-the-privacy-policy {
+  padding-bottom: 0;
+}
+.check-box-agree-and-send-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 1em 0;
+}
+.send-button-for-join-us-form {
+  width: 6em;
+  height: 2em;
+  /* border: 1px solid #266431b2; */
+  border-radius: 16px;
+  background-color: #266431;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contain-image-for-founding-vision img {
+  width: 83%;
+  object-fit: cover;
+}
+.header-for-abouts-section-text {
+  font-family: Century Gothic;
+  font-size: 48px;
+  line-height: 57.2px;
+  text-align: left;
+  color: #266431;
+}
+.MISSION-for-abouts-section-text {
+  font-family: Century Gothic;
+  font-size: 36px;
+  font-style: italic;
+  line-height: 51px;
+  text-align: left;
+  color: #266431;
+}
+.MISSION-bharat-for-abouts-section-text {
+  font-family: Century Gothic;
+  font-size: 36px;
+  line-height: 51px;
+  text-align: left;
+  color: #266431;
+}
+.para-text-for-the-abouts-section {
+  font-family: Century Gothic;
+  font-size: 23px;
+  /* font-weight: 400; */
+  line-height: 28.2px;
+  text-align: left;
+  color: #676d75;
+  padding: 3em 0;
+}
+.right-column-for-home-page-first-div {
+  display: grid;
+
+  padding: 3em 0;
+  gap: 1em;
+}
+.landing-page-team-img {
+  width: 482px;
+  height: 298px;
+  object-fit: cover;
+  border-radius: 13px;
+}
+
+.branch-image {
+  object-fit: cover;
+  width: 541px;
+  /* height: 298px; */
+  /* position: absolute; */
+}
+.including-text-for-home-products {
+  font-family: Century Gothic;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 19.99px;
+  text-align: left;
+  color: #266431;
+}
+.see-all-top-detail-button {
+  background-color: #266431;
+  border-radius: 20px;
+  color: white;
+  /* font-family: Prata,ui-serif,Georgia,Cambria,Times New Roman,Times,serif; */
+  padding: 8px;
+  border: none;
+  cursor: context-menu;
+  font-size: 13px;
+}
+.explore-our-range-of-text-home-page {
+  font-family: Century Gothic;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 51px;
+  text-align: left;
+  color: #266431;
+  margin: 0;
+}
+.images-of-top-products-in-home-slider-section {
+  border-radius: 9px;
+  background-color: rgb(217, 217, 217);
+  padding: 35px;
+  object-fit: cover;
+  height: 26em;
+}
+.paragraph-text-for-home-page-third-section-why-products {
+  font-family: Century Gothic;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.07px;
+  text-align: left;
+  color: #266431;
+  padding: 2em 0;
+}
+.see-all-products-button {
+  background-color: #266431;
+  border-radius: 41px;
+  color: white;
+  /* font-family: Prata, ui-serif, Georgia, Cambria, Times New Roman, Times, serif; */
+  padding: 13px;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+.left-side-column-for-all-product-page {
+  flex-direction: column;
+  display: flex;
+  gap: 1em;
+}
+.Join-Us-Now-btn-home {
+  border: 1px solid #266431;
+  border-radius: 41px;
+  color: #266431;
+  /* font-family: Prata, ui-serif, Georgia, Cambria, Times New Roman, Times, serif; */
+  padding: 13px;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+.para-for-main-bussiness-op-pag {
+  font-family: Century Gothic;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31px;
+  text-align: center;
+  padding: 2em 0;
+}
 @keyframes scroll {
   from {
     transform: translateX(0); /* Start from initial position */
@@ -608,7 +799,7 @@ left: 10.59px; */
     padding: 9px;
   }
   .aversa-herbals-head-tag-contact-us {
-    color: rgb(22, 98, 51);
+    color: #266431;
     font-family: Prata, ui-serif, Georgia, Cambria, Times New Roman, Times,
       serif;
     font-size: 3rem;

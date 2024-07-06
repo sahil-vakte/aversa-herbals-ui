@@ -1,25 +1,37 @@
-import React from 'react'
-import SectionOne from '../../Components/HomePage/SectionOne'
-import TopProducts from '../../Components/HomePage/TopProducts'
-import BusinessOpportunityInfo from '../../Components/HomePage/BusinessOpportunityInfo'
-import SectionTwo from '../../Components/HomePage/SectionTwo'
-import SectionThree from '../../Components/HomePage/SectionThree'
-import WebNavbarAdd from '../../Components/WebsiteNavbar/WebNavbarAdd'
+import React from "react";
+import SectionOne from "../../Components/HomePage/SectionOne";
+import TopProducts from "../../Components/HomePage/TopProducts";
+import BusinessOpportunityInfo from "../../Components/HomePage/BusinessOpportunityInfo";
+import SectionTwo from "../../Components/HomePage/SectionTwo";
+import SectionThree from "../../Components/HomePage/SectionThree";
+import WebNavbarAdd from "../../Components/WebsiteNavbar/WebNavbarAdd";
 
 const WebsiteHomepage = () => {
   return (
     <div>
-      <div><WebNavbarAdd/></div>
-      <div><SectionOne/></div>
-      <div style={{marginTop:"80px"}}><SectionTwo/></div>
-      <div style={{marginTop:"80px"}}><TopProducts/></div>
-      <div style={{marginTop:"80px"}}><SectionThree/></div>
+      <div>
+        <WebNavbarAdd />
+      </div>
+      <div>
+        <SectionOne />
+      </div>
+      <div style={{ marginTop: "80px" }}>
+        <SectionTwo />
+      </div>
+      <div style={{ marginTop: "80px" }}>
+        <TopProducts />
+      </div>
+      <div style={{ marginTop: "80px" }}>
+        <SectionThree />
+      </div>
       {/* <div style={{marginTop:"80px"}}>
         <img src={MainImage} style={{width:"100%"}}/>
       </div> */}
-      <div style={{marginTop:"80px"}}><BusinessOpportunityInfo/></div>
+      <div style={{ marginTop: "80px" }}>
+        <BusinessOpportunityInfo />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default WebsiteHomepage
+export default WebsiteHomepage;

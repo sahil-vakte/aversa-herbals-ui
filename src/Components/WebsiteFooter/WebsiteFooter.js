@@ -101,14 +101,25 @@ const WebsiteFooter = () => {
             </Col>
             <Col sm={2}>
               <h1 className="website-footer-heading">Our Policies</h1>
-              <Link to="/aversa-herbal-privacy-policy" style={{textDecoration:"none"}}>
-              <p className="website-footer-para-tag">Privacy Policy </p>
+              <Link
+                to="/aversa-herbal-privacy-policy"
+                style={{ textDecoration: "none" }}
+              >
+                <p className="website-footer-para-tag">Privacy Policy </p>
               </Link>
-              <Link to="/aversa-herbal-refund-and-cancellation-policy" style={{textDecoration:"none"}}>
-              <p className="website-footer-para-tag">Refunds & Cancellations</p>
+              <Link
+                to="/aversa-herbal-refund-and-cancellation-policy"
+                style={{ textDecoration: "none" }}
+              >
+                <p className="website-footer-para-tag">
+                  Refunds & Cancellations
+                </p>
               </Link>
-              <Link to="/aversa-herbal-shipping-policy" style={{textDecoration:"none"}}>
-              <p className="website-footer-para-tag">Shipping policy</p>
+              <Link
+                to="/aversa-herbal-shipping-policy"
+                style={{ textDecoration: "none" }}
+              >
+                <p className="website-footer-para-tag">Shipping policy</p>
               </Link>
             </Col>
           </Row>

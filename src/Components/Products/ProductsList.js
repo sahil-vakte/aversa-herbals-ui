@@ -207,7 +207,7 @@ const ProductsList = () => {
                                 <h3
                                   style={{
                                     fontSize:
-                                      index.title.length > 20 ? "25px" : "",
+                                      index.title.length > 20 ? "19px" : "",
                                   }}
                                 >
                                   {index.title.toUpperCase()}
