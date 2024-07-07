@@ -9,6 +9,7 @@ import benefitsOfDirectSelling2 from "../../Assets/Group 70054@2x.png";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { IoCall } from "react-icons/io5";
+import backgroundShade from "../../Assets/backgroundshade.png";
 
 const BoSectionThree = () => {
   return (
@@ -27,16 +28,19 @@ const BoSectionThree = () => {
               <img src={BackendSupport} style={{ width: "100%" }} />
             </Col>
             <Col sm={1}></Col>
-            <Col sm={5}>
-              <h1 className="aversa-herbals-head-tag">
+            <Col
+              sm={5}
+              className="col-for-aversa-herbal-section-two-direct-seller-bussiness-op"
+            >
+              <h1 className="aversa-herbals-head-tag-b-section-two-direct-seller">
                 <span style={{ fontWeight: "300" }}>Full Back End</span> Support
               </h1>
-              <p className="aversa-herbals-para-tag-one">
+              <p className="para-sub-heading-about">
                 Once you have become an Independent Direct seller, you have
                 exclusive access to our dedicate business center that provides
                 back-end support, product information videos, digital and social
                 tools for marketing etc.
-                <br />
+                <br /> <br />
                 Our customized training program will help you learn the nuances
                 of marketing like building customer base, sales techniques, and
                 product pitches among other useful skills.
@@ -62,15 +66,23 @@ const BoSectionThree = () => {
           </Row>
         </div>
       </Container>
+      <div className="contains-main-text-for-abdul-kalam-section">
+        <div className="rectangle-for-abdul-kalam-bill-gates-image-one"></div>
+        <h1 className="aversa-herbals-head-tag-b-section-two-direct-seller">
+          <span style={{ fontWeight: "300" }}>A</span> Professional Perspective{" "}
+          <br />
+          <span style={{ fontWeight: "300" }}>On Business Oppourtunity</span>
+        </h1>
+        <div className="rectangle-for-abdul-kalam-bill-gates-image-two"></div>
+      </div>
       <div style={{}}>
         <img src={AbdulKalam2} alt="" className="non-display-things" />
       </div>
-
       <div
+        className="flex justify-center py-16 benefits-of-being-direct-seller-section-bo"
         style={{
-          marginTop: "60px",
-          display: "flex",
-          justifyContent: "center",
+          backgroundImage: `url(${backgroundShade})`,
+          backgroundRepeat: "repeat",
         }}
       >
         <div>

@@ -48,42 +48,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.registration-page-background::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* background-image: url("../Assets/mockup 3.jpg"); */
+  background-image: url("../Assets/bgimageforsignupform.jpeg");
   background-size: cover;
   background-position: center;
-  /* filter: blur(12px); */
-  background-color: #d9d9d9;
 }
 
 .registration-content {
-  z-index: 0; /* Ensure the content is on top of the blurred background */
-  /* background-color: rgb(196 196 196 / 70%); */
-  /* padding-top: 20px; */
-  padding-bottom: 20px;
+  padding: 4em 0;
 }
 .regi-stration-from-bg {
   background-color: white;
   padding: 20px;
   border-radius: 15px;
+  width: 519px;
+  top: 250px;
+  left: 728px;
+  gap: 0px;
+  opacity: 0px;
 }
 
 .registration-input-form-input-tag {
-  width: 100%;
-  border: none;
-  padding: 5px;
+  font-size: 13px;
 }
-.registration-input-form-input-tag:focus {
-  outline: none;
-}
+
 .login-page-background {
   position: relative;
   width: 100%;
@@ -91,19 +78,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.login-page-background::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../Assets/mockup 1.jpg");
+  background-image: url("../Assets/bgimageforsignupform.jpeg");
   background-size: cover;
   background-position: center;
-  filter: blur(12px);
 }
 
 .cart-page-of-aversa-bg {
@@ -138,9 +115,13 @@
 }
 
 .aversa-images-of-no-hexagone {
-  height: 100%;
-  width: 100%;
-  border-radius: 20px;
+  width: 574px;
+  height: 430px;
+  top: 3195px;
+  left: 782px;
+  gap: 0px;
+  border-radius: 11px 0px 0px 0px;
+  opacity: 0px;
 }
 
 .background-video {
@@ -185,10 +166,12 @@
   background-color: #ac1f29;
   padding: 5px;
   color: white;
+  width: 100%;
+  height: 55px;
 }
 
 .home-page-advertise-h-tag {
-  font-size: 23px;
+  font-size: 14px;
   margin: 0px;
   font-family: Koulen;
 }
@@ -250,9 +233,9 @@
 }
 
 .product-list-product-image {
-  height: 293px;
+  height: 323px;
   object-fit: cover;
-  width: 40%;
+  /* width: 40%; */
 }
 
 .product-list-product-image-below-div {
@@ -303,7 +286,7 @@
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 2.1);
   padding: 10px;
-  border-radius: 25px;
+  border-radius: 3px;
 }
 .button-for-add-to-cart {
   width: 100%;
@@ -421,6 +404,10 @@
 .registration-form-main-div .form-label {
   margin-bottom: 0px;
   margin-top: 5px;
+  font-size: 13px;
+  padding-bottom: 0.5em;
+  font-weight: 500;
+  font-style: Inter;
 }
 
 .register-now-business-opp-btn {
@@ -564,7 +551,8 @@ left: 10.59px; */
 }
 .join-us-form-containers {
   width: 75em;
-
+  display: flex;
+  justify-content: center;
   border-radius: 20px;
   border: 3px solid #266431;
   opacity: 0px;
@@ -595,8 +583,8 @@ left: 10.59px; */
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
-  padding-left: 4em;
-  margin-left: 12px;
+  /* padding-left: 4em;
+  margin-left: 12px; */
   border-radius: 20px 0 0 20px;
 }
 .image-container-for-join-us-section-two-business-opportunity-page {
@@ -606,8 +594,8 @@ left: 10.59px; */
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
-  padding-left: 4em;
-  margin-left: 12px;
+  /* padding-left: 4em;
+  margin-left: 12px; */
   border-radius: 20px 0 0 20px;
 }
 
@@ -779,6 +767,80 @@ left: 10.59px; */
   line-height: 31px;
   text-align: center;
   padding: 2em 0;
+}
+.border-for-each-product-in-product-age {
+  border: 0.2px solid #26643157;
+  border-radius: 11px;
+  width: 340px;
+  height: 478px;
+  padding-top: 1em;
+}
+.cover-imag-product-page-cc {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+.home-page-advertise-h-tag-terms-and-conditions {
+  font-size: 6px;
+}
+.aversa-herbals-head-tag-b-section-two-direct-seller {
+  font-family: Century Gothic;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 51px;
+  text-align: left;
+  color: #266431;
+  font-style: bold;
+}
+.col-for-aversa-herbal-section-two-direct-seller-bussiness-op {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.rectangle-for-abdul-kalam-bill-gates-image-one {
+  width: 80px;
+  height: 15px;
+  top: 5871px;
+  left: 1px;
+  gap: 0px;
+  border-radius: 0px 7.5px 7.5px 0px;
+  opacity: 0px;
+  background: #26643126;
+}
+.rectangle-for-abdul-kalam-bill-gates-image-two {
+  width: 614px;
+  height: 15px;
+  top: 5871px;
+  left: 828px;
+  gap: 0px;
+  border-radius: 7.5px 0px 0px 7.5px;
+  opacity: 0px;
+  background: #26643126;
+}
+.contains-main-text-for-abdul-kalam-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 3em 0;
+  margin: 0;
+}
+.benefits-of-being-direct-seller-section-bo {
+  max-width: 100%;
+  height: 693px;
+}
+.aversa-logo-png-all {
+  width: 160px;
+  height: 135px;
+  gap: 0px;
+  opacity: 0px;
+}
+.two-cols-for-registration-form-and-logo {
+  align-items: center;
+  display: flex;
+  gap: 18em;
+}
+.label-for-sign-up-form {
+  font-size: 13px;
 }
 @keyframes scroll {
   from {

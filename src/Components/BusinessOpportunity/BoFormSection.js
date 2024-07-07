@@ -2,18 +2,24 @@ import React, { useEffect } from "react";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import bottomimgaboutcontact from "../../Assets/bottomimgaboutcontact.jpeg";
-
+import backgroundShade from "../../Assets/backgroundshade.png";
 const BoFormSection = () => {
   return (
     <div className=" w-full max-w-7xl flex flex-col sm:flex-row m-auto join-us-form-containers">
-      <Row className="flex items-center justify-between w-full h-96">
+      <Row
+        className="flex items-center justify-between w-full h-96 "
+        style={{
+          backgroundImage: `url(${backgroundShade})`,
+          backgroundRepeat: "repeat",
+        }}
+      >
         <Col
           sm={4}
           className="flex justify-center image-container-for-join-us-section-two-business-opportunity-page"
         ></Col>
         <Col sm={6} className="flex flex-col items-center sm:items-start">
           <p className="sm:text-4xl md:text-5xl font-bold mb-6 sm:text-left header-text-join-us-section">
-            start your story now !
+            Start your story now !
           </p>
           <p className="text-base sm:text-lg md:text-xl mb-6 sm:text-left bottom-text-join-us-section text-custom-green">
             Send us your details and we’ll get in touch in regards to your

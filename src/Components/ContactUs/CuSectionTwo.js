@@ -2,16 +2,22 @@ import React from "react";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import bottomimgaboutcontact from "../../Assets/bottomimgaboutcontact.jpeg";
-
+import backgroundShade from "../../Assets/backgroundshade.png";
 const CuSectionTwo = () => {
   return (
     <div className=" w-full max-w-7xl flex flex-col sm:flex-row m-auto join-us-form-containers">
-      <Row className="flex items-center justify-between w-full h-96">
+      <Row
+        className="flex items-center justify-between w-full h-96"
+        style={{
+          backgroundImage: `url(${backgroundShade})`,
+          backgroundRepeat: "repeat",
+        }}
+      >
         <Col
           sm={4}
           className="flex justify-center image-container-for-join-us-section-two-contact-page"
         ></Col>
-        <Col sm={6} className="flex flex-col items-center sm:items-start">
+        <Col sm={6} className="flex flex-col items-center sm:items-start ">
           <p className="sm:text-4xl md:text-5xl font-bold mb-6 sm:text-left header-text-join-us-section">
             Join Us
           </p>

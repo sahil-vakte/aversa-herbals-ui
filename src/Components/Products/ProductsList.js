@@ -184,7 +184,7 @@ const ProductsList = () => {
                   {products &&
                     products.map((index) => (
                       <Col sm={4} className="mb-5">
-                        <div>
+                        <div className="border-for-each-product-in-product-age">
                           <div
                             style={{
                               textAlign: "center",

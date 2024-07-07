@@ -41,7 +41,7 @@ const CuSectionOne = () => {
           Get in touch !
         </p>
       </Row>
-      <Container className="container-for-contact ">
+      <Container>
         <Row className="">
           <Col sm={12} className="grid items-center  text-center">
             <h1 className="aversa-herbals-head-tag ">
@@ -51,99 +51,103 @@ const CuSectionOne = () => {
               Feel free to reach out to us at your convenience.
             </p>
           </Col>
+          <div className="action-btn-contact">
+            <Row className="icons-row flex justify-center items-center text-[rgb(22,98,51)] email-contact-chat-with-us-cards-section">
+              <Col>
+                <div
+                  style={{
+                    border: "1px solid gray",
+                    padding: "3em",
+                    borderRadius: "0.5em",
+                    height: "18em",
+                    width: "100%",
+                  }}
+                  className="flex flex-col gap-4 justify-center text-center items-center"
+                >
+                  <h1 className="grid justify-center items-center">
+                    <FaPhone className="contact-us-icon" />
+                  </h1>
+
+                  <section>
+                    <i className="icon-texts">Talk to us</i>
+                    <br />
+
+                    <b
+                      className="icon-texts-text"
+                      onClick={() => {
+                        window.location.href = "tel:+91 97332 42832 ";
+                      }}
+                    >
+                      +91 97332 42832
+                    </b>
+                    <br />
+                    <p className="icon-texts-text">
+                      All Days (11:00AM -06:00PM)
+                    </p>
+                  </section>
+                </div>
+              </Col>
+              <Col>
+                <div
+                  style={{
+                    border: "1px solid gray",
+                    padding: "3em",
+                    borderRadius: "0.5em",
+                    height: "18em",
+                    width: "100%",
+                  }}
+                  className="flex flex-col gap-4 justify-center text-center items-center"
+                >
+                  <h1 className="grid justify-center items-center">
+                    <MdEmail className="contact-us-icon" />
+                  </h1>
+
+                  <span>
+                    <i className="icon-texts">Write E-mail to us</i>
+                    <br />
+
+                    <b
+                      className="icon-texts-text"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => {
+                        window.location.href = "mailto:info@aversaherbals.com";
+                      }}
+                    >
+                      info@aversaherbals.com
+                    </b>
+                    <p style={{ display: "" }}>.</p>
+                  </span>
+                </div>
+              </Col>
+              <Col>
+                <div
+                  style={{
+                    border: "1px solid gray",
+                    alignItems: "right",
+                    borderRadius: "0.5em",
+                    height: "18em",
+                    width: "100%",
+                  }}
+                  className="flex flex-col gap-4 justify-center text-center items-center"
+                >
+                  <h1 className="grid justify-center items-center">
+                    <BiMessage className="contact-us-icon" />
+                  </h1>
+
+                  <section>
+                    <i className="icon-texts">Chat with us</i>
+                    <br />
+                    <b className="icon-texts-text">On WhatsApp</b>
+                    <br />
+                    <b className="icon-texts-text">+91 97332 42832</b>
+                  </section>
+                </div>
+              </Col>
+            </Row>
+          </div>
         </Row>
-        <div className="action-btn-contact">
-          <Row className="icons-row flex justify-center items-center text-[rgb(22,98,51)] email-contact-chat-with-us-cards-section">
-            <Col>
-              <div
-                style={{
-                  border: "1px solid gray",
-                  padding: "3em",
-                  borderRadius: "0.5em",
-                  height: "18em",
-                  width: "100%",
-                }}
-                className="flex flex-col gap-4 justify-center text-center items-center"
-              >
-                <h1 className="grid justify-center items-center">
-                  <FaPhone className="contact-us-icon" />
-                </h1>
-
-                <section>
-                  <i className="icon-texts">Talk to us</i>
-                  <br />
-
-                  <b
-                    className="icon-texts-text"
-                    onClick={() => {
-                      window.location.href = "tel:+91 97332 42832 ";
-                    }}
-                  >
-                    +91 97332 42832
-                  </b>
-                  <br />
-                  <p className="icon-texts-text">All Days (11:00AM -06:00PM)</p>
-                </section>
-              </div>
-            </Col>
-            <Col>
-              <div
-                style={{
-                  border: "1px solid gray",
-                  padding: "3em",
-                  borderRadius: "0.5em",
-                  height: "18em",
-                  width: "100%",
-                }}
-                className="flex flex-col gap-4 justify-center text-center items-center"
-              >
-                <h1 className="grid justify-center items-center">
-                  <MdEmail className="contact-us-icon" />
-                </h1>
-
-                <span>
-                  <i className="icon-texts">Write E-mail to us</i>
-                  <br />
-
-                  <b
-                    className="icon-texts-text"
-                    style={{ cursor: "pointer" }}
-                    onClick={() => {
-                      window.location.href = "mailto:info@aversaherbals.com";
-                    }}
-                  >
-                    info@aversaherbals.com
-                  </b>
-                  <p style={{ display: "" }}>.</p>
-                </span>
-              </div>
-            </Col>
-            <Col>
-              <div
-                style={{
-                  border: "1px solid gray",
-                  alignItems: "right",
-                  borderRadius: "0.5em",
-                  height: "18em",
-                  width: "100%",
-                }}
-                className="flex flex-col gap-4 justify-center text-center items-center"
-              >
-                <h1 className="grid justify-center items-center">
-                  <BiMessage className="contact-us-icon" />
-                </h1>
-
-                <section>
-                  <i className="icon-texts">Chat with us</i>
-                  <br />
-                  <b className="icon-texts-text">On WhatsApp</b>
-                  <br />
-                  <b className="icon-texts-text">+91 97332 42832</b>
-                </section>
-              </div>
-            </Col>
-          </Row>
-        </div>
+      </Container>
+      <Container className="container-for-contact ">
         <Row className="py-12 text-[rgb(22,98,51)] address-and-the-map-section-contact-us">
           <Col sm={4} className="italic column-for-map-and-address-contact">
             <h4>ADDRESS</h4>
