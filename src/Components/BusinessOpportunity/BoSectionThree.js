@@ -6,6 +6,9 @@ import BackendSupport2 from "../../Assets/Group 69932.svg";
 import AbdulKalam2 from "../../Assets/abdul-kalam-small.png";
 import benefitsOfDirectSelling1 from "../../Assets/Group 70053@2x.png";
 import benefitsOfDirectSelling2 from "../../Assets/Group 70054@2x.png";
+import benefitsOfDirectSelling3 from "../../Assets/businessopportunity_newimg1.jpg";
+import benefitsOfDirectSelling4 from "../../Assets/businessopportunity_newimg2.jpeg";
+
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { IoCall } from "react-icons/io5";
@@ -78,18 +81,34 @@ const BoSectionThree = () => {
       <div style={{}}>
         <img src={AbdulKalam2} alt="" className="non-display-things" />
       </div>
+
       <div
-        className="flex justify-center py-16 benefits-of-being-direct-seller-section-bo"
+        className="grid py-16 benefits-of-being-direct-seller-section-bo"
         style={{
           backgroundImage: `url(${backgroundShade})`,
           backgroundRepeat: "repeat",
         }}
       >
-        <div>
-          <img src={benefitsOfDirectSelling1} style={{ width: "100%" }} />
+        <div className="Benefits-of-being-a-Direct-seller">
+          <p>#Benefits of being a Direct seller</p>
         </div>
-        <div>
-          <img src={benefitsOfDirectSelling2} style={{ width: "100%" }} />
+        <div className="flex justify-center gap-3">
+          <div>
+            <img src={benefitsOfDirectSelling1} style={{ width: "100%" }} />
+          </div>
+          <div>
+            <img src={benefitsOfDirectSelling2} style={{ width: "100%" }} />
+          </div>
+          <div className="grid">
+            <img
+              src={benefitsOfDirectSelling4}
+              className="benefitsOfDirectSelling4-img"
+            />
+            <img
+              src={benefitsOfDirectSelling3}
+              className="benefitsOfDirectSelling3-img"
+            />
+          </div>
         </div>
       </div>
     </div>

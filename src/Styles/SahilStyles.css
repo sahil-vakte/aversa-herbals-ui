@@ -842,6 +842,29 @@ left: 10.59px; */
 .label-for-sign-up-form {
   font-size: 13px;
 }
+.Benefits-of-being-a-Direct-seller {
+  font-family: Century Gothic;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 51px;
+  text-align: left;
+  color: #266431;
+  padding: 0 3em;
+}
+.benefitsOfDirectSelling4-img {
+  object-fit: cover;
+  width: 192px;
+  border-radius: 11px;
+  height: 324px;
+}
+.benefitsOfDirectSelling3-img {
+  object-fit: cover;
+  width: 192px;
+  height: 159px;
+
+  border-radius: 11px;
+}
 @keyframes scroll {
   from {
     transform: translateX(0); /* Start from initial position */
