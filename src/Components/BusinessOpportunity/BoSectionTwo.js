@@ -14,8 +14,8 @@ const BoSectionTwo = () => {
           >
             <h1 className="aversa-herbals-head-tag-b-section-two-direct-seller">
               <span style={{ fontWeight: "300" }}>Become a</span> Direct seller
-              <span style={{ fontWeight: "300" }}>in</span> few
-              <span style={{ fontWeight: "300" }}>simple</span> steps
+              <span style={{ fontWeight: "300" }}> in</span> few
+              <span style={{ fontWeight: "300" }}> simple</span> steps
             </h1>
             <p className="para-sub-heading-about">
               By becoming a aversa herbals direct seller, you are entering a

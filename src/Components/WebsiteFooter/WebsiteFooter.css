@@ -3,11 +3,12 @@
   padding: 30px;
   background-image: url("../../Assets/footer.png");
   /* transformOrigin: '0 0'; */
+  height: 400px;
 }
 .aversa-footer-background-two {
   background-color: rgba(255, 255, 255, 0.51);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 5.5em;
+  border-radius: 11px;
 }
 .footer-slogan {
   color: black;
@@ -25,4 +26,11 @@
   color: black;
   font-family: Prata, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
   cursor: pointer;
+}
+.alright-reserved-footer-text {
+  font-family: Inter;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12.1px;
+  text-align: center;
 }

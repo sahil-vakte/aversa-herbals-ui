@@ -38,11 +38,11 @@ const SectionTwo = () => {
             <p className="text-base sm:text-lg para-sub-heading-about">
               At Aversa Herbals, we're on a mission to promote health and wealth
               across Bharat. As a leading Herbal Product Company, we operate on
-              the principles of direct selling and multi-level marketing,
-              empowering individuals to achieve their wellness and financial
-              goals. <br /> <br /> Our dedicated team of owners, directors, and
-              employees are committed to delivering high-quality herbal products
-              and unparalleled support to our valued customers and partners.
+              the principles of direct selling, empowering individuals to
+              achieve their wellness and financial goals. <br /> <br /> Our
+              dedicated team of owners, directors, and employees are committed
+              to delivering high-quality herbal products and unparalleled
+              support to our valued customers and partners.
               <br /> <br />
               Together, we strive to create a healthier and wealthier future for
               every individual we touch.
