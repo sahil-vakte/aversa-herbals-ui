@@ -1,0 +1,44 @@
+.linear-color {
+  border: 2px solid;
+  border-color: #266431;
+  border-radius: 11px;
+  /* border-image-slice: 1; */
+}
+
+.bg-image {
+  background-image: url("../../../Assets/sideImg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.best-sellin-product-text {
+  color: #676d75;
+  font-family: Century Gothic;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 11px;
+  text-align: center;
+}
+.best-selling-image {
+  width: 210px;
+  height: 210px;
+  /* top: 4322px;
+left: 682px; */
+  gap: 0px;
+  margin-top: -30px;
+
+  opacity: 0px;
+}
+.best-sellin-product-title {
+  font-family: Century Gothic;
+  font-size: 14px;
+  font-weight: 700;
+  /* line-height: 13px; */
+  text-align: center;
+  color: #266431;
+}
+.div-best-selling-product-text {
+  width: 250px;
+  height: 200px;
+  margin-bottom: 90px;
+}

@@ -865,6 +865,84 @@ left: 10.59px; */
 
   border-radius: 11px;
 }
+
+.bg-for-anti-diabatic {
+  background-image: url("../Assets/anti_Diabatic.png");
+  z-index: -1;
+  /* height: 597px; */
+  /* width: 50%; */
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: -100px;
+}
+.second-half-diabatic {
+  background-image: url("../Assets/anti_Diabatic.png");
+
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.best-selling-heading {
+  font-family: Century Gothic;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: -1.559999942779541px;
+  text-align: left;
+}
+
+.antidiabetic-wrapper {
+  background-size: contain;
+  height: 300px;
+  margin-top: 40px;
+  background-repeat: no-repeat;
+}
+
+.antidiabetic-title {
+  color: #266431;
+  font-family: "Century Gothic";
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 62px;
+  text-align: center;
+}
+
+.antidiabetic-subtitle {
+  color: #266431;
+  font-family: "Century Gothic";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 62px;
+  text-align: center;
+}
+
+.antidiabetic-button {
+  background-color: #266431;
+}
+
+/* Responsive styles */
+@media (min-width: 1024px) {
+  .antidiabetic-wrapper {
+    height: 100vh;
+  }
+
+  .antidiabetic-title {
+    font-size: 50px;
+    line-height: 72px;
+  }
+
+  .antidiabetic-subtitle {
+    font-size: 30px;
+    line-height: 72px;
+  }
+
+  .antidiabetic-button {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+}
+
 @keyframes scroll {
   from {
     transform: translateX(0); /* Start from initial position */
@@ -1009,5 +1087,23 @@ left: 10.59px; */
     top: 98%;
     left: 60%;
     font-size: 2.2rem;
+  }
+  .antidiabetic-wrapper {
+    height: 100vh;
+  }
+
+  .antidiabetic-title {
+    font-size: 50px;
+    line-height: 72px;
+  }
+
+  .antidiabetic-subtitle {
+    font-size: 30px;
+    line-height: 72px;
+  }
+
+  .antidiabetic-button {
+    font-size: 18px;
+    padding: 10px 20px;
   }
 }

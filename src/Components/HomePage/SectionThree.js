@@ -4,6 +4,7 @@ import kahalbattaImage from "../../Assets/khalbattass.PNG";
 import BranchImage from "../../Assets/BRANCH.png";
 import { Link } from "react-router-dom";
 import { IoIosArrowDropright } from "react-icons/io";
+import antiDiabeticImage from "../../Assets/anti_Diabatic.png";
 
 const SectionThree = () => {
   return (
@@ -52,6 +53,22 @@ const SectionThree = () => {
             />
           </Col>
         </Row>
+        <div
+          className="antidiabetic-wrapper relative w-full h-[300px] lg:h-screen bg-contain mt-10"
+          style={{ backgroundImage: `url(${antiDiabeticImage})` }}
+        >
+          <div className="antidiabetic-content absolute inset-0 flex flex-col items-end justify-center text-center p-8 pr-10">
+            <h2 className="antidiabetic-title text-center ">
+              ANTI DIABETIC CARE
+            </h2>
+            <p className="antidiabetic-subtitle text-center">
+              blend of Ayurvedic herb
+            </p>
+            <button className="antidiabetic-button bg-[#266431] text-white text-lg font-bold py-2 px-6 rounded-full hover:bg-[#1E5031] transition duration-300">
+              SHOP NOW
+            </button>
+          </div>
+        </div>
       </Container>
     </div>
   );
