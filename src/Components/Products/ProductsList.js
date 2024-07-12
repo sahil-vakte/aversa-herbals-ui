@@ -183,7 +183,7 @@ const ProductsList = () => {
                 <Row>
                   {products &&
                     products.map((index) => (
-                      <Col sm={4} className="mb-5">
+                      <Col sm={4} className="mb-24">
                         <div className="border-for-each-product-in-product-age">
                           <div
                             style={{

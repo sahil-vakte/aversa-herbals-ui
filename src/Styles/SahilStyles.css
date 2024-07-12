@@ -64,7 +64,7 @@
   top: 250px;
   left: 728px;
   gap: 0px;
-  opacity: 0px;
+  /* opacity: 0px; */
 }
 
 .registration-input-form-input-tag {
@@ -472,7 +472,7 @@
 left: 10.59px; */
   gap: 0px;
   border: 6.25px 0px 0px 0px;
-  opacity: 0px;
+  /* opacity: 0px; */
 }
 .icon-texts {
   font-family: Century Gothic;
@@ -555,7 +555,7 @@ left: 10.59px; */
   justify-content: center;
   border-radius: 20px;
   border: 3px solid #266431;
-  opacity: 0px;
+  /* opacity: 0px; */
 }
 .action-btn-contact {
   display: flex;
@@ -1105,5 +1105,15 @@ left: 10.59px; */
   .antidiabetic-button {
     font-size: 18px;
     padding: 10px 20px;
+  }
+  .aversa-footer-background {
+    padding: 30px;
+    height: auto;
+  }
+  .join-us-form-containers {
+    width: 100%;
+  }
+  .column-for-map-and-address-contact {
+    height: auto;
   }
 }
