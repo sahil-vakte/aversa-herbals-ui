@@ -95,7 +95,7 @@ const AdministratorViewSidebarLinks = ({ open, handleDrawerClose }) => {
         </Link>
 
         <Link
-          to="/admin/patientlist"
+          to="/admin/admin-aversa-all-customers"
           style={{ textDecoration: "none", color: "black" }}
         >
           <ListItem disablePadding sx={{ display: "block",

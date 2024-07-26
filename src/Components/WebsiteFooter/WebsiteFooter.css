@@ -34,3 +34,9 @@
   line-height: 12.1px;
   text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+  .aversa-footer-background-two {
+    padding: 0px;
+  }
+}

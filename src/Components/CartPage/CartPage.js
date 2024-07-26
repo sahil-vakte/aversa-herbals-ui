@@ -10,6 +10,7 @@ const CartPage = () => {
   const userId = localStorage.getItem("userId");
   const userData = JSON.parse(localStorage.getItem("userData"));
   const [cartData, setCartData] = useState([]);
+  
   const [fetchApiData, setfetchApiData] = useState(false);
   const [cartCount, setCartCount] = useState(0);
 
@@ -136,18 +137,35 @@ const CartPage = () => {
     e.preventDefault();
 
     const token = localStorage.getItem("token");
-
+    const currentDate = new Date().toISOString().split('T')[0];
     try {
       const response = await axios.post(
         "https://aversaherbals.com/api/orders/create/",
         formData,
         {
           headers: {
-            Authorization: `Bearer ${token}`, // Add the token to the headers
+            Authorization: `Bearer ${token}`,
           },
         }
       );
       console.log("Response:", response.data);
+      if (response.data.id) {
+        axios.post("https://aversaherbals.com/api/sales/", {
+          user: 1,
+          sale_id: response.data.id,
+          amount: finalAmount,
+          date: currentDate,
+        });
+      }
+      const deletePromises = cartData.map((item) =>
+        axios.delete(`https://aversaherbals.com/api/cart/item/delete/${item.id}/`)
+      );
+      await Promise.all(deletePromises);
+
+      setfetchApiData(!fetchApiData)
+      setCartCount(0);
+      eventBus.emit("cartCountChanged", 0);
+    
     } catch (error) {
       console.error("Error:", error.response.data);
     }

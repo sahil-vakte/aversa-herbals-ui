@@ -7,6 +7,7 @@ import CreateProductNew from "../AdminView/Products/CreateProductNew";
 import ProductDiseaseTypeList from "../AdminView/ProductDiseaseType/ProductDiseaseTypeList";
 import ProductTypeList from "../AdminView/ProductType/ProductTypeList";
 import UpdateProductData from "../AdminView/Products/UpdateProductData";
+import CustomersList from "../AdminView/CustomersList/CustomersList";
 
 const AdminRoutes = () => {
   function ScrollToTop() {
@@ -30,6 +31,7 @@ const AdminRoutes = () => {
         <Route path="/create-ingredients" element=<CreateIngredients/> />
         <Route path="/admin-aversa-all-disease-types-of-product" element=<ProductDiseaseTypeList/> />
         <Route path="/admin-aversa-all-product-types-of-product" element=<ProductTypeList/> />
+        <Route path="/admin-aversa-all-customers" element=<CustomersList/> />
       </Routes>
     </div>
   );

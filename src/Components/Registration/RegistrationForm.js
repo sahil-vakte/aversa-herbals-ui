@@ -20,6 +20,7 @@ const RegistrationForm = () => {
     usertype: null,
     main_sponsor_id: null,
     errors: {},
+    sub_users: {},
   });
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -56,6 +57,88 @@ const RegistrationForm = () => {
     return newErrors;
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const errors = validateFields();
+  //   if (Object.keys(errors).length > 0) {
+  //     setFormData({ ...formData, errors });
+  //     Swal.fire({
+  //       icon: "error",
+  //       title: "Oops...",
+  //       text: "Please Fill All Required Fields!",
+  //       confirmButtonColor: "#266431",
+  //     });
+  //     return;
+  //   }
+  //   setLoading(true);
+  //   try {
+  //     const formDataToSend = {
+  //       ...formData,
+  //       username: formData.email,
+  //       major_sponsor_id: null,
+  //       head_sponsor_id: null,
+  //       upper_head_sponsor_id: null,
+  //       is_adhar_kyc: false,
+  //       is_pan_kyc: false,
+  //       is_driving_license_kyc: false,
+  //       is_voter_id_kyc: false,
+  //       is_passport_kyc: false,
+  //     };
+
+  //     await axios.post("https://aversaherbals.com/api/users/", formDataToSend);
+  //     setLoading(false);
+
+  //     Swal.fire({
+  //       title: "Account Registered Successfully!",
+  //       text: "Login to Your Account to Start Shopping!",
+  //       confirmButtonColor: "#266431",
+  //       showClass: {
+  //         popup: `
+  //           animate__animated
+  //           animate__fadeInUp
+  //           animate__faster
+  //         `,
+  //       },
+  //       hideClass: {
+  //         popup: `
+  //           animate__animated
+  //           animate__fadeOutDown
+  //           animate__faster
+  //         `,
+  //       },
+  //     }).then(() => {
+      
+  //       setTimeout(() => {
+  //         navigate("/aversa-herbal-login");
+  //       }, 1000);
+  //     });
+  //     setFormData({
+  //       username: "",
+  //       first_name: "",
+  //       last_name: "",
+  //       email: "",
+  //       password: "",
+  //       mobile: "",
+  //       street: "",
+  //       city: "",
+  //       state: "",
+  //       zip: "",
+  //       usertype: null,
+  //       main_sponsor_id: null,
+  //       errors: {},
+  //     });
+  //   } catch (error) {
+  //     console.error("Error adding user:", error);
+  //     setLoading(false);
+  //     Swal.fire({
+  //       icon: "error",
+  //       title: "Oops...",
+  //       text: "This Email and Mobile Number is Already Registered!",
+  //       confirmButtonColor: "#266431",
+  //     });
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const errors = validateFields();
@@ -83,10 +166,17 @@ const RegistrationForm = () => {
         is_voter_id_kyc: false,
         is_passport_kyc: false,
       };
-
-      await axios.post("https://aversaherbals.com/api/users/", formDataToSend);
+  
+      const response = await axios.post("https://aversaherbals.com/api/users/", formDataToSend);
+      const userId = response.data.id; // Assuming the response contains the user ID
       setLoading(false);
-
+  
+      if (formData.main_sponsor_id) {
+        await axios.patch(`https://aversaherbals.com/api/users/${formData.main_sponsor_id}/`, {
+          sub_users: { userId }
+        });
+      }
+  
       Swal.fire({
         title: "Account Registered Successfully!",
         text: "Login to Your Account to Start Shopping!",
@@ -110,6 +200,7 @@ const RegistrationForm = () => {
           navigate("/aversa-herbal-login");
         }, 1000);
       });
+  
       setFormData({
         username: "",
         first_name: "",
@@ -136,7 +227,7 @@ const RegistrationForm = () => {
       });
     }
   };
-
+  
   return (
     <div>
       {loading && <AdminLoader />}
