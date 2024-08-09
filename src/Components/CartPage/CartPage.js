@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 import { FiPlusCircle, FiMinusCircle } from "react-icons/fi";
 import EmptyCart from "./EmptyCart";
 import eventBus from "./EventBus";
+import Swal from "sweetalert2";
 
 const CartPage = () => {
   const userId = localStorage.getItem("userId");
   const userData = JSON.parse(localStorage.getItem("userData"));
   const [cartData, setCartData] = useState([]);
-  
+  console.log("userDatauserData",userData)
   const [fetchApiData, setfetchApiData] = useState(false);
   const [cartCount, setCartCount] = useState(0);
 
@@ -133,8 +134,73 @@ const CartPage = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const [orderId, setOrderId] = useState("");
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
+  const [paymentError, setPaymentError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const createOrder = async () => {
+    try {
+      const response = await axios.post("https://aversaherbals.com/api/razorpay/create-order/", {
+        amount: parseFloat(finalAmount),
+        currency: "INR",
+        receipt: "order_receipt",
+      });
+
+      setOrderId(response.data.id);
+      return response.data.id; 
+    } catch (error) {
+      console.error("Error creating order:", error);
+      setPaymentError("Error creating order");
+      setIsLoading(false);
+    }
+  };
+
+  const loadRazorpay = async (orderId) => {
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.async = true;
+    script.onload = () => handleRazorpayLoad(orderId);
+    document.body.appendChild(script);
+  };
+
+  const handleRazorpayLoad = (orderId) => {
+    const options = {
+      key: "rzp_live_AmQvmWRqmT5OLQ",
+      amount: finalAmount,
+      currency: "INR",
+      name: "Aversa Herbals",
+      description: "Products Purchase Payment",
+      order_id: orderId,
+      handler: handlePaymentSuccess,
+      prefill: {
+        name:  userData&&userData?.first_name + userData&&userData?.last_name,
+        email:  userData&&userData?.email,
+        contact: userData&&userData?.mobile,
+      },
+      notes: {
+        address: userData&&userData?.street + userData&&userData?.city + userData&&userData?.state + userData&&userData?.zip,
+      },
+      theme: {
+        color: "#166332",
+      },
+    };
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+  };
+
+
+  const handlePayNow = async () => {
+    setIsLoading(true);
+    const orderId = await createOrder();
+    if (orderId) {
+      loadRazorpay(orderId);
+    }
+  };
+
+ 
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     const token = localStorage.getItem("token");
     const currentDate = new Date().toISOString().split('T')[0];
@@ -151,7 +217,7 @@ const CartPage = () => {
       console.log("Response:", response.data);
       if (response.data.id) {
         axios.post("https://aversaherbals.com/api/sales/", {
-          user: 1,
+          user: userId,
           sale_id: response.data.id,
           amount: finalAmount,
           date: currentDate,
@@ -165,11 +231,39 @@ const CartPage = () => {
       setfetchApiData(!fetchApiData)
       setCartCount(0);
       eventBus.emit("cartCountChanged", 0);
+      Swal.fire({
+        title: "Order Created Successfully!",
+        // text: "Your Order has been sent to !",
+        confirmButtonColor: "#266431",
+        showClass: {
+          popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+          `,
+        },
+        hideClass: {
+          popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+          `,
+        },
+      })
     
     } catch (error) {
       console.error("Error:", error.response.data);
     }
   };
+
+  const handlePaymentSuccess = (response) => {
+    console.log("Payment successful:", response);
+    setPaymentSuccess(true);
+    setIsLoading(false);
+    handleSubmit()
+  };
+
+
 
   return (
     <div className="cart-page-of-aversa-bg">
@@ -393,7 +487,8 @@ const CartPage = () => {
                     variant="warning"
                     style={{ width: "100%" }}
                     className="mt-3"
-                    onClick={handleSubmit}
+                    onClick={handlePayNow}
+                    // onClick={handleSubmit}
                   >
                     Proceed to Checkout
                   </Button>

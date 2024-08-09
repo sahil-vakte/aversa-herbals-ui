@@ -81,7 +81,7 @@ const WebRoutes = () => {
             path="/aversa-herbal-business-opportunity-form"
             element=<BoFormSection />
           />
-          {/* <Route path="/aversa-herbal-login" element=<PaymentForm/> /> */}
+          <Route path="/checkout" element=<PaymentForm/> />
         </Routes>
       </div>
       <div

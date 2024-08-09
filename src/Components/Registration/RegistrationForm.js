@@ -412,7 +412,7 @@ const RegistrationForm = () => {
                 <Col sm={12}>
                   <Form.Check
                     type="radio"
-                    label="Purchase Products for Personal use."
+                    label="Personal Buyer Account"
                     className="label-for-sign-up-form"
                     name="usertype"
                     value="client"
@@ -424,7 +424,7 @@ const RegistrationForm = () => {
                 <Col sm={12}>
                   <Form.Check
                     type="radio"
-                    label="Start your own business, access exclusive offers, and earn income by selling products."
+                    label="Brand Partner Account"
                     className="label-for-sign-up-form"
                     name="usertype"
                     value="distributor"

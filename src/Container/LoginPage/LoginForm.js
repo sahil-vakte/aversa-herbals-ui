@@ -46,11 +46,11 @@ const LoginForm = () => {
         });
       }
       console.log("Response:", response.data);
-      const { token, user } = response.data;
+
       localStorage.setItem("userData", JSON.stringify(response.data.user));
       localStorage.setItem("userId", response.data.user.id);
       localStorage.setItem("token", response.data.token);
-      // setMessage('Login successful');
+      setLoading(false);
       Swal.fire({
         title: "Login Successful!",
         // text: "Login to Your Account to Start Shopping!",

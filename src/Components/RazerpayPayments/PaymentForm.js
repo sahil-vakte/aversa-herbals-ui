@@ -1,15 +1,11 @@
-// PaymentForm.js
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const PaymentForm = () => {
   const [orderId, setOrderId] = useState("");
   const [paymentSuccess, setPaymentSuccess] = useState(false);
   const [paymentError, setPaymentError] = useState("");
-
-  useEffect(() => {
-    createOrder();
-  }, []);
+  const [isLoading, setIsLoading] = useState(false);
 
   const createOrder = async () => {
     try {
@@ -20,20 +16,23 @@ const PaymentForm = () => {
       });
 
       setOrderId(response.data.id);
+      return response.data.id; // Return the order ID to be used in loadRazorpay
     } catch (error) {
       console.error("Error creating order:", error);
+      setPaymentError("Error creating order");
+      setIsLoading(false);
     }
   };
 
-  const loadRazorpay = async () => {
+  const loadRazorpay = async (orderId) => {
     const script = document.createElement("script");
     script.src = "https://checkout.razorpay.com/v1/checkout.js";
     script.async = true;
-    script.onload = handleRazorpayLoad;
+    script.onload = () => handleRazorpayLoad(orderId);
     document.body.appendChild(script);
   };
 
-  const handleRazorpayLoad = () => {
+  const handleRazorpayLoad = (orderId) => {
     const options = {
       key: "rzp_test_8ML31thvWgYv8V",
       amount: 1,
@@ -61,15 +60,23 @@ const PaymentForm = () => {
   const handlePaymentSuccess = (response) => {
     console.log("Payment successful:", response);
     setPaymentSuccess(true);
+    setIsLoading(false);
+  };
+
+  const handlePayNow = async () => {
+    setIsLoading(true);
+    const orderId = await createOrder();
+    if (orderId) {
+      loadRazorpay(orderId);
+    }
   };
 
   return (
     <div>
-      {!orderId && <p>Creating order...</p>}
-      {orderId && !paymentSuccess && (
+      {isLoading && <p>Loading...</p>}
+      {!paymentSuccess && !isLoading && (
         <div>
-          <p>Order created successfully! Proceed to payment:</p>
-          <button onClick={loadRazorpay}>Pay Now</button>
+          <button onClick={handlePayNow}>Pay Now</button>
         </div>
       )}
       {paymentSuccess && <p>Payment successful!</p>}
